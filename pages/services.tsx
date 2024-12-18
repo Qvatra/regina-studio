@@ -1,15 +1,144 @@
 import Head from "next/head";
 
+interface ServiceCategory {
+  title: string;
+  services: Service[];
+}
+
+interface Service {
+  name: string;
+  description: string;
+  startingPrice: string;
+  priceDetails: string;
+}
+
 export default function Services() {
+  const serviceCategories: ServiceCategory[] = [
+    {
+      title: "Photography Services",
+      services: [
+        {
+          name: "Product Photography",
+          description: "Professional product photography to showcase your items in their best light. Perfect for e-commerce, catalogs, and marketing materials.",
+          startingPrice: "€35",
+          priceDetails: "per image, includes basic retouching"
+        },
+        {
+          name: "Personal Portraits",
+          description: "Capture your personality and style with professional portrait sessions. Great for professional headshots, modeling portfolios, or personal branding.",
+          startingPrice: "€150",
+          priceDetails: "per hour, includes 10 edited photos"
+        },
+        {
+          name: "Family Photography",
+          description: "Preserve precious family moments with natural, candid photography sessions. Perfect for families of all sizes and special occasions.",
+          startingPrice: "€300",
+          priceDetails: "1.5-hour session, includes 15 edited photos"
+        },
+        {
+          name: "Event Photography",
+          description: "Document your special events with professional photography. Suitable for corporate events, parties, celebrations, and more.",
+          startingPrice: "€150",
+          priceDetails: "per hour, includes edited photos"
+        },
+        {
+          name: "Wedding Photography",
+          description: "Tell your wedding story through beautiful, timeless photographs. Comprehensive coverage of your special day.",
+          startingPrice: "€2,000",
+          priceDetails: "full day coverage, includes edited photos"
+        }
+      ]
+    },
+    {
+      title: "Videography Services",
+      services: [
+        {
+          name: "Commercial Videos",
+          description: "Professional video production for your business or product. Perfect for advertising, social media, and marketing campaigns.",
+          startingPrice: "€1,000",
+          priceDetails: "per minute of finished video"
+        },
+        {
+          name: "Social Media Reels",
+          description: "Engaging short-form video content optimized for social media platforms. Ideal for building brand awareness and engagement.",
+          startingPrice: "€75",
+          priceDetails: "per hour of shooting and editing"
+        },
+        {
+          name: "Event Videography",
+          description: "Capture the energy and excitement of your event with professional video coverage. Perfect for corporate events, performances, and celebrations.",
+          startingPrice: "€75",
+          priceDetails: "per hour, includes edited footage"
+        },
+        {
+          name: "Wedding Videography",
+          description: "Create a cinematic story of your wedding day. From preparation to reception, capture all the special moments.",
+          startingPrice: "€1,400",
+          priceDetails: "full day coverage, includes edited film"
+        },
+        {
+          name: "Family Story Videos",
+          description: "Document your family's special moments or create a legacy video. Perfect for family reunions, anniversaries, or personal documentaries.",
+          startingPrice: "€75",
+          priceDetails: "per hour, includes edited video"
+        }
+      ]
+    }
+  ];
+
   return (
     <>
       <Head>
-        <title>Our Services | Studio Regina</title>
+        <title>Services & Pricing | Studio Regina</title>
         <meta name="description" content="Professional photography and videography services including weddings, events, portraits, commercial projects, and more." />
       </Head>
-      <main className="mx-auto max-w-[1960px] p-4">
-        <h1>Our Services</h1>
-        {/* Add content here */}
+      <main className="mx-auto max-w-4xl px-4 py-12 text-white">
+        <section className="text-center mb-16">
+          <h1 className="text-4xl font-bold tracking-wider mb-4">SERVICES & PRICING</h1>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Each project is unique and deserves special attention. While these are my starting prices,
+            I'm happy to create a custom package that perfectly fits your needs.
+          </p>
+        </section>
+
+        {serviceCategories.map((category) => (
+          <section key={category.title} className="mb-16">
+            <h2 className="text-3xl font-bold mb-8">{category.title}</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {category.services.map((service) => (
+                <div
+                  key={service.name}
+                  className="bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-colors"
+                >
+                  <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
+                  <p className="text-gray-300 mb-4 min-h-[80px]">
+                    {service.description}
+                  </p>
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="text-2xl font-bold text-white mb-1">
+                      {service.startingPrice}
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                      {service.priceDetails}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section className="text-center mt-16">
+          <p className="text-gray-300 text-lg mb-4">
+            Looking for a custom package or have specific requirements?
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors"
+          >
+            Let's Discuss Your Project
+          </a>
+        </section>
       </main>
     </>
   );

@@ -23,8 +23,9 @@ export default function Modal({
   const [curIndex, setCurIndex] = useState(index);
 
   function handleClose() {
-    router.push("/", undefined, { shallow: true });
-    onClose();
+    if (onClose) {
+      onClose();
+    }
   }
 
   function changePhotoId(newVal: number) {
