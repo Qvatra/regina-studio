@@ -119,7 +119,7 @@ export default function Home() {
         </div>
 
         {/* Services */}
-        <div className="py-20 bg-gray-900">
+        <div id="portfolio" className="py-20 bg-gray-900 scroll-mt-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
             <div className="grid md:grid-cols-2 gap-12">

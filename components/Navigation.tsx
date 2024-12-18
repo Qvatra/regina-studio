@@ -1,14 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const isActive = (path: string) => pathname === path;
+
+  useEffect(() => {
+    if (window.location.hash === '#portfolio') {
+      setTimeout(() => {
+        document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, [pathname]);
+
+  const handlePortfolioClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsPortfolioOpen(false);
+    setIsOpen(false);
+    
+    if (pathname === '/') {
+      // If already on home page, just scroll to portfolio section
+      document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If on another page, navigate to home with hash
+      router.push('/#portfolio');
+    }
+  };
 
   return (
     <nav className="bg-black text-white">
@@ -40,7 +63,10 @@ export default function Navigation() {
 
             {/* Portfolio Dropdown */}
             <div className="relative group">
-              <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">
+              <button 
+                onClick={handlePortfolioClick}
+                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              >
                 Portfolio
               </button>
               <div className="absolute left-0 top-full w-48 pt-2 -mt-2 z-50">
