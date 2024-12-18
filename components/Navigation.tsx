@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
 
-  const isActive = (path: string) => router.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="bg-black text-white">
@@ -15,8 +16,15 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
-            <Link href="/" className="flex-shrink-0 flex items-center">
-              {/* Add your logo here */}
+            <Link href="/" className="flex-shrink-0 flex items-center space-x-2">
+              <Image
+                src="/assets/logo.png"
+                alt="Studio Regina Logo"
+                width={40}
+                height={40}
+                className="w-auto h-8"
+                priority
+              />
               <span className="text-xl font-bold">Studio Regina</span>
             </Link>
           </div>
@@ -35,16 +43,18 @@ export default function Navigation() {
               <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">
                 Portfolio
               </button>
-              <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-black ring-1 ring-black ring-opacity-5 hidden group-hover:block">
-                <div className="py-1">
-                  <Link href="/portfolio-photography"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-700">
-                    Photography
-                  </Link>
-                  <Link href="/portfolio-videography"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-700">
-                    Videography
-                  </Link>
+              <div className="absolute left-0 top-full w-48 pt-2 -mt-2 z-50">
+                <div className="rounded-md shadow-lg bg-black ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+                  <div className="py-1">
+                    <Link href="/portfolio-photography"
+                      className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-700">
+                      Photography
+                    </Link>
+                    <Link href="/portfolio-videography"
+                      className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-700">
+                      Videography
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
