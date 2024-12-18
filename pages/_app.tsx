@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -7,6 +8,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Navigation />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }
