@@ -30,15 +30,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
       <Head>
-        <title>Next.js Conf 2022 Photos</title>
-        <meta
-          property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
-        <meta
-          name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
+      <title>Studio Regina | Creative Photography & Videography Services</title>
+      <meta name="description" content="Studio Regina offers professional photography and videography services, specializing in weddings, events, family portraits, individual sessions, ad creations, and creative media production." />
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
         {photoId && (
