@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import TypeWriter from '../components/TypeWriter';
 
 export default function Home() {
   const citations = [
@@ -51,6 +52,8 @@ export default function Home() {
   const [currentCitation, setCurrentCitation] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const typeWriterWords = ["Photographer", "Filmmaker", "Blogger", "Friend"];
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIsTransitioning(true);
@@ -72,61 +75,44 @@ export default function Home() {
         />
       </Head>
 
-      <main className="text-white">
+      <main className="text-gray-900">
         {/* Hero Banner */}
-        <div className="relative h-[50vh] w-full">
-          <Image
-            src="/assets/home.jpg"
-            alt="Studio Regina Hero Image"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40">
-            <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4 text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Capturing Life's Beautiful Moments
-              </h1>
-              <p className="text-xl md:text-2xl mb-8">
-                Professional Photography & Videography Services in Amsterdam Area
-              </p>
-              <Link
-                href="/contact"
-                className="bg-white text-black px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Book a Session
-              </Link>
-            </div>
+        <div className="relative w-full">
+          <div className="relative md:h-auto aspect-[21/7] w-full">
+            <Image
+              src="/assets/banner.jpg"
+              alt="Studio Regina Hero Image"
+              fill
+              className="object-cover object-[center_calc(70%)]"
+              priority
+            />
           </div>
         </div>
 
-        {/* Citations */}
-        <div className="bg-black py-20">
-          <div className="max-w-4xl mx-auto px-4 h-[120px] flex items-center justify-center">
-            <div 
-              className={`text-center transition-all duration-500 ${
-                isTransitioning ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
-              }`}
-            >
-              <p className="text-2xl md:text-3xl italic mb-4">
-                "{citations[currentCitation].text}"
-              </p>
-              <p className="text-gray-400">
-                — {citations[currentCitation].author}
-              </p>
-            </div>
-          </div>
+        {/* Name Introduction */}
+        <div className="text-center mt-24">
+          <p className="text-3xl font-semibold text-gray-900 pb-4 uppercase">This is me, Regina:</p>
+
+          <TypeWriter
+            words={typeWriterWords}
+            typingSpeed={150}
+            deletingSpeed={100}
+            delayBetweenWords={1000}
+            className="text-gray-400 text-2xl font-semibold uppercase"
+          />
+
+          <p className="text-lg text-gray-600 pt-5 font-semibold">- based in Amsterdam area -</p>
         </div>
 
         {/* Services */}
-        <div id="portfolio" className="py-20 bg-gray-900 scroll-mt-16">
+        <div id="portfolio" className="py-24 scroll-mt-0">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-12 ml-6 mr-6">
               {services.map((service) => (
                 <div key={service.title} className="group">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">{service.title}</h3>
                   <Link href={service.link}>
-                    <div className="relative h-80 mb-6 overflow-hidden rounded-lg cursor-pointer">
+                    <div className="relative h-60 mb-6 overflow-hidden cursor-pointer">
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -135,17 +121,16 @@ export default function Home() {
                       />
                       <div className="absolute inset-0 bg-black/20 transition-opacity duration-500 group-hover:bg-black/40" />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <span className="bg-white/90 text-black px-6 py-2 rounded-lg font-semibold">
+                        <span className="bg-white text-gray-900 px-6 py-2 rounded-lg font-semibold">
                           View Portfolio
                         </span>
                       </div>
                     </div>
                   </Link>
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-4">{service.description}</p>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
                   <ul className="space-y-2">
                     {service.items.map((item) => (
-                      <li key={item} className="flex items-center text-gray-300">
+                      <li key={item} className="flex items-center text-gray-600">
                         <span className="mr-2">•</span>
                         {item}
                       </li>
@@ -157,18 +142,39 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Citations */}
+        <div className="mb-20 max-w-4xl mx-auto px-4 flex items-center justify-center">
+          <div 
+            className={`text-center transition-all duration-500 ${
+              isTransitioning ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
+            }`}
+          >
+            <p className="text-2xl md:text-3xl italic mb-4 text-gray-800">
+              "{citations[currentCitation].text}"
+            </p>
+            <p className="text-gray-600">
+              — {citations[currentCitation].author}
+            </p>
+          </div>
+        </div>
+
+        {/* Horizontal Line */}
+        <div className="max-w-4xl mx-auto px-4">
+          <hr className="border-gray-500 border-t-1 my-12" />
+        </div>
+
         {/* CTA Section */}
-        <div className="py-20 bg-black">
+        <div className="pb-12">
           <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900">
               Ready to Create Something Beautiful?
             </h2>
-            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
               Let's work together to capture your special moments or bring your creative vision to life.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-black px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors"
             >
               Get in Touch
             </Link>

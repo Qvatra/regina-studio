@@ -59,14 +59,14 @@ export default function Contact() {
         <title>Contact | Studio Regina</title>
         <meta name="description" content="Get in touch with Studio Regina for your photography and videography needs. Connect via Instagram, WhatsApp, email, or Facebook." />
       </Head>
-      <main className="mx-auto max-w-4xl px-4 py-12 text-white">
+      <main className="mx-auto max-w-4xl px-4 py-12 text-gray-900">
         <section className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-wider mb-4">LET'S CONNECT</h1>
           <div className="max-w-2xl mx-auto">
-            <p className="text-gray-300 text-lg mb-4">
+            <p className="text-gray-600 text-lg mb-4">
               I'm excited to hear about your story and discuss how we can create something beautiful together! Whether it's a wedding, family portrait, commercial project, or any other creative endeavor, I'm here to help bring your vision to life.
             </p>
-            <p className="text-gray-300 text-lg">
+            <p className="text-gray-600 text-lg">
               Choose your preferred way to connect with me below:
             </p>
           </div>
@@ -79,24 +79,24 @@ export default function Contact() {
               href={option.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`block p-6 rounded-lg transition-transform hover:scale-105 ${
+              className={`block p-6 rounded-lg transition-transform hover:scale-105 shadow-sm ${
                 option.primary 
-                  ? 'bg-white/10 hover:bg-white/15' 
-                  : 'bg-white/5 hover:bg-white/10'
+                  ? 'bg-gray-50 hover:bg-gray-100' 
+                  : 'bg-gray-50/50 hover:bg-gray-50'
               }`}
             >
               <div className="flex items-center mb-4">
-                <option.icon className="h-6 w-6 mr-3" />
+                <option.icon className="h-6 w-6 mr-3 text-gray-700" />
                 <h2 className="text-xl font-semibold">{option.name}</h2>
               </div>
-              <p className="text-gray-300 mb-3">{option.description}</p>
-              <p className="text-gray-400 font-medium">{option.handle}</p>
+              <p className="text-gray-600 mb-3">{option.description}</p>
+              <p className="text-gray-500 font-medium">{option.handle}</p>
             </a>
           ))}
         </section>
 
         <section className="mt-16 text-center">
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-600 text-lg">
             I typically respond within 24 hours. Looking forward to connecting with you!
           </p>
         </section>

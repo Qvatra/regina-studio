@@ -92,10 +92,10 @@ export default function Services() {
         <title>Services & Pricing | Studio Regina</title>
         <meta name="description" content="Professional photography and videography services including weddings, events, portraits, commercial projects, and more." />
       </Head>
-      <main className="mx-auto max-w-4xl px-4 py-12 text-white">
+      <main className="mx-auto max-w-4xl px-4 py-12 text-gray-900">
         <section className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-wider mb-4">SERVICES & PRICING</h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Each project is unique and deserves special attention. While these are my starting prices,
             I'm happy to create a custom package that perfectly fits your needs.
           </p>
@@ -108,17 +108,17 @@ export default function Services() {
               {category.services.map((service) => (
                 <div
                   key={service.name}
-                  className="bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-colors"
+                  className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors shadow-sm"
                 >
                   <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
-                  <p className="text-gray-300 mb-4 min-h-[80px]">
+                  <p className="text-gray-600 mb-4 min-h-[80px]">
                     {service.description}
                   </p>
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="text-2xl font-bold text-white mb-1">
+                  <div className="border-t border-gray-200 pt-4">
+                    <p className="text-2xl font-bold text-gray-900 mb-1">
                       {service.startingPrice}
                     </p>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-500 text-sm">
                       {service.priceDetails}
                     </p>
                   </div>
@@ -129,12 +129,12 @@ export default function Services() {
         ))}
 
         <section className="text-center mt-16">
-          <p className="text-gray-300 text-lg mb-4">
+          <p className="text-gray-600 text-lg mb-4">
             Looking for a custom package or have specific requirements?
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors"
+            className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg transition-colors hover:bg-gray-800"
           >
             Let's Discuss Your Project
           </a>

@@ -33,7 +33,7 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
           content="Browse through our collection of professional photography work including weddings, portraits, events, commercial photography, and creative shoots." 
         />
       </Head>
-      <main className="mx-auto max-w-[1960px] p-4">
+      <main className="mx-auto max-w-[1960px] p-4 bg-white">
         {photoId && (
           <Modal
             images={images}
@@ -44,14 +44,14 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
           />
         )}
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
-          <div className="after:content relative mb-5 flex h-[629px] flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-white/10 px-6 pb-16 pt-64 text-center text-white shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight lg:pt-0">
+          <div className="after:content relative mb-5 flex h-[629px] flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-gray-50 px-6 pb-16 pt-64 text-center shadow-sm after:pointer-events-none after:absolute after:inset-0 after:rounded-lg lg:pt-0">
             <div className="absolute inset-0 flex items-center justify-center opacity-20">
-              <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-black/0 via-black to-black"></span>
+              <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-gray-50/0 via-gray-50 to-gray-50"></span>
             </div>
-            <h1 className="mt-8 mb-4 text-3xl font-bold uppercase tracking-widest">
+            <h1 className="mt-8 mb-4 text-3xl font-bold uppercase tracking-widest text-gray-900">
               Photography Portfolio
             </h1>
-            <p className="max-w-[40ch] text-white/75 sm:max-w-[32ch]">
+            <p className="max-w-[40ch] text-gray-600 sm:max-w-[32ch]">
               Explore our collection of professional photography work, capturing moments that tell unique stories.
             </p>
           </div>
@@ -65,7 +65,7 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
               as={`/portfolio-photography/${id}`}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               shallow
-              className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
+              className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg"
             >
               <Image
                 alt="Photography portfolio image"
