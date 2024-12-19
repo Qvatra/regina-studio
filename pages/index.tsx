@@ -110,7 +110,6 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 ml-6 mr-6">
               {services.map((service) => (
                 <div key={service.title} className="group">
-                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">{service.title}</h3>
                   <Link href={service.link}>
                     <div className="relative h-60 mb-6 overflow-hidden cursor-pointer">
                       <Image
@@ -119,11 +118,11 @@ export default function Home() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black/20 transition-opacity duration-500 group-hover:bg-black/40" />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <span className="bg-white text-gray-900 px-6 py-2 rounded-lg font-semibold">
-                          View Portfolio
-                        </span>
+                      <div className="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:bg-black/50" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <h3 className="text-3xl font-semibold text-white uppercase z-10">
+                          {service.title}
+                        </h3>
                       </div>
                     </div>
                   </Link>
