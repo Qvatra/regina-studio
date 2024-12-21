@@ -45,10 +45,10 @@ export default function TypeWriter({
   return (
     <div className="flex items-center justify-center">
       <div className="text-center">
-        <span className={className}>
+        <p className={className}>
           {text}
           <span>|</span>
-        </span>
+        </p>
       </div>
     </div>
   );

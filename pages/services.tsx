@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import { Card, CardHeader, CardContent, CardFooter } from '../components/Card';
 
 interface ServiceCategory {
   title: string;
@@ -107,26 +107,24 @@ export default function Services() {
             <h2 className="text-3xl font-bold mb-8">{category.title}</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {category.services.map((service) => (
-                <Link
+                <Card 
                   key={service.name}
                   href="/contact"
-                  className="block group"
+                  className="h-[240px]"
                 >
-                  <div className="bg-gray-100 p-6 hover:bg-gray-200 transition-colors transition-transform hover:scale-105 h-full cursor-pointer">
-                    <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
-                    <p className="text-gray-600 mb-4 min-h-[80px]">
-                      {service.description}
+                  <CardHeader>
+                    <h3>{service.name}</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p>{service.description}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-2xl font-bold text-gray-900">
+                      {service.startingPrice}
                     </p>
-                    <div className="border-t border-gray-300 pt-4">
-                      <p className="text-2xl font-bold text-gray-900 mb-1">
-                        {service.startingPrice}
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        {service.priceDetails}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
+                    <p className="text-sm">{service.priceDetails}</p>
+                  </CardFooter>
+                </Card>
               ))}
             </div>
           </section>
@@ -138,7 +136,7 @@ export default function Services() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg transition-colors hover:bg-gray-700"
+            className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg transition-colors hover:bg-gray-600"
           >
             Let's Discuss Your Project
           </a>

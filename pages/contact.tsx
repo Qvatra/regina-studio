@@ -3,6 +3,7 @@ import {
   ChatBubbleLeftRightIcon as WhatsAppIcon,
   EnvelopeIcon as MailIcon
 } from '@heroicons/react/24/outline';
+import { Card, CardHeader, CardContent, CardFooter } from '../components/Card';
 
 // Custom Instagram and Facebook icons since they're not available in Heroicons
 const InstagramIcon = ({ className = "h-6 w-6" }) => (
@@ -70,20 +71,23 @@ export default function Contact() {
 
         <section className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
           {contactOptions.map((option) => (
-            <a
+            <Card
               key={option.name}
               href={option.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-6 transition-transform transition-colors hover:scale-105 bg-gray-100 hover:bg-gray-200"
             >
-              <div className="flex items-center mb-4">
-                <option.icon className="h-6 w-6 mr-3 text-gray-700" />
-                <h2 className="text-xl font-semibold">{option.name}</h2>
-              </div>
-              <p className="text-gray-600 mb-3">{option.description}</p>
-              <p className="text-gray-500 font-medium">{option.handle}</p>
-            </a>
+              <CardHeader>
+                <div className="flex items-center mb-4">
+                  <option.icon className="h-6 w-6 mr-3 text-gray-700" />
+                  <h2>{option.name}</h2>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p>{option.description}</p>
+              </CardContent>
+              <CardFooter>
+                <p>{option.handle}</p>
+              </CardFooter>
+            </Card>
           ))}
         </section>
 

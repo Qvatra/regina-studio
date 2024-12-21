@@ -26,6 +26,10 @@ module.exports = {
           },
         },
       },
+      fontFamily: {
+        sans: ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Inter', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [

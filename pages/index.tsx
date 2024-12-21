@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import TypeWriter from '../components/TypeWriter';
+import Citations from '../components/Citations';
 
 export default function Home() {
   const citations = [
@@ -49,21 +50,7 @@ export default function Home() {
     }
   ];
 
-  const [currentCitation, setCurrentCitation] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
   const typeWriterWords = ["Photographer", "Filmmaker", "Blogger", "Friend"];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentCitation((prev) => (prev + 1) % citations.length);
-        setIsTransitioning(false);
-      }, 500);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <>
@@ -91,7 +78,7 @@ export default function Home() {
 
         {/* Name Introduction */}
         <div className="text-center mt-24">
-          <p className="text-3xl font-semibold text-gray-900 pb-4 uppercase">This is me, Regina:</p>
+          <h1 className="text-3xl font-semibold text-gray-900 pb-4 uppercase">This is me, Regina:</h1>
 
           <TypeWriter
             words={typeWriterWords}
@@ -120,9 +107,9 @@ export default function Home() {
                       />
                       <div className="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:bg-black/50" />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <h3 className="text-3xl font-semibold text-white uppercase z-10">
+                        <h2 className="text-3xl font-semibold text-white uppercase z-10">
                           {service.title}
-                        </h3>
+                        </h2>
                       </div>
                     </div>
                   </Link>
@@ -142,20 +129,7 @@ export default function Home() {
         </div>
 
         {/* Citations */}
-        <div className="mb-20 max-w-4xl mx-auto px-4 flex items-center justify-center">
-          <div 
-            className={`text-center transition-all duration-500 ${
-              isTransitioning ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
-            }`}
-          >
-            <p className="text-2xl md:text-3xl italic mb-4 text-gray-800">
-              "{citations[currentCitation].text}"
-            </p>
-            <p className="text-gray-600">
-              — {citations[currentCitation].author}
-            </p>
-          </div>
-        </div>
+        <Citations citations={citations} />
 
         {/* Horizontal Line */}
         <div className="max-w-4xl mx-auto px-4">
@@ -173,7 +147,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-700 transition-colors"
+              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-600 transition-colors"
             >
               Get in Touch
             </Link>
