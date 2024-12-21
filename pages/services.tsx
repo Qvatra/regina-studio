@@ -93,7 +93,7 @@ export default function Services() {
         <title>Services & Pricing | Studio Regina</title>
         <meta name="description" content="Professional photography and videography services including weddings, events, portraits, commercial projects, and more." />
       </Head>
-      <main className="mx-auto max-w-5xl px-4 py-12 text-gray-900">
+      <main className="mx-auto max-w-5xl px-4 pt-12 text-gray-900">
         <section className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-wider mb-4">SERVICES & PRICING</h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -104,7 +104,7 @@ export default function Services() {
 
         {serviceCategories.map((category) => (
           <section key={category.title} className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">{category.title}</h2>
+            <h2 className="text-3xl font-bold tracking-wider mb-8">{category.title}</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {category.services.map((service) => (
                 <Card key={service.name} href="/contact">

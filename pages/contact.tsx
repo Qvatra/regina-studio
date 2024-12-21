@@ -56,9 +56,9 @@ export default function Contact() {
         <title>Contact | Studio Regina</title>
         <meta name="description" content="Get in touch with Studio Regina for your photography and videography needs. Connect via Instagram, WhatsApp, email, or Facebook." />
       </Head>
-      <main className="mx-auto max-w-4xl px-4 py-12 text-gray-900">
-        <section className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-wider mb-4">LET'S CONNECT</h1>
+      <main className="mx-auto max-w-4xl px-4 pt-8 text-gray-900">
+        <section className="text-center mb-12">
+          <h1 className="text-3xl font-bold tracking-wider mb-4">LET'S CONNECT</h1>
           <div className="max-w-2xl mx-auto">
             <p className="text-gray-600 text-lg mb-4">
               I'm excited to hear about your story and discuss how we can create something beautiful together! Whether it's a wedding, family portrait, commercial project, or any other creative endeavor, I'm here to help bring your vision to life.

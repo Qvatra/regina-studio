@@ -69,80 +69,81 @@ export default function Navigation() {
     }`;
 
   return (
-    <nav className="text-gray-800">
+    <nav className="sticky top-0 bg-white z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo centered */}
-        <div className="flex justify-center py-4">
-          <Link href="/" className="flex-shrink-0 flex flex-col items-center h-[60px]">
-            <Logo />
-          </Link>
-        </div>
+        <div className="flex justify-between items-center h-22">
+          <div className="flex-1 md:flex-none">
+            <Link href="/" className="flex justify-center md:justify-start my-4">
+              <Logo className="h-[50px] w-auto" />
+            </Link>
+          </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:justify-center md:space-x-8 pt-2 pb-6">
-          {menuItems.map((item) => (
-            item.children ? (
-              <div key={item.path} className="relative group">
-                <button 
-                  onClick={handlePortfolioClick}
+          {/* Desktop Navigation - right */}
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            {menuItems.map((item) => (
+              item.children ? (
+                <div key={item.path} className="relative group">
+                  <button 
+                    onClick={handlePortfolioClick}
+                    className={navItemClassName(isActive(item.path))}
+                  >
+                    {item.label}
+                  </button>
+                  <div className="absolute left-0 top-full w-48 pt-2 -mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                    <div className="bg-white py-2 shadow-lg">
+                      {item.children.map((child) => (
+                        <Link 
+                          key={child.path}
+                          href={child.path}
+                          className={`block px-4 py-2 ${navItemClassName(isSubActive(child.path))}`}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link 
+                  key={item.path}
+                  href={item.path} 
                   className={navItemClassName(isActive(item.path))}
                 >
                   {item.label}
-                </button>
-                <div className="absolute left-0 top-full w-48 pt-2 -mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                  <div className="bg-white py-2 shadow-lg">
-                    {item.children.map((child) => (
-                      <Link 
-                        key={child.path}
-                        href={child.path}
-                        className={`block px-4 py-2 ${navItemClassName(isSubActive(child.path))}`}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <Link 
-                key={item.path}
-                href={item.path} 
-                className={navItemClassName(isActive(item.path))}
-              >
-                {item.label}
-              </Link>
-            )
-          ))}
-        </div>
+                </Link>
+              )
+            ))}
+          </div>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden absolute top-6 right-6">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none"
-          >
-            <span className="sr-only">Open main menu</span>
-            {/* Hamburger icon */}
-            <svg
-              className={`${isOpen ? 'hidden' : 'block'} h-6 w-6 scale-125`}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          {/* Mobile menu button */}
+          <div className="flex-0 flex justify-end md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            {/* Close icon */}
-            <svg
-              className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+              <span className="sr-only">Open main menu</span>
+              {/* Hamburger icon */}
+              <svg
+                className={`${isOpen ? 'hidden' : 'block'} h-6 w-6 scale-125`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              {/* Close icon */}
+              <svg
+                className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}

@@ -65,12 +65,12 @@ export default function Home() {
       <main className="text-gray-900">
         {/* Hero Banner */}
         <div className="relative w-full">
-          <div className="relative md:h-auto aspect-[21/10] sm:aspect-[21/7] w-full">
+          <div className="relative md:h-auto aspect-[21/11] sm:aspect-[21/7] xl:aspect-[21/5] w-full">
             <Image
               src="/assets/banner.jpg"
               alt="Studio Regina Hero Image"
               fill
-              className="object-cover object-[center_calc(70%)]"
+              className="object-cover object-[center_calc(70%)] xl:object-[center_calc(52%)]"
               priority
             />
           </div>
@@ -78,7 +78,7 @@ export default function Home() {
 
         {/* Name Introduction */}
         <div className="text-center mt-24">
-          <h1 className="text-3xl font-semibold text-gray-900 pb-4 uppercase">This is me, Regina:</h1>
+          <h1 className="text-3xl font-bold tracking-wider text-gray-900 pb-4 uppercase">This is me, Regina:</h1>
 
           <TypeWriter
             words={typeWriterWords}
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
 
         {/* Services */}
-        <div id="portfolio" className="py-24 scroll-mt-0">
+        <div id="portfolio" className="pt-24 pb-20 scroll-mt-0">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid sm:grid-cols-2 sm:gap-4 md:gap-6 ml-2 mr-2">
               {services.map((service) => (
@@ -133,13 +133,13 @@ export default function Home() {
 
         {/* Horizontal Line */}
         <div className="max-w-4xl mx-auto px-4">
-          <hr className="border-gray-500 border-t-1 my-12" />
+          <hr className="border-gray-200 border-t-1 my-12" />
         </div>
 
         {/* CTA Section */}
-        <div className="pb-12">
+        <div>
           <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900">
+            <h2 className="text-3xl font-bold tracking-wider mb-4 text-gray-900">
               Ready to Create Something Beautiful?
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">

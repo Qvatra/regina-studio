@@ -16,14 +16,14 @@ export default function About() {
         <title>About | Studio Regina</title>
         <meta name="description" content="Learn about Regina, her journey in photography and videography, and her passion for creative storytelling." />
       </Head>
-      <main className="mx-auto px-4 pb-12 text-gray-900">
+      <main className="mx-auto px-4 text-gray-900">
         <div className="mb-16 mt-2">
           <div className="max-w-2xl mx-auto aspect-[10/6] relative">
             <Image
               src="/assets/about.jpg"
               alt="Regina Portrait"
               fill
-              className="object-cover rounded-lg shadow-md"
+              className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
@@ -31,7 +31,7 @@ export default function About() {
         </div>
 
         <section className="mb-16 max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8">MY STORY</h2>
+          <h2 className="text-3xl font-bold tracking-wider mb-4">MY STORY</h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600">
               My journey into the world of visual storytelling began in 2006 when I first picked up a camera at the age of 18. What started as a hobby quickly blossomed into an all-consuming passion that would eventually become my profession.
@@ -49,7 +49,7 @@ export default function About() {
         </section>
 
         <section className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8">FUN FACTS</h2>
+          <h2 className="text-3xl font-bold tracking-wider mb-4">FUN FACTS</h2>
           <ul className="space-y-4">
             {funFacts.map((fact, index) => (
               <li key={index} className="flex items-center space-x-3">

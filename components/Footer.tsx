@@ -52,7 +52,7 @@ export default function Footer() {
   const linkClassName = "text-gray-900 hover:text-gray-600 transition-all hover:scale-125 transform-gpu origin-center";
 
   return (
-    <footer className="mt-auto py-10">
+    <footer className="mt-auto py-10 mt-10">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8">
         {socialLinks.map(({ href, label, icon }) => (
           <a

@@ -1,8 +1,9 @@
-export default function Logo({ className = "w-auto h-8" }) {
+export default function Logo({ className }: { className: string }) {
   return (<svg 
     width="232.02857666015623" 
     height="110.38149593946491" 
     viewBox="0 0 200.00000000000003 95.14474253844747" 
+    className={className}
     >
       <defs id="SvgjsDefs1036"></defs>
       <g
