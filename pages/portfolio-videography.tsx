@@ -21,30 +21,16 @@ const VideographyPortfolio: NextPage = ({ videos }: { videos: VideoProps[] }) =>
           content="Watch our collection of professional video work including wedding films, commercials, events, and creative productions." 
         />
       </Head>
-      <main className="mx-auto max-w-[1960px] p-4 bg-white">
-        <div className="mb-12">
-          <div className="relative mb-5 flex h-[400px] flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-gray-50 px-6 pb-16 pt-64 text-center shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center opacity-20">
-              <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-gray-50/0 via-gray-50 to-gray-50"></span>
-            </div>
-            <h1 className="mt-8 mb-4 text-3xl font-bold uppercase tracking-widest text-gray-900">
-              Videography Portfolio
-            </h1>
-            <p className="max-w-[40ch] text-gray-600 sm:max-w-[32ch]">
-              Explore our collection of professional video work, bringing stories to life through motion.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          {videos.map((video) => (
+      <main className="mx-auto max-w-7xl p-4 bg-white">
+        <div className="columns-1 sm:columns-2 md:columns-3">
+          {videos.map((video, index) => (
             <div 
               key={video.id} 
-              className="relative overflow-hidden rounded-lg bg-gray-50 shadow-sm"
+              className="relative break-inside-avoid bg-gray-50 mb-8"
             >
-              <div className="aspect-video">
+              <div>
                 <video
-                  className="w-full"
+                  className="w-full h-full object-cover"
                   controls
                   poster={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/c_scale,w_720/${video.public_id}.jpg`}
                 >

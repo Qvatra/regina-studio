@@ -16,16 +16,8 @@ export default function About() {
         <title>About | Studio Regina</title>
         <meta name="description" content="Learn about Regina, her journey in photography and videography, and her passion for creative storytelling." />
       </Head>
-      <main className="mx-auto max-w-4xl px-4 py-12 text-gray-900">
-        <section className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-wider mb-4">THIS IS ME</h1>
-          <h2 className="text-2xl tracking-wide mb-6">R E G I N A</h2>
-          <p className="text-lg italic text-gray-600">
-            Amsterdam area based, open for travel.
-          </p>
-        </section>
-
-        <div className="mb-16">
+      <main className="mx-auto px-4 pb-12 text-gray-900">
+        <div className="mb-16 mt-2">
           <div className="max-w-2xl mx-auto aspect-[10/6] relative">
             <Image
               src="/assets/about.jpg"
@@ -39,7 +31,7 @@ export default function About() {
         </div>
 
         <section className="mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">MY STORY</h2>
+          <h2 className="text-2xl font-bold mb-8">MY STORY</h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600">
               My journey into the world of visual storytelling began in 2006 when I first picked up a camera at the age of 18. What started as a hobby quickly blossomed into an all-consuming passion that would eventually become my profession.
@@ -57,12 +49,12 @@ export default function About() {
         </section>
 
         <section className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">FUN FACTS</h2>
+          <h2 className="text-2xl font-bold mb-8">FUN FACTS</h2>
           <ul className="space-y-4">
             {funFacts.map((fact, index) => (
-              <li key={index} className="flex items-start space-x-4">
-                <span className="font-bold text-xl min-w-[24px]">{index + 1}.</span>
-                <span className="text-lg text-gray-600">{fact}</span>
+              <li key={index} className="flex items-center space-x-3">
+                <span className="text-2xl leading-none flex items-center">•</span>
+                <span className="text-lg text-gray-600 flex items-center">{fact}</span>
               </li>
             ))}
           </ul>

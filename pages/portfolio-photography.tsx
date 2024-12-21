@@ -33,7 +33,7 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
           content="Browse through our collection of professional photography work including weddings, portraits, events, commercial photography, and creative shoots." 
         />
       </Head>
-      <main className="mx-auto max-w-[1960px] p-4 bg-white">
+      <main className="mx-auto max-w-7xl p-4 bg-white">
         {photoId && (
           <Modal
             images={images}
@@ -43,19 +43,8 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
             }}
           />
         )}
-        <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
-          <div className="after:content relative mb-5 flex h-[629px] flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-gray-50 px-6 pb-16 pt-64 text-center shadow-sm after:pointer-events-none after:absolute after:inset-0 after:rounded-lg lg:pt-0">
-            <div className="absolute inset-0 flex items-center justify-center opacity-20">
-              <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-gray-50/0 via-gray-50 to-gray-50"></span>
-            </div>
-            <h1 className="mt-8 mb-4 text-3xl font-bold uppercase tracking-widest text-gray-900">
-              Photography Portfolio
-            </h1>
-            <p className="max-w-[40ch] text-gray-600 sm:max-w-[32ch]">
-              Explore our collection of professional photography work, capturing moments that tell unique stories.
-            </p>
-          </div>
-          {images.map(({ id, public_id, format, blurDataUrl }) => (
+        <div className="columns-1 sm:columns-2 md:columns-3">
+          {images.map(({ id, public_id, format, blurDataUrl }, index) => (
             <Link
               key={id}
               href={{
@@ -65,21 +54,20 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
               as={`/portfolio-photography/${id}`}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               shallow
-              className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg"
+              className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0"
             >
               <Image
                 alt="Photography portfolio image"
-                className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+                className="transform brightness-90 transition will-change-auto group-hover:brightness-110"
                 style={{ transform: "translate3d(0, 0, 0)" }}
                 placeholder="blur"
                 blurDataURL={blurDataUrl}
                 src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
                 width={720}
                 height={480}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                priority={index < 6}
+                loading={index < 6 ? 'eager' : 'lazy'}
               />
             </Link>
           ))}

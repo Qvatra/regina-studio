@@ -25,7 +25,6 @@ export default function Contact() {
       url: "https://instagram.com/marymeberry",
       icon: InstagramIcon,
       description: "Follow my creative journey and let's connect! This is my preferred way to communicate as it helps us build a stronger creative community.",
-      primary: true
     },
     {
       name: "WhatsApp",
@@ -33,7 +32,6 @@ export default function Contact() {
       url: "https://wa.me/+31649739457",
       icon: WhatsAppIcon,
       description: "For quick responses and easy communication, feel free to reach out via WhatsApp.",
-      primary: true
     },
     {
       name: "Email",
@@ -41,7 +39,6 @@ export default function Contact() {
       url: "mailto:regina.shaydullina@gmail.com?subject=Contact%20from%20website",
       icon: MailIcon,
       description: "Send me a detailed message about your project or inquiry.",
-      primary: false
     },
     {
       name: "Facebook",
@@ -49,7 +46,6 @@ export default function Contact() {
       url: "https://facebook.com/regina.shaydullina.5",
       icon: FacebookIcon,
       description: "Connect with me on Facebook to stay updated with my latest work.",
-      primary: false
     }
   ];
 
@@ -79,11 +75,7 @@ export default function Contact() {
               href={option.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`block p-6 rounded-lg transition-transform hover:scale-105 shadow-sm ${
-                option.primary 
-                  ? 'bg-gray-50 hover:bg-gray-100' 
-                  : 'bg-gray-50/50 hover:bg-gray-50'
-              }`}
+              className="block p-6 transition-transform transition-colors hover:scale-105 bg-gray-100 hover:bg-gray-200"
             >
               <div className="flex items-center mb-4">
                 <option.icon className="h-6 w-6 mr-3 text-gray-700" />
@@ -95,7 +87,7 @@ export default function Contact() {
           ))}
         </section>
 
-        <section className="mt-16 text-center">
+        <section className="mt-12 text-center">
           <p className="text-gray-600 text-lg">
             I typically respond within 24 hours. Looking forward to connecting with you!
           </p>

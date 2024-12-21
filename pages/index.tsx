@@ -78,7 +78,7 @@ export default function Home() {
       <main className="text-gray-900">
         {/* Hero Banner */}
         <div className="relative w-full">
-          <div className="relative md:h-auto aspect-[21/7] w-full">
+          <div className="relative md:h-auto aspect-[21/10] sm:aspect-[21/7] w-full">
             <Image
               src="/assets/banner.jpg"
               alt="Studio Regina Hero Image"
@@ -101,17 +101,17 @@ export default function Home() {
             className="text-gray-400 text-2xl font-semibold uppercase"
           />
 
-          <p className="text-lg text-gray-600 pt-5 font-semibold">- based in Amsterdam area -</p>
+          <p className="text-lg text-gray-600 pt-5 font-semibold">- Amsterdam area based, open for travel -</p>
         </div>
 
         {/* Services */}
         <div id="portfolio" className="py-24 scroll-mt-0">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 ml-6 mr-6">
+            <div className="grid sm:grid-cols-2 sm:gap-4 md:gap-6 ml-2 mr-2">
               {services.map((service) => (
                 <div key={service.title} className="group">
                   <Link href={service.link}>
-                    <div className="relative h-60 mb-6 overflow-hidden cursor-pointer">
+                    <div className="relative aspect-[21/9] mb-6 overflow-hidden cursor-pointer">
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -126,8 +126,8 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <ul className="space-y-2">
+                  <p className="text-gray-600 mb-4 font-semibold">{service.description}</p>
+                  <ul className="space-y-2 mb-6">
                     {service.items.map((item) => (
                       <li key={item} className="flex items-center text-gray-600">
                         <span className="mr-2">•</span>
@@ -173,7 +173,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors"
+              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-700 transition-colors"
             >
               Get in Touch
             </Link>
