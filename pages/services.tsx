@@ -20,33 +20,33 @@ export default function Services() {
       services: [
         {
           name: "Product Photography",
-          description: "Professional product photography to showcase your items in their best light. Perfect for e-commerce, catalogs, and marketing materials.",
+          description: "Professional product photos for e-commerce and marketing. Includes basic retouching to make your items shine.",
           startingPrice: "€35",
-          priceDetails: "per image, includes basic retouching"
+          priceDetails: "per image with basic retouching"
         },
         {
           name: "Personal Portraits",
-          description: "Capture your personality and style with professional portrait sessions. Great for professional headshots, modeling portfolios, or personal branding.", 
+          description: "Professional portraits for headshots, modeling portfolios, and personal branding that capture your unique style.",
           startingPrice: "€200",
-          priceDetails: "per hour, includes 10 edited photos"
+          priceDetails: "per hour, 10 edited photos"
         },
         {
           name: "Family Photography",
-          description: "Preserve precious family moments with natural, candid photography sessions. Perfect for families of all sizes and special occasions.",
+          description: "Natural, candid photography sessions to capture precious family moments and create lasting memories.",
           startingPrice: "€300",
-          priceDetails: "1.5-hour session, includes 15 edited photos"
+          priceDetails: "1.5h session, 15 edited photos"
         },
         {
           name: "Event Photography",
-          description: "Document your special events with professional photography. Suitable for corporate events, parties, celebrations, and more.",
+          description: "Professional coverage for corporate events, parties, and celebrations. Capturing key moments as they unfold.",
           startingPrice: "€300",
-          priceDetails: "per hour, includes 15 edited photos"
+          priceDetails: "per hour, 15 edited photos"
         },
         {
           name: "Wedding Photography",
-          description: "Tell your wedding story through beautiful, timeless photographs. Comprehensive coverage of your special day.",
+          description: "Comprehensive wedding day coverage capturing all the special moments, from preparation to reception.",
           startingPrice: "€2,500",
-          priceDetails: "full day coverage, includes edited photos"
+          priceDetails: "full day with edited photos"
         }
       ]
     },
@@ -55,33 +55,33 @@ export default function Services() {
       services: [
         {
           name: "Commercial Videos",
-          description: "Professional video production for your business or product. Perfect for advertising, social media, and marketing campaigns.",
+          description: "High-quality video production for business marketing, advertising, and social media campaigns.",
           startingPrice: "€1,000",
-          priceDetails: "per minute of finished video"
+          priceDetails: "per minute of final video"
         },
         {
           name: "Social Media Reels",
-          description: "Engaging short-form video content optimized for social media platforms. Ideal for building brand awareness and engagement.",
+          description: "Engaging short-form videos optimized for social platforms to boost your brand's online presence.",
           startingPrice: "€150",
-          priceDetails: "per hour of shooting and editing"
+          priceDetails: "per hour, shooting & editing"
         },
         {
           name: "Event Videography",
-          description: "Capture the energy and excitement of your event with professional video coverage. Perfect for corporate events, performances, and celebrations.",
+          description: "Professional video coverage for corporate events and celebrations, capturing the energy and excitement.",
           startingPrice: "€350",
-          priceDetails: "per hour, includes edited footage"
+          priceDetails: "per hour with edited footage"
         },
         {
           name: "Wedding Videography",
-          description: "Create a cinematic story of your wedding day. From preparation to reception, capture all the special moments.",
+          description: "Cinematic wedding coverage that tells your love story, from the first look to the last dance.",
           startingPrice: "€3,500",
-          priceDetails: "full day coverage, includes edited film"
+          priceDetails: "full day with edited film"
         },
         {
           name: "Family Story Videos",
-          description: "Document your family's special moments or create a legacy video. Perfect for family reunions, anniversaries, or personal documentaries.",
+          description: "Document family milestones and create legacy videos perfect for reunions and special occasions.",
           startingPrice: "€350",
-          priceDetails: "per hour, includes edited video"
+          priceDetails: "per hour with edited video"
         }
       ]
     }

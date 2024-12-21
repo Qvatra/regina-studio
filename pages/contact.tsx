@@ -69,7 +69,7 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
+        <section className="grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
           {contactOptions.map((option) => (
             <Card
               key={option.name}
