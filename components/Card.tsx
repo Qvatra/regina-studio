@@ -25,7 +25,7 @@ interface CardFooterProps {
 }
 
 export function Card({ href, className = "", children, onClick }: CardProps) {
-  const cardClassName = `block p-5 h-full group bg-gray-100 hover:bg-gray-200 transition-all hover:scale-105 relative ${className}`;
+  const cardClassName = `block p-5 h-full group bg-gray-100 hover:bg-gray-200 transition-all hover:scale-105 flex flex-col ${className}`;
 
   return href ? (
     <Link href={href} className={cardClassName}>{children}</Link>
@@ -44,7 +44,7 @@ export function CardHeader({ children, className = "" }: CardHeaderProps) {
 
 export function CardContent({ children, className = "" }: CardContentProps) {
   return (
-    <div className={`text-gray-600 mb-12 ${className}`}>
+    <div className={`text-gray-600 flex-grow ${className}`}>
       {children}
     </div>
   );
@@ -52,7 +52,7 @@ export function CardContent({ children, className = "" }: CardContentProps) {
 
 export function CardFooter({ children, className = "" }: CardFooterProps) {
   return (
-    <div className={`absolute bottom-5 left-5 right-5 text-gray-500 font-medium ${className}`}>
+    <div className={`text-gray-500 font-medium mt-4 ${className}`}>
       {children}
     </div>
   );

@@ -107,11 +107,7 @@ export default function Services() {
             <h2 className="text-3xl font-bold mb-8">{category.title}</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {category.services.map((service) => (
-                <Card 
-                  key={service.name}
-                  href="/contact"
-                  className="h-[240px]"
-                >
+                <Card key={service.name} href="/contact">
                   <CardHeader>
                     <h3>{service.name}</h3>
                   </CardHeader>
