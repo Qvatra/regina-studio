@@ -5,7 +5,11 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="icon"
+            href="/favicon.svg"
+            type="image/svg+xml"
+          />
           <meta
             name="description"
             content="Professional photography and videography services in Amsterdam area. Specializing in weddings, events, portraits, and commercial projects."
