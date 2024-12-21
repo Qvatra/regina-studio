@@ -18,7 +18,7 @@ export default function Navigation() {
     { label: 'Home', path: '/' },
     { 
       label: 'Portfolio', 
-      path: '/#portfolio',
+      path: '/portfolio',
       children: [
         { label: 'Photography', path: '/portfolio-photography' },
         { label: 'Videography', path: '/portfolio-videography' },
@@ -29,7 +29,11 @@ export default function Navigation() {
     { label: 'Contact', path: '/contact' },
   ];
 
-  const isActive = (path: string, isMobile?: boolean) => {
+  const isActive = (path: string) => {
+    if (path === '/portfolio') {
+      return pathname.includes(path);
+    }
+
     return pathname === path;
   };
 
@@ -148,7 +152,7 @@ export default function Navigation() {
               item.children ? (
                 <div key={item.path}>
                   <div
-                    className={mobileNavItemClassName(isActive('', true))}
+                    className={mobileNavItemClassName(isActive(''))}
                     onClick={handlePortfolioClick}
                   >
                     {item.label}

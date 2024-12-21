@@ -33,7 +33,7 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
           content="Browse through our collection of professional photography work including weddings, portraits, events, commercial photography, and creative shoots." 
         />
       </Head>
-      <main className="mx-auto max-w-7xl p-4 bg-white">
+      <main className="mx-auto max-w-7xl p-4">
         {photoId && (
           <Modal
             images={images}
@@ -54,12 +54,11 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
               as={`/portfolio-photography/${id}`}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               shallow
-              className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0"
+              className="overflow-hidden after:content group relative mb-5 block w-full cursor-pointer after:pointer-events-none after:absolute after:inset-0"
             >
               <Image
                 alt="Photography portfolio image"
-                className="transform brightness-90 transition will-change-auto group-hover:brightness-110"
-                style={{ transform: "translate3d(0, 0, 0)" }}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
                 placeholder="blur"
                 blurDataURL={blurDataUrl}
                 src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
