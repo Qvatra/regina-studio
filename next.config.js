@@ -1,4 +1,13 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/portfolio-photography/:id',
+        destination: '/portfolio-photography?photoId=:id',
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -11,3 +20,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = nextConfig;
