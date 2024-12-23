@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function About() {
   const funFacts = [
-    "I speak four languages: English, Dutch, Russian, and Ukrainian",
-    "Before becoming a photographer, I worked as a chef in an Italian restaurant",
-    "I have a Bachelor's degree in Law, but my creative passion led me down a different path",
-    "My love for photography started when I was 18, and it's been growing ever since",
-    "I live in beautiful Beverwijk, just a stone's throw away from Amsterdam"
+    "I speak four languages: English, Dutch, Russian, and Ukrainian.",
+    "Originally from Siberia and having lived in Ukraine, I now reside in the Netherlands.",
+    "When I’m not behind the camera, you’ll find me baking desserts or exploring new places.",
+    "I can’t eat a beautifully plated dish without taking a picture first!",
+    "I developed my skills through experimentation and watching countless tutorials."
   ];
 
   return (

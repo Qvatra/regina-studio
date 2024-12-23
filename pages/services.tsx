@@ -45,7 +45,7 @@ export default function Services() {
         {
           name: "Wedding Photography",
           description: "Comprehensive wedding day coverage capturing all the special moments, from preparation to reception.",
-          startingPrice: "€2,500",
+          startingPrice: "€2.500",
           priceDetails: "full day with edited photos"
         }
       ]
@@ -56,7 +56,7 @@ export default function Services() {
         {
           name: "Commercial Videos",
           description: "High-quality video production for business marketing, advertising, and social media campaigns.",
-          startingPrice: "€1,000",
+          startingPrice: "€1.000",
           priceDetails: "per minute of final video"
         },
         {
@@ -74,8 +74,8 @@ export default function Services() {
         {
           name: "Wedding Videography",
           description: "Cinematic wedding coverage that tells your love story, from the first look to the last dance.",
-          startingPrice: "€3,500",
-          priceDetails: "full day with edited film"
+          startingPrice: "€1.500 - €5.000",
+          priceDetails: "depending on the film length"
         },
         {
           name: "Family Story Videos",
