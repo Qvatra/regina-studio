@@ -16,9 +16,9 @@ export default function About() {
         <title>About | Studio Regina</title>
         <meta name="description" content="Learn about Regina, her journey in photography and videography, and her passion for creative storytelling." />
       </Head>
-      <main className="mx-auto px-4 text-gray-900">
-        <div className="mb-16 mt-2">
-          <div className="max-w-2xl mx-auto aspect-[10/6] relative">
+      <main className="mx-auto px-4 text-gray-900 max-w-3xl">
+        <div className="mb-12 mt-4">
+          <div className="mx-auto aspect-[10/6] relative">
             <Image
               src="/assets/about.jpg"
               alt="Regina Shaydullina - Professional Photographer and Videographer in Amsterdam"
@@ -30,7 +30,7 @@ export default function About() {
           </div>
         </div>
 
-        <section className="mb-16 max-w-3xl mx-auto">
+        <section className="mb-16 mx-auto">
           <h2 className="text-3xl font-bold tracking-wider mb-4">MY STORY</h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600">
