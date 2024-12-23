@@ -127,7 +127,7 @@ export default function Services() {
         ))}
 
         <section className="text-center mt-16">
-          <p className="text-gray-600 text-lg mb-4">
+          <p className="text-gray-600 text-lg mb-8">
             Looking for a custom package or have specific requirements?
           </p>
           <a

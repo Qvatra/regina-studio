@@ -21,7 +21,7 @@ export default function About() {
           <div className="max-w-2xl mx-auto aspect-[10/6] relative">
             <Image
               src="/assets/about.jpg"
-              alt="Regina Portrait"
+              alt="Regina Shaydullina - Professional Photographer and Videographer in Amsterdam"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"

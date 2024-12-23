@@ -57,7 +57,7 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
               className="overflow-hidden after:content group relative mb-5 block w-full cursor-pointer after:pointer-events-none after:absolute after:inset-0"
             >
               <Image
-                alt="Photography portfolio image"
+                alt="Studio Regina Photography Portfolio - Professional Photography Work"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 placeholder="blur"
                 blurDataURL={blurDataUrl}

@@ -80,9 +80,10 @@ export default function SharedModal({
                   width={navigation ? 1280 : 1920}
                   height={navigation ? 853 : 1280}
                   priority
-                  alt="Portfolio image"
+                  alt={`Studio Regina Portfolio - Professional Photography (Full View)`}
                   onLoad={() => setLoaded(true)}
                   className="max-h-[calc(100vh-120px)] w-auto object-contain"
+                  sizes="100vw"
                 />
               </motion.div>
             </AnimatePresence>
@@ -188,7 +189,7 @@ export default function SharedModal({
                     } relative inline-block w-full shrink-0 transform-gpu overflow-hidden focus:outline-none`}
                   >
                     <Image
-                      alt="small photos on the bottom"
+                      alt={`Thumbnail for ${id === index ? 'current' : 'navigation'} image in portfolio`}
                       width={180}
                       height={120}
                       className={`${

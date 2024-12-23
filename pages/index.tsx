@@ -68,7 +68,7 @@ export default function Home() {
           <div className="relative md:h-auto aspect-[21/11] sm:aspect-[21/7] xl:aspect-[21/5] w-full">
             <Image
               src="/assets/banner.jpg"
-              alt="Studio Regina Hero Image"
+              alt="Studio Regina - Professional Photography and Videography in Amsterdam"
               fill
               className="object-cover object-[center_calc(70%)] xl:object-[center_calc(52%)]"
               priority
@@ -101,7 +101,7 @@ export default function Home() {
                     <div className="relative aspect-[21/9] mb-6 overflow-hidden cursor-pointer">
                       <Image
                         src={service.image}
-                        alt={service.title}
+                        alt={`Studio Regina ${service.title} Services - ${service.description}`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
@@ -133,7 +133,7 @@ export default function Home() {
 
         {/* Horizontal Line */}
         <div className="max-w-4xl mx-auto px-4">
-          <hr className="border-gray-200 border-t-1 my-12" />
+          <hr className="border-gray-200 border-t-1 mt-12 mb-20" />
         </div>
 
         {/* CTA Section */}
