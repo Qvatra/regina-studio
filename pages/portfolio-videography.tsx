@@ -1,16 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import cloudinary from "../utils/cloudinary";
+import { google } from 'googleapis';
 
 interface VideoProps {
-  id: number;
+  id: string;
   title: string;
-  public_id?: string;
-  format?: string;
-  description?: string;
-  youtubeId?: string;
-  type: 'cloudinary' | 'youtube';
-  isShort?: boolean;
+  isVertical: boolean;
 }
 
 const VideographyPortfolio: NextPage = ({ videos }: { videos: VideoProps[] }) => {
@@ -28,33 +23,21 @@ const VideographyPortfolio: NextPage = ({ videos }: { videos: VideoProps[] }) =>
           {videos.map((video) => (
             <div 
               key={video.id} 
-              className="relative break-inside-avoid bg-gray-50 mb-4"
+              className="relative break-inside-avoid mb-4"
             >
-              {video.type === 'youtube' ? (
-                <div className={`relative ${video.isShort ? 'aspect-[9/16]' : 'aspect-video'}`}>
-                  <iframe
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <div>
-                  <video
-                    className="w-full h-full object-cover"
-                    controls
-                    poster={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/c_scale,w_720/${video.public_id}.jpg`}
-                  >
-                    <source
-                      src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/c_scale,w_720/${video.public_id}.${video.format}`}
-                      type={`video/${video.format}`}
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              )}
+              <div className={`relative overflow-hidden ${
+                video.isVertical 
+                  ? 'w-full aspect-[9/16] mx-auto' 
+                  : 'aspect-video'
+              }`}>
+                <iframe
+                  className='w-full h-full'
+                  src={`https://www.youtube.com/embed/${video.id}?modestbranding=1&showinfo=0&rel=0&controls=1&color=white&iv_load_policy=3`}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -65,56 +48,63 @@ const VideographyPortfolio: NextPage = ({ videos }: { videos: VideoProps[] }) =>
 
 export async function getStaticProps() {
   try {
-    const cloudinaryResults = await cloudinary.v2.search
-      .expression(`folder:${process.env.CLOUDINARY_VIDEO_FOLDER}/*`)
-      .sort_by("public_id", "desc")
-      .max_results(40)
-      .execute();
+    const youtube = google.youtube({
+      version: 'v3',
+      auth: process.env.YOUTUBE_API_KEY
+    });
 
-    // YouTube videos including shorts
-    const youtubeVideos = [
-      {
-        id: 1000,
-        title: "Wedding Film",
-        youtubeId: "VsjGCc1BLwI",
-        type: 'youtube' as const,
-        isShort: false
-      },
-      {
-        id: 1001,
-        title: "Behind the Scenes",
-        youtubeId: "A5sDEPuVovU",
-        type: 'youtube' as const,
-        isShort: true
-      },
-    ];
+    // Get channel uploads playlist
+    const channelResponse = await youtube.channels.list({
+      part: ['contentDetails'],
+      id: [process.env.YOUTUBE_CHANNEL_ID]
+    });
 
-    const videos: VideoProps[] = [
-      ...youtubeVideos,
-      ...cloudinaryResults.resources.map((video, index) => ({
-        id: index,
-        title: video.context?.custom?.caption || '',
-        description: video.context?.custom?.description || '',
-        public_id: video.public_id,
-        format: video.format,
-        type: 'cloudinary' as const
-      })),
+    const uploadsPlaylistId = channelResponse.data.items[0].contentDetails.relatedPlaylists.uploads;
 
-    ];
+    // Get all videos from the uploads playlist
+    const playlistResponse = await youtube.playlistItems.list({
+      part: ['snippet', 'contentDetails'],
+      playlistId: uploadsPlaylistId,
+      maxResults: 50
+    });
+
+    // Process and separate videos by type
+    const allVideos = playlistResponse.data.items.map(item => ({
+      id: item.contentDetails.videoId,
+      title: item.snippet.title,
+      isVertical: ['shorts', 'vertical'].some(keyword => item.snippet.description.toLowerCase().includes(keyword))
+    }));
+
+    const verticalVideos = allVideos.filter(v => v.isVertical);
+    const horizontalVideos = allVideos.filter(v => !v.isVertical);
+
+    // Mix videos in a pattern: 2 vertical, 1 horizontal
+    const mixedVideos: VideoProps[] = [];
+    let vIndex = 0;
+    let hIndex = 0;
+
+    while (vIndex < verticalVideos.length || hIndex < horizontalVideos.length) {
+      // Add two vertical videos if available
+      if (vIndex < verticalVideos.length) {
+        mixedVideos.push(verticalVideos[vIndex++]);
+      }
+      // Add one horizontal video if available
+      if (hIndex < horizontalVideos.length) {
+        mixedVideos.push(horizontalVideos[hIndex++]);
+      }
+    }
 
     return {
       props: {
-        videos,
+        videos: mixedVideos
       },
-      revalidate: 3600,
+      revalidate: 3600
     };
   } catch (error) {
     console.error('Error fetching videos:', error);
     return {
-      props: {
-        videos: [],
-      },
-      revalidate: 3600,
+      props: { videos: [] },
+      revalidate: 3600
     };
   }
 }
