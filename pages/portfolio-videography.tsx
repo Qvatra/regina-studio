@@ -63,8 +63,8 @@ export async function getStaticProps() {
       }));
 
       const remainingVideos: VideoProps[] = [
-        ...verticalVideos.slice(pairsToUse),
-        ...horizontalVideos.slice(pairsToUse)
+        ...horizontalVideos.slice(pairsToUse),
+        ...verticalVideos.slice(pairsToUse)
       ];
 
       return { pairs, remainingVideos };
