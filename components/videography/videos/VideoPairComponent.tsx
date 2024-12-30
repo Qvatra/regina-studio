@@ -17,8 +17,8 @@ export const VideoPairComponent = ({ pair, isReversed }: { pair: VideoPair, isRe
       role="group" 
       aria-label="Video pair"
     >
-      {videos.map(({ video, isVertical }, index) => (
-        <div key={index} className="relative">
+      {videos.map(({ video, isVertical }) => (
+        <div key={video.id} className="relative">
           <div className={`relative overflow-hidden ${
             isVertical ? 'w-full aspect-[9/16] mx-auto' : 'aspect-video'
           }`}>

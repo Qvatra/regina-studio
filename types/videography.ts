@@ -25,11 +25,11 @@ export interface LayoutProps {
 }
 
 export interface YouTubeVideo {
-  contentDetails?: {
-    videoId?: string;
+  contentDetails: {
+    videoId: string;
   };
-  snippet?: {
-    title?: string;
-    description?: string;
+  snippet: {
+    title: string;
+    description: string | null;
   };
 } 
