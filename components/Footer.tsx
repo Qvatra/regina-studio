@@ -29,7 +29,7 @@ const socialLinks = [
     )
   },
   {
-    href: "https://wa.me/+31649739457",
+    href: "https://wa.me/31649739457",
     label: "WhatsApp",
     icon: (
       <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

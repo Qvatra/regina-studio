@@ -90,7 +90,7 @@ export default function Services() {
   return (
     <>
       <Head>
-        <title>Services & Pricing | Studio Regina</title>
+        <title>Services & Pricing | Regina Photography</title>
         <meta name="description" content="Professional photography and videography services including weddings, events, portraits, commercial projects, and more." />
       </Head>
       <main className="mx-auto max-w-5xl px-4 pt-12 text-gray-900">

@@ -3,7 +3,7 @@ import Head from 'next/head'
 export default function PageHead() {
   return (
     <Head>
-      <title>Videography Portfolio | Studio Regina</title>
+      <title>Videography Portfolio | Regina Photography</title>
       <meta 
         name="description" 
         content="Watch our collection of professional video work including wedding films, commercials, events, and creative productions." 

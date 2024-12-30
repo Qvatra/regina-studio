@@ -2,18 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 
 export default function About() {
-  const funFacts = [
-    "I speak four languages: English, Dutch, Russian, and Ukrainian.",
-    "Originally from Siberia and having lived in Ukraine, I now reside in the Netherlands.",
-    "When I’m not behind the camera, you’ll find me baking desserts or exploring new places.",
-    "I can’t eat a beautifully plated dish without taking a picture first!",
-    "I developed my skills through experimentation and watching countless tutorials."
-  ];
-
   return (
     <>
       <Head>
-        <title>About | Studio Regina</title>
+        <title>About | Regina photography</title>
         <meta name="description" content="Learn about Regina, her journey in photography and videography, and her passion for creative storytelling." />
       </Head>
       <main className="mx-auto px-4 text-gray-900 max-w-3xl">
@@ -37,6 +29,9 @@ export default function About() {
               My journey into the world of visual storytelling began in 2006 when I first picked up a camera at the age of 18. What started as a hobby quickly blossomed into an all-consuming passion that would eventually become my profession.
             </p>
             <p className="text-gray-600">
+              Born in Siberia and having lived in Ukraine before making the Netherlands my home, I bring a rich multicultural perspective to my work. Speaking English, Dutch, Russian, and Ukrainian helps me connect with clients from diverse backgrounds, making everyone feel comfortable during our sessions.
+            </p>
+            <p className="text-gray-600">
               Though my path wasn't straightforward – I earned a Bachelor's degree in Law and even spent time as a chef in an Italian restaurant – these experiences have enriched my perspective and approach to creative work. Each chapter of my life has contributed to how I tell stories through my lens.
             </p>
             <p className="text-gray-600">
@@ -48,16 +43,10 @@ export default function About() {
           </div>
         </section>
 
-        <section className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-wider mb-4">FUN FACTS</h2>
-          <ul className="space-y-4">
-            {funFacts.map((fact, index) => (
-              <li key={index} className="flex items-center space-x-3">
-                <span className="text-2xl leading-none flex items-center">•</span>
-                <span className="text-lg text-gray-600 flex items-center">{fact}</span>
-              </li>
-            ))}
-          </ul>
+        <section className="mt-20">
+          <div className="text-md text-gray-500 text-center">
+            <p>Chamber of Commerce (KVK) Number: 95169903</p>
+          </div>
         </section>
       </main>
     </>
