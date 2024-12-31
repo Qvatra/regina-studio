@@ -4,6 +4,8 @@ import {
   EnvelopeIcon as MailIcon
 } from '@heroicons/react/24/outline';
 import { Card, CardHeader, CardContent, CardFooter } from '../components/Card';
+import ArrowIcon from '../components/icons/ArrowIcon';
+import Button from '../components/Button';
 
 // Custom Instagram and Facebook icons since they're not available in Heroicons
 const InstagramIcon = ({ className = "h-6 w-6" }) => (
@@ -26,13 +28,15 @@ export default function Contact() {
       url: "https://instagram.com/marymeberry",
       icon: InstagramIcon,
       description: "Follow my creative journey and let's connect! This is my preferred way to communicate as it helps us build a stronger creative community.",
+      cta: "Connect"
     },
     {
       name: "WhatsApp",
       handle: "+31 649739457",
-      url: "https://wa.me/+31649739457",
+      url: "https://wa.me/31649739457",
       icon: WhatsAppIcon,
       description: "For quick responses and easy communication, feel free to reach out via WhatsApp.",
+      cta: "Message Me"
     },
     {
       name: "Email",
@@ -40,6 +44,7 @@ export default function Contact() {
       url: "mailto:regina.shaydullina@gmail.com?subject=Contact%20from%20website",
       icon: MailIcon,
       description: "Send me a detailed message about your project or inquiry.",
+      cta: "Send Email"
     },
     {
       name: "Facebook",
@@ -47,6 +52,7 @@ export default function Contact() {
       url: "https://facebook.com/regina.shaydullina.5",
       icon: FacebookIcon,
       description: "Connect with me on Facebook to stay updated with my latest work.",
+      cta: "Connect"
     }
   ];
 
@@ -71,10 +77,7 @@ export default function Contact() {
 
         <section className="grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
           {contactOptions.map((option) => (
-            <Card
-              key={option.name}
-              href={option.url}
-            >
+            <Card key={option.name}>
               <CardHeader>
                 <div className="flex items-center mb-4">
                   <option.icon className="h-6 w-6 mr-3 text-gray-700" />
@@ -82,10 +85,14 @@ export default function Contact() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p>{option.description}</p>
+                <p className="mb-4">{option.description}</p>
+                <p className="text-gray-700 font-medium">{option.handle}</p>
               </CardContent>
               <CardFooter>
-                <p>{option.handle}</p>
+                <Button href={option.url} external className="w-[150px]">
+                  {option.cta}
+                  <ArrowIcon className="ml-2 w-4 h-4" />
+                </Button>
               </CardFooter>
             </Card>
           ))}

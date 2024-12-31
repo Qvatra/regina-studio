@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { google } from "googleapis";
 import PageHead from '../components/videography/PageHead'
 import { MobileLayout, TabletLayout, DesktopLayout } from '../components/videography/layouts'
-import { LayoutProps, VideoProps, VideoPair, YouTubeVideo } from '../types/videography'
+import { LayoutProps, VideoProps, VideoPair } from '../types/videography'
 
 const VideographyPortfolio: NextPage<LayoutProps> = ({ oneCol, twoCols, threeCols }) => (
   <>

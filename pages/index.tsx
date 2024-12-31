@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import TypeWriter from '../components/TypeWriter';
 import Citations from '../components/Citations';
+import Button from '../components/Button';
 
 export default function Home() {
   const citations = [
@@ -145,12 +146,7 @@ export default function Home() {
             <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
               Let's work together to capture your special moments or bring your creative vision to life.
             </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-600 transition-colors"
-            >
-              Get in Touch
-            </Link>
+            <Button href="/contact">Get in Touch</Button>
           </div>
         </div>
       </main>
