@@ -6,7 +6,7 @@ import { LayoutProps, VideoProps, VideoPair } from '../../types/videography'
 import ScrollToTop from '../../components/ScrollToTop';
 import StyledLink from '../../components/StyledLink';
 
-const VideographyPortfolio: NextPage<LayoutProps> = ({ oneCol, twoCols, threeCols }) => (
+const VideographyPortfolio: NextPage<LayoutProps> = ({ twoCols, threeCols }) => (
   <>
     <PageHead />
     <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
