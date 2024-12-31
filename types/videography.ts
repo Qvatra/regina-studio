@@ -10,10 +10,6 @@ export interface VideoPair {
 }
 
 export interface LayoutProps {
-  oneCol: {
-    pairs: VideoPair[];
-    remainingVideos: VideoProps[];
-  };
   twoCols: {
     pairs: VideoPair[];
     remainingVideos: VideoProps[];

@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import TypeWriter from '../components/TypeWriter';
 import Citations from '../components/Citations';
-import Button from '../components/Button';
+import StyledButton from '../components/StyledButton';
 
 export default function Home() {
   const citations = [
@@ -146,7 +145,7 @@ export default function Home() {
             <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
               Let's work together to capture your special moments or bring your creative vision to life.
             </p>
-            <Button href="/contact">Get in Touch</Button>
+            <StyledButton href="/contact">Get in Touch</StyledButton>
           </div>
         </div>
       </main>

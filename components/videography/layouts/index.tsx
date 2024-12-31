@@ -3,9 +3,9 @@ import { VideoPairComponent } from '../videos/VideoPairComponent'
 import { RemainingVideos } from '../videos/RemainingVideos'
 
 export const MobileLayout = ({ pairs, remainingVideos }: { pairs: VideoPair[], remainingVideos: VideoProps[] }) => (
-  <div className="grid grid-cols-1 gap-4 md:hidden">
+  <div className="grid grid-cols-2 gap-4 md:hidden">
     {pairs.map((pair, index) => (
-      <VideoPairComponent key={index} pair={pair} />
+      <VideoPairComponent key={index} pair={pair} isReversed={index % 2 === 1} />
     ))}
     <RemainingVideos videos={remainingVideos} />
   </div>
@@ -27,4 +27,4 @@ export const DesktopLayout = ({ pairs, remainingVideos }: { pairs: VideoPair[], 
     ))}
     <RemainingVideos videos={remainingVideos} />
   </div>
-); 
+);

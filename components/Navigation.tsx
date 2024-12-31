@@ -20,8 +20,8 @@ export default function Navigation() {
       label: 'Portfolio', 
       path: '/portfolio',
       children: [
-        { label: 'Photography', path: '/portfolio-photography' },
-        { label: 'Videography', path: '/portfolio-videography' },
+        { label: 'Photography', path: '/portfolio/photography' },
+        { label: 'Videography', path: '/portfolio/videography' },
       ]
     },
     { label: 'Services', path: '/services' },

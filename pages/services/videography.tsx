@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Button from "../../components/Button";
+import StyledButton from '../../components/StyledButton';
 import { Card, CardHeader, CardContent, CardFooter } from '../../components/Card';
+import Link from "next/link";
 
 export default function VideographyServices() {
   const packages = [
@@ -68,7 +69,7 @@ export default function VideographyServices() {
               </CardContent>
               <CardFooter>
                 <p className="text-3xl font-bold text-gray-900 mb-4">{pkg.price}</p>
-                <Button href="/contact">Book Now</Button>
+                <StyledButton href="/contact">Book Now</StyledButton>
               </CardFooter>
             </Card>
           ))}
@@ -95,9 +96,15 @@ export default function VideographyServices() {
           </div>
         </section>
 
-        <p className="text-gray-600 text-center">
-          Need a custom package? Contact me to discuss your specific requirements.
-        </p>
+        <div className="text-center">
+          <p className="text-gray-600">
+            Need a custom package?{' '}
+            <Link href="/contact" className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
+              Contact me
+            </Link>
+            {' '}to discuss your specific requirements.
+          </p>
+        </div>
       </main>
     </>
   );

@@ -49,7 +49,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const linkClassName = "text-gray-900 hover:text-gray-600 transition-all hover:scale-125 transform-gpu origin-center";
+  const linkClassName = "text-gray-900 hover:text-gray-500 transition-all hover:scale-125 transform-gpu origin-center";
 
   return (
     <footer className="mt-auto pt-20 pb-10">

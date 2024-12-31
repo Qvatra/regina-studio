@@ -10,7 +10,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export default function Button({ 
+export default function StyledButton({ 
   children, 
   href, 
   external = false,

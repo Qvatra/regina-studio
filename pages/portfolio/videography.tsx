@@ -1,19 +1,23 @@
 import type { NextPage } from "next";
 import { google } from "googleapis";
-import PageHead from '../components/videography/PageHead'
-import { MobileLayout, TabletLayout, DesktopLayout } from '../components/videography/layouts'
-import { LayoutProps, VideoProps, VideoPair } from '../types/videography'
+import PageHead from '../../components/videography/PageHead'
+import { MobileLayout, TabletLayout, DesktopLayout } from '../../components/videography/layouts'
+import { LayoutProps, VideoProps, VideoPair } from '../../types/videography'
+import ScrollToTop from '../../components/ScrollToTop';
+import StyledLink from '../../components/StyledLink';
 
 const VideographyPortfolio: NextPage<LayoutProps> = ({ oneCol, twoCols, threeCols }) => (
   <>
     <PageHead />
     <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
       <section>
-        <MobileLayout {...oneCol} />
+        <MobileLayout {...twoCols} />
         <TabletLayout {...twoCols} />
         <DesktopLayout {...threeCols} />
       </section>
     </main>
+    <ScrollToTop />
+    <StyledLink href="/services" text="Book a session" />
   </>
 );
 
@@ -72,7 +76,6 @@ export async function getStaticProps() {
 
     return {
       props: {
-        oneCol: createLayoutArrays(1),
         twoCols: createLayoutArrays(2),
         threeCols: createLayoutArrays(3)
       },
@@ -82,7 +85,6 @@ export async function getStaticProps() {
     console.error('Error fetching videos:', error);
     return {
       props: {
-        oneCol: { pairs: [], remainingVideos: [] },
         twoCols: { pairs: [], remainingVideos: [] },
         threeCols: { pairs: [], remainingVideos: [] }
       },

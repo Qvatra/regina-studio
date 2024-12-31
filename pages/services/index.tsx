@@ -1,8 +1,7 @@
 import Head from "next/head";
-import { Card, CardHeader, CardContent, CardFooter } from '../components/Card';
+import { Card, CardHeader, CardContent, CardFooter } from '../../components/Card';
 import Link from "next/link";
-import ArrowIcon from '../components/icons/ArrowIcon';
-import Button from '../components/Button';
+import StyledButton from '../../components/StyledButton';
 
 export default function Services() {
   const services = [
@@ -44,7 +43,7 @@ export default function Services() {
           </p>
         </section>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Card key={service.title}>
               <CardHeader>
@@ -58,10 +57,7 @@ export default function Services() {
                 <div className="h-[2lh] mb-1">
                   <p className="text-sm text-gray-400 mb-4">{service.priceDetails}</p>
                 </div>
-                <Button href={service.path}>
-                  Learn More
-                  <ArrowIcon className="ml-2 w-4 h-4" />
-                </Button>
+                <StyledButton href={service.path}>Learn More</StyledButton>
               </CardFooter>
             </Card>
           ))}

@@ -4,8 +4,7 @@ import {
   EnvelopeIcon as MailIcon
 } from '@heroicons/react/24/outline';
 import { Card, CardHeader, CardContent, CardFooter } from '../components/Card';
-import ArrowIcon from '../components/icons/ArrowIcon';
-import Button from '../components/Button';
+import StyledButton from '../components/StyledButton';
 
 // Custom Instagram and Facebook icons since they're not available in Heroicons
 const InstagramIcon = ({ className = "h-6 w-6" }) => (
@@ -79,20 +78,16 @@ export default function Contact() {
           {contactOptions.map((option) => (
             <Card key={option.name}>
               <CardHeader>
-                <div className="flex items-center mb-4">
+                <div className="flex items-center my-2">
                   <option.icon className="h-6 w-6 mr-3 text-gray-700" />
                   <h2>{option.name}</h2>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="mb-4">{option.description}</p>
-                <p className="text-gray-700 font-medium">{option.handle}</p>
+                <p>{option.description}</p>
               </CardContent>
               <CardFooter>
-                <Button href={option.url} external className="w-[150px]">
-                  {option.cta}
-                  <ArrowIcon className="ml-2 w-4 h-4" />
-                </Button>
+                <StyledButton href={option.url} external className="w-[150px]">{option.cta}</StyledButton>
               </CardFooter>
             </Card>
           ))}
