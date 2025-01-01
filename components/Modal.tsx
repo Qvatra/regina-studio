@@ -39,7 +39,7 @@ export default function Modal({
       {
         query: { photoId: newVal },
       },
-      `/portfolio-photography/${newVal}`,
+      `/portfolio/photography/${newVal}`,
       { shallow: true },
     );
   }

@@ -3,8 +3,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/portfolio-photography/:id',
-        destination: '/portfolio-photography?photoId=:id',
+        source: '/portfolio/photography/:id',
+        destination: '/portfolio/photography?photoId=:id',
       },
     ];
   },
