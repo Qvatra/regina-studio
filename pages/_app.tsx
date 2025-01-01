@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import Navigation from "../components/Navigation";
+import Navigation from "../components/navigation";
 import Footer from "../components/Footer";
 import "../styles/index.css";
 

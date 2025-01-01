@@ -51,6 +51,15 @@ export const homeContent = {
       heading: "Ready to Create Something Beautiful?",
       text: "Let's work together to capture your special moments or bring your creative vision to life.",
       button: "Get in Touch"
+    },
+    navigation: {
+      home: "Home",
+      portfolio: "Portfolio",
+      photography: "Photography",
+      videography: "Videography",
+      services: "Services",
+      about: "About",
+      contact: "Contact"
     }
   },
   nl: {
@@ -105,6 +114,15 @@ export const homeContent = {
       heading: "Klaar om Iets Moois te Creëren?",
       text: "Laten we samenwerken om uw speciale momenten vast te leggen of uw creatieve visie tot leven te brengen.",
       button: "Neem Contact Op"
+    },
+    navigation: {
+      home: "Home",
+      portfolio: "Portfolio",
+      photography: "Fotografie",
+      videography: "Videografie",
+      services: "Diensten",
+      about: "Over",
+      contact: "Contact"
     }
   },
   ru: {
@@ -159,6 +177,15 @@ export const homeContent = {
       heading: "Готовы Создать Что-то Прекрасное?",
       text: "Давайте работать вместе, чтобы запечатлеть ваши особенные моменты или воплотить ваше творческое видение в жизнь.",
       button: "Связаться"
+    },
+    navigation: {
+      home: "Главная",
+      portfolio: "Портфолио",
+      photography: "Фотография",
+      videography: "Видеосъёмка",
+      services: "Услуги",
+      about: "Обо мне",
+      contact: "Контакты"
     }
   },
   ua: {
@@ -213,6 +240,15 @@ export const homeContent = {
       heading: "Готові Створити Щось Прекрасне?",
       text: "Давайте працювати разом, щоб закарбувати ваші особливі моменти або втілити ваше творче бачення в життя.",
       button: "Зв'язатися"
+    },
+    navigation: {
+      home: "Головна",
+      portfolio: "Портфоліо",
+      photography: "Фотографія",
+      videography: "Відеозйомка",
+      services: "Послуги",
+      about: "Про мене",
+      contact: "Контакти"
     }
   }
 };
