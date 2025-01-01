@@ -15,15 +15,17 @@ export default function DesktopMenu({
   isSubActive
 }: DesktopMenuProps) {
   const navItemClassName = (isItemActive: boolean) => 
-    `text-sm uppercase tracking-wider ${
-      isItemActive ? 'text-gray-900 font-bold tracking-wide' : 'text-gray-500 hover:text-gray-900 hover:font-bold hover:tracking-wide'
+    `text-sm uppercase tracking-wider py-2 block text-center ${
+      isItemActive 
+        ? 'text-gray-900 font-bold tracking-wide' 
+        : 'text-gray-500 hover:text-gray-900 hover:font-bold hover:tracking-wide'
     }`;
 
   return (
-    <div className="hidden md:flex md:items-center md:space-x-4">
+    <div className="hidden md:flex md:items-center md:gap-2">
       {menuItems.map((item) => (
         item.children ? (
-          <div key={item.path} className="relative group">
+          <div key={item.path} className="relative group w-[90px]">
             <button 
               onClick={handlePortfolioClick}
               className={navItemClassName(isActive(item.path))}
@@ -45,13 +47,15 @@ export default function DesktopMenu({
             </div>
           </div>
         ) : (
-          <Link 
-            key={item.path}
-            href={item.path} 
-            className={navItemClassName(isActive(item.path))}
-          >
-            {item.label}
-          </Link>
+          <div className="w-[90px]">
+            <Link 
+              key={item.path}
+              href={item.path} 
+              className={navItemClassName(isActive(item.path))}
+            >
+              {item.label}
+            </Link>
+          </div>
         )
       ))}
     </div>
