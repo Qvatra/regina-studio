@@ -3,12 +3,12 @@ import { VideoPair } from '../../../types/videography'
 export const VideoPairComponent = ({ pair, isReversed }: { pair: VideoPair, isReversed?: boolean }) => {
   const videos = isReversed 
     ? [
-        { video: pair.horizontal, isVertical: false },
-        { video: pair.vertical, isVertical: true }
+        { video: pair.horizontal[0], isVertical: false },
+        { video: pair.vertical[0], isVertical: true }
       ]
     : [
-        { video: pair.vertical, isVertical: true },
-        { video: pair.horizontal, isVertical: false }
+        { video: pair.vertical[0], isVertical: true },
+        { video: pair.horizontal[0], isVertical: false }
       ];
 
   return (

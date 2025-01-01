@@ -2,16 +2,22 @@ import type { NextPage } from "next";
 import { google } from "googleapis";
 import PageHead from '../../components/videography/PageHead'
 import { MobileLayout, TabletLayout, DesktopLayout } from '../../components/videography/layouts'
-import { LayoutProps, VideoProps, VideoPair } from '../../types/videography'
+import { LayoutProps, VideoProps, VideoPair, LayoutProp } from '../../types/videography'
 import ScrollToTop from '../../components/ScrollToTop';
 import StyledLink from '../../components/StyledLink';
 
-const VideographyPortfolio: NextPage<LayoutProps> = ({ twoCols, threeCols }) => (
+interface GroupConfig {
+  verticalVideos: VideoProps[];
+  horizontalVideos: VideoProps[];
+  colCount?: number;
+}
+
+const VideographyPortfolio: NextPage<LayoutProps> = ({ oneCol, twoCols, threeCols }) => (
   <>
     <PageHead />
     <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
       <section>
-        <MobileLayout {...twoCols} />
+        <MobileLayout {...oneCol} />
         <TabletLayout {...twoCols} />
         <DesktopLayout {...threeCols} />
       </section>
@@ -21,72 +27,96 @@ const VideographyPortfolio: NextPage<LayoutProps> = ({ twoCols, threeCols }) => 
   </>
 );
 
+const createPairs = ({ verticalVideos, horizontalVideos, colCount = 2 }: GroupConfig): LayoutProp => {
+  const totalPairs = Math.min(verticalVideos.length, horizontalVideos.length);
+  const pairsToUse = Math.floor(totalPairs / colCount) * colCount;
+
+  return { 
+    groups: Array.from({ length: pairsToUse }, (_, i) => ({
+      vertical: [verticalVideos[i]],
+      horizontal: [horizontalVideos[i]]
+    })), 
+    remainingVerticalVideos: verticalVideos.slice(pairsToUse),
+    remainingHorizontalVideos: horizontalVideos.slice(pairsToUse)
+  };
+};
+
+const createTrios = ({ verticalVideos, horizontalVideos }: GroupConfig): LayoutProp => {
+  const verticalPairs = verticalVideos
+    .slice(verticalVideos.length % 2)
+    .reduce<VideoProps[][]>((acc, video, index) => {
+      if (index % 2 === 0) {
+        acc.push([video, verticalVideos[index + 1]]);
+      }
+      return acc;
+    }, []);
+
+  const triosToUse = Math.min(verticalPairs.length, horizontalVideos.length);
+
+  return {
+    groups: Array.from({ length: triosToUse }, (_, i) => ({
+      vertical: verticalPairs[i],
+      horizontal: [horizontalVideos[i]],
+    })),
+    remainingVerticalVideos: verticalVideos.length % 2 ? [verticalVideos[0]] : [],
+    remainingHorizontalVideos: horizontalVideos.slice(triosToUse)
+  };
+};
+
+const fetchYouTubeVideos = async () => {
+  const youtube = google.youtube({
+    version: 'v3',
+    auth: process.env.YOUTUBE_API_KEY
+  });
+
+  const { data: { items: [{ contentDetails }] } } = await youtube.channels.list({
+    part: ['contentDetails'],
+    id: [process.env.YOUTUBE_CHANNEL_ID]
+  });
+
+  const { data: { items = [] } } = await youtube.playlistItems.list({
+    part: ['snippet', 'contentDetails'],
+    playlistId: contentDetails.relatedPlaylists.uploads,
+    maxResults: 50
+  });
+
+  return items.map(item => ({
+    id: item.contentDetails?.videoId || '',
+    title: item.snippet?.title || '',
+    isVertical: ['shorts', 'vertical'].some(keyword => 
+      item.snippet?.description?.toLowerCase().includes(keyword) || false
+    )
+  }));
+};
+
 export async function getStaticProps() {
   try {
-    const youtube = google.youtube({
-      version: 'v3',
-      auth: process.env.YOUTUBE_API_KEY
-    });
-
-    // Get channel uploads playlist
-    const channelResponse = await youtube.channels.list({
-      part: ['contentDetails'],
-      id: [process.env.YOUTUBE_CHANNEL_ID]
-    });
-
-    const uploadsPlaylistId = channelResponse.data.items[0].contentDetails.relatedPlaylists.uploads;
-
-    // Get all videos from the uploads playlist
-    const playlistResponse = await youtube.playlistItems.list({
-      part: ['snippet', 'contentDetails'],
-      playlistId: uploadsPlaylistId,
-      maxResults: 50
-    });
-
-    // Process and separate videos by type
-    const allVideos = playlistResponse.data.items?.map(item => ({
-      id: item.contentDetails?.videoId || '',
-      title: item.snippet?.title || '',
-      isVertical: ['shorts', 'vertical'].some(keyword => 
-        item.snippet?.description?.toLowerCase().includes(keyword) || false
-      )
-    })) || [];
-
-    const verticalVideos = allVideos.filter(v => v.isVertical);
-    const horizontalVideos = allVideos.filter(v => !v.isVertical);
-    const totalPairs = Math.min(verticalVideos.length, horizontalVideos.length);
-
-    const createLayoutArrays = (colCount: number) => {
-      // Calculate how many pairs we need to fill the columns
-      const pairsToUse = Math.floor(totalPairs / colCount) * colCount;
-      
-      // Create pairs array that will fill the columns of the layout
-      const pairs: VideoPair[] = Array.from({ length: pairsToUse }, (_, i) => ({
-        vertical: verticalVideos[i],
-        horizontal: horizontalVideos[i]
-      }));
-
-      const remainingVideos: VideoProps[] = [
-        ...horizontalVideos.slice(pairsToUse),
-        ...verticalVideos.slice(pairsToUse)
-      ];
-
-      return { pairs, remainingVideos };
+    const allVideos = await fetchYouTubeVideos();
+    const videos = {
+      verticalVideos: allVideos.filter(v => v.isVertical),
+      horizontalVideos: allVideos.filter(v => !v.isVertical)
     };
 
     return {
       props: {
-        twoCols: createLayoutArrays(2),
-        threeCols: createLayoutArrays(3)
+        oneCol: createTrios(videos),
+        twoCols: createPairs({ ...videos, colCount: 2 }),
+        threeCols: createPairs({ ...videos, colCount: 3 }),
       },
       revalidate: 3600
     };
   } catch (error) {
     console.error('Error fetching videos:', error);
+    const emptyLayout: LayoutProp = { 
+      groups: [], 
+      remainingVerticalVideos: [], 
+      remainingHorizontalVideos: [] 
+    };
     return {
       props: {
-        twoCols: { pairs: [], remainingVideos: [] },
-        threeCols: { pairs: [], remainingVideos: [] }
+        oneCol: emptyLayout,
+        twoCols: emptyLayout,
+        threeCols: emptyLayout
       },
       revalidate: 3600
     };

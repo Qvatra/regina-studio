@@ -5,19 +5,20 @@ export interface VideoProps {
 }
 
 export interface VideoPair {
-  vertical: VideoProps;
-  horizontal: VideoProps;
+  vertical: VideoProps[];
+  horizontal: VideoProps[];
 }
 
+export interface LayoutProp {
+  groups: VideoPair[];
+  remainingVerticalVideos: VideoProps[];
+  remainingHorizontalVideos: VideoProps[];
+};
+
 export interface LayoutProps {
-  twoCols: {
-    pairs: VideoPair[];
-    remainingVideos: VideoProps[];
-  };
-  threeCols: {
-    pairs: VideoPair[];
-    remainingVideos: VideoProps[];
-  };
+  oneCol: LayoutProp;
+  twoCols: LayoutProp;
+  threeCols: LayoutProp;
 }
 
 export interface YouTubeVideo {
