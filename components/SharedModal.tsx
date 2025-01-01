@@ -117,7 +117,7 @@ export default function SharedModal({
               )}
 
               {/* Top controls */}
-              <div className="absolute top-0 right-0 flex items-center gap-2 p-3 text-white">
+              <div className="absolute top-[24px] right-0 flex items-center gap-2 p-3 text-white">
                 {navigation ? (
                   <a
                     href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`}
@@ -144,7 +144,7 @@ export default function SharedModal({
               </div>
 
               {/* Close button */}
-              <div className="absolute top-0 left-0 flex items-center gap-2 p-3 text-white">
+              <div className="absolute top-[24px] left-0 flex items-center gap-2 p-3 text-white">
                 <button
                   onClick={() => closeModal()}
                   className="rounded-full bg-white/90 p-2 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white"

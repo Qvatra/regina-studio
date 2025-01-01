@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import Logo from './Logo';
+import { Language } from '../content/about';
 
 type MenuItem = {
   label: string;
@@ -9,10 +11,35 @@ type MenuItem = {
   children?: { label: string; path: string; }[];
 };
 
+const languages: { [key in Language]: string } = {
+  en: 'English',
+  nl: 'Nederlands',
+  ru: 'Русский',
+  ua: 'Українська'
+};
+
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  
+  const currentLang = (router.query.lang as Language) || 
+    (typeof window !== 'undefined' ? localStorage.getItem('preferredLanguage') as Language : null) || 
+    'en';
+
+  useEffect(() => {
+    if (currentLang) {
+      localStorage.setItem('preferredLanguage', currentLang);
+    }
+  }, [currentLang]);
+
+  const switchLanguage = (lang: Language) => {
+    localStorage.setItem('preferredLanguage', lang);
+    const newPath = router.pathname.replace('[lang]', lang);
+    router.push(newPath);
+    setIsLangOpen(false);
+  };
 
   const menuItems: MenuItem[] = [
     { label: 'Home', path: '/' },
@@ -25,7 +52,7 @@ export default function Navigation() {
       ]
     },
     { label: 'Services', path: '/services' },
-    { label: 'About', path: '/about' },
+    { label: 'About', path: `/about/${currentLang}` },
     { label: 'Contact', path: '/contact' },
   ];
 
@@ -72,14 +99,14 @@ export default function Navigation() {
     <nav className="sticky top-0 bg-white z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-22">
-          <div className="flex-1 md:flex-none">
-            <Link href="/" className="flex justify-center md:justify-start my-4">
+          <div className="flex-0">
+            <Link href="/" className="flex justify-start my-4">
               <Logo className="h-[50px] w-auto" />
             </Link>
           </div>
 
-          {/* Desktop Navigation - right */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:items-center md:space-x-4">
             {menuItems.map((item) => (
               item.children ? (
                 <div key={item.path} className="relative group">
@@ -115,8 +142,46 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex-0 flex justify-end md:hidden">
+          {/* Language Selector */}
+          <div className="absolute right-16 mr-3 top-8 md:relative md:top-0 md:right-0 md:mr-0">
+            <button
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="flex items-center space-x-1 text-gray-600 hover:text-gray-900"
+            >
+              <span className="text-sm">{languages[currentLang]}</span>
+              <svg
+                className={`w-4 h-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Language Dropdown */}
+            {isLangOpen && (
+              <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+                {Object.entries(languages).map(([lang, name]) => (
+                  <button
+                    key={lang}
+                    onClick={() => switchLanguage(lang as Language)}
+                    className={`block w-full text-left px-4 py-2 text-sm ${
+                      currentLang === lang 
+                        ? 'bg-gray-100 text-gray-900' 
+                        : 'text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    {name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Mobile buttons */}
+          <div className="flex items-center md:hidden">
+            {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none"
