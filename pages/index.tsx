@@ -39,14 +39,14 @@ export default function Home() {
       description: "From intimate portraits to grand events, we capture the essence of every moment.",
       items: ["Weddings", "Family Portraits", "Events", "Product Photography", "Personal Shoots"],
       image: "/assets/photo.jpg",
-      link: "/portfolio-photography"
+      link: "/portfolio/photography"
     },
     {
       title: "Videography",
       description: "Professional video production that tells your story in motion.",
       items: ["Wedding Films", "Commercial Videos", "Social Media Content", "Event Coverage", "Family Stories"],
       image: "/assets/video.jpg",
-      link: "/portfolio-videography"
+      link: "/portfolio/videography"
     }
   ];
 
