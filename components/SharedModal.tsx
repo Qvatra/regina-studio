@@ -99,7 +99,7 @@ export default function SharedModal({
                 <>
                   {index > 0 && (
                     <button
-                      className="absolute left-3 top-[calc(50%-16px)] rounded-full bg-white/90 p-3 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white focus:outline-none"
+                      className="absolute left-3 top-[calc(50%-56px)] rounded-full bg-white/90 p-3 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white focus:outline-none"
                       onClick={() => changePhotoId(index - 1)}
                     >
                       <ChevronLeftIcon className="h-6 w-6" />
@@ -107,7 +107,7 @@ export default function SharedModal({
                   )}
                   {index + 1 < images.length && (
                     <button
-                      className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-white/90 p-3 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white focus:outline-none"
+                      className="absolute right-3 top-[calc(50%-56px)] rounded-full bg-white/90 p-3 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white focus:outline-none"
                       onClick={() => changePhotoId(index + 1)}
                     >
                       <ChevronRightIcon className="h-6 w-6" />
@@ -117,7 +117,7 @@ export default function SharedModal({
               )}
 
               {/* Top controls */}
-              <div className="absolute top-[24px] right-0 flex items-center gap-2 p-3 text-white">
+              <div className="absolute top-[32px] right-0 flex items-center gap-2 p-3 text-white">
                 {navigation ? (
                   <a
                     href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`}
@@ -144,7 +144,7 @@ export default function SharedModal({
               </div>
 
               {/* Close button */}
-              <div className="absolute top-[24px] left-0 flex items-center gap-2 p-3 text-white">
+              <div className="absolute top-[32px] left-0 flex items-center gap-2 p-3 text-white">
                 <button
                   onClick={() => closeModal()}
                   className="rounded-full bg-white/90 p-2 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white"

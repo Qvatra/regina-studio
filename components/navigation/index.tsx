@@ -62,10 +62,10 @@ export default function Navigation() {
     e.preventDefault();
     setIsOpen(false);
     
-    if (pathname === '/') {
+    if (pathname === `/${currentLang}`) {
       document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      router.push('/#portfolio');
+      router.push(`/${currentLang}/#portfolio`);
     }
   };
 

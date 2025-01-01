@@ -2,10 +2,14 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // For root path, /about and /contact
+  // For root path, /about, /contact, /services and service subpages
   if (request.nextUrl.pathname === '/' || 
       request.nextUrl.pathname === '/about' || 
-      request.nextUrl.pathname === '/contact') {
+      request.nextUrl.pathname === '/contact' ||
+      request.nextUrl.pathname === '/services' ||
+      request.nextUrl.pathname === '/services/photography' ||
+      request.nextUrl.pathname === '/services/videography' ||
+      request.nextUrl.pathname === '/services/wedding') {
     // If it's a user (has cookie), redirect to preferred language
     const preferredLanguage = request.cookies.get('preferredLanguage')?.value;
     if (preferredLanguage) {
@@ -20,5 +24,13 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/about', '/contact'],
+  matcher: [
+    '/', 
+    '/about', 
+    '/contact', 
+    '/services', 
+    '/services/photography', 
+    '/services/videography',
+    '/services/wedding'
+  ],
 }; 
