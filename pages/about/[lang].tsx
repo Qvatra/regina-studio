@@ -32,13 +32,13 @@ export default function About({ lang }: AboutProps) {
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`https://studioregina.nl/about/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/about/${l}`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`https://studioregina.nl/about/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/about/${lang}`}
         />
       </Head>
 

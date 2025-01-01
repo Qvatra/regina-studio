@@ -4,7 +4,7 @@ import { aboutContent } from '../content/about';
 const Sitemap = () => null;
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const baseUrl = 'https://studioregina.nl';
+  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

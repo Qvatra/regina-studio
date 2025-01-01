@@ -14,10 +14,10 @@ export default function AboutIndex() {
             key={lang}
             rel="alternate" 
             hrefLang={lang} 
-            href={`https://studioregina.nl/about/${lang}`}
+            href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/about/${lang}`}
           />
         ))}
-        <link rel="canonical" href="https://studioregina.nl/about/en" />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/about/en`} />
       </Head>
 
       <main className="mx-auto max-w-4xl px-4 py-12 text-center">
