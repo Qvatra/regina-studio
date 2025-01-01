@@ -5,6 +5,7 @@ import { servicesContent } from '../content/services';
 import { photographyServicesContent } from '../content/photographyServices';
 import { videographyServicesContent } from '../content/videographyServices';
 import { weddingServicesContent } from '../content/weddingServices';
+import { portfolioContent } from '../content/portfolio';
 
 const Sitemap = () => null;
 
@@ -74,6 +75,26 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
           />`).join('')}
         <changefreq>monthly</changefreq>
       </url>
+      <url>
+        <loc>${baseUrl}/portfolio/photography</loc>
+        ${Object.keys(portfolioContent).map((lang) => `
+          <xhtml:link 
+            rel="alternate"
+            hreflang="${lang}"
+            href="${baseUrl}/portfolio/photography/${lang}"
+          />`).join('')}
+        <changefreq>weekly</changefreq>
+      </url>
+      <url>
+        <loc>${baseUrl}/portfolio/videography</loc>
+        ${Object.keys(portfolioContent).map((lang) => `
+          <xhtml:link 
+            rel="alternate"
+            hreflang="${lang}"
+            href="${baseUrl}/portfolio/videography/${lang}"
+          />`).join('')}
+        <changefreq>weekly</changefreq>
+      </url>
       ${Object.keys(aboutContent).map((lang) => `
         <url>
           <loc>${baseUrl}/about/${lang}</loc>
@@ -108,6 +129,18 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         <url>
           <loc>${baseUrl}/services/wedding/${lang}</loc>
           <changefreq>monthly</changefreq>
+        </url>
+      `).join('')}
+      ${Object.keys(portfolioContent).map((lang) => `
+        <url>
+          <loc>${baseUrl}/portfolio/photography/${lang}</loc>
+          <changefreq>weekly</changefreq>
+        </url>
+      `).join('')}
+      ${Object.keys(portfolioContent).map((lang) => `
+        <url>
+          <loc>${baseUrl}/portfolio/videography/${lang}</loc>
+          <changefreq>weekly</changefreq>
         </url>
       `).join('')}
     </urlset>`;

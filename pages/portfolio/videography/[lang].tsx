@@ -1,10 +1,19 @@
 import type { NextPage } from "next";
 import { google } from "googleapis";
-import PageHead from '../../components/videography/PageHead'
-import { MobileLayout, TabletLayout, DesktopLayout } from '../../components/videography/layouts'
-import { LayoutProps, VideoProps, VideoPair, LayoutProp } from '../../types/videography'
-import ScrollToTop from '../../components/ScrollToTop';
-import StyledLink from '../../components/StyledLink';
+import { GetStaticProps, GetStaticPaths } from 'next';
+import { useEffect } from 'react';
+import PageHead from '../../../components/videography/PageHead';
+import { MobileLayout, TabletLayout, DesktopLayout } from '../../../components/videography/layouts';
+import { LayoutProps, VideoProps, VideoPair, LayoutProp } from '../../../types/videography';
+import ScrollToTop from '../../../components/ScrollToTop';
+import StyledLink from '../../../components/StyledLink';
+import { portfolioContent } from "../../../content/portfolio";
+import { Language } from "../../../content/about";
+import Head from "next/head";
+
+interface VideographyPortfolioPageProps extends LayoutProps {
+  lang: Language;
+}
 
 interface GroupConfig {
   verticalVideos: VideoProps[];
@@ -12,20 +21,51 @@ interface GroupConfig {
   colCount?: number;
 }
 
-const VideographyPortfolio: NextPage<LayoutProps> = ({ oneCol, twoCols, threeCols }) => (
-  <>
-    <PageHead />
-    <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
-      <section>
-        <MobileLayout {...oneCol} />
-        <TabletLayout {...twoCols} />
-        <DesktopLayout {...threeCols} />
-      </section>
-    </main>
-    <ScrollToTop />
-    <StyledLink href="/services" text="Book a session" />
-  </>
-);
+const VideographyPortfolio: NextPage<VideographyPortfolioPageProps> = ({ oneCol, twoCols, threeCols, lang }) => {
+  const content = portfolioContent[lang];
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferredLanguage', lang);
+      document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
+    }
+  }, [lang]);
+
+  return (
+    <>
+      <Head>
+        <title>{content.videoTitle}</title>
+        <meta name="description" content={content.videoMetaDescription} />
+        {Object.keys(portfolioContent).map((l) => (
+          l !== lang && (
+            <link 
+              key={l}
+              rel="alternate" 
+              hrefLang={l} 
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/portfolio/videography/${l}`}
+            />
+          )
+        ))}
+        <link 
+          rel="canonical" 
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/portfolio/videography/${lang}`}
+        />
+      </Head>
+      <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
+        <section>
+          <MobileLayout {...oneCol} />
+          <TabletLayout {...twoCols} />
+          <DesktopLayout {...threeCols} />
+        </section>
+      </main>
+      <ScrollToTop />
+      <StyledLink 
+        href={`/services/${lang}`} 
+        text={content.bookSession} 
+      />
+    </>
+  );
+};
 
 const createPairs = ({ verticalVideos, horizontalVideos, colCount = 2 }: GroupConfig): LayoutProp => {
   const totalPairs = Math.min(verticalVideos.length, horizontalVideos.length);
@@ -89,7 +129,24 @@ const fetchYouTubeVideos = async () => {
   }));
 };
 
-export async function getStaticProps() {
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: Object.keys(portfolioContent).map(lang => ({
+      params: { lang }
+    })),
+    fallback: false
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const lang = params?.lang as Language;
+  
+  if (!Object.keys(portfolioContent).includes(lang)) {
+    return {
+      notFound: true
+    };
+  }
+
   try {
     const allVideos = await fetchYouTubeVideos();
     const videos = {
@@ -102,6 +159,7 @@ export async function getStaticProps() {
         oneCol: createTrios(videos),
         twoCols: createPairs({ ...videos, colCount: 2 }),
         threeCols: createPairs({ ...videos, colCount: 3 }),
+        lang
       },
       revalidate: 3600
     };
@@ -116,11 +174,12 @@ export async function getStaticProps() {
       props: {
         oneCol: emptyLayout,
         twoCols: emptyLayout,
-        threeCols: emptyLayout
+        threeCols: emptyLayout,
+        lang
       },
       revalidate: 3600
     };
   }
-}
+};
 
 export default VideographyPortfolio; 

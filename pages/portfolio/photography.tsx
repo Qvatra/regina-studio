@@ -11,6 +11,8 @@ import type { ImageProps } from "../../utils/types";
 import { useLastViewedPhoto } from "../../utils/useLastViewedPhoto";
 import ScrollToTop from '../../components/ScrollToTop';
 import StyledLink from '../../components/StyledLink';
+import { portfolioContent } from "../../content/portfolio";
+import { Language } from "../../content/about";
 
 const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter();
@@ -25,6 +27,11 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
       setLastViewedPhoto(null);
     }
   }, [photoId, lastViewedPhoto, setLastViewedPhoto]);
+
+  // Get preferred language
+  const currentLang = (typeof window !== 'undefined' 
+    ? localStorage.getItem('preferredLanguage') as Language 
+    : null) || 'en';
 
   return (
     <>
@@ -75,7 +82,10 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
         </div>
       </main>
       <ScrollToTop />
-      <StyledLink href="/services" text="Book a session" />
+      <StyledLink 
+        href={`/services/${currentLang}`} 
+        text={portfolioContent[currentLang].bookSession} 
+      />
     </>
   );
 };
