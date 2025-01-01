@@ -1,10 +1,14 @@
+import { useEffect } from 'react';
 import Head from "next/head";
+import { GetStaticProps, GetStaticPaths } from 'next';
 import {
   ChatBubbleLeftRightIcon as WhatsAppIcon,
   EnvelopeIcon as MailIcon
 } from '@heroicons/react/24/outline';
-import { Card, CardHeader, CardContent, CardFooter } from '../components/Card';
-import StyledButton from '../components/StyledButton';
+import { Card, CardHeader, CardContent, CardFooter } from '../../components/Card';
+import StyledButton from '../../components/StyledButton';
+import { contactContent } from '../../content/contact';
+import { Language } from '../../content/about';
 
 // Custom Instagram and Facebook icons since they're not available in Heroicons
 const InstagramIcon = ({ className = "h-6 w-6" }) => (
@@ -19,63 +23,82 @@ const FacebookIcon = ({ className = "h-6 w-6" }) => (
   </svg>
 );
 
-export default function Contact() {
-  const contactOptions = [
-    {
-      name: "Instagram",
-      handle: "@marymeberry",
-      url: "https://instagram.com/marymeberry",
-      icon: InstagramIcon,
-      description: "Follow my creative journey and let's connect! This is my preferred way to communicate as it helps us build a stronger creative community.",
-      cta: "Connect"
-    },
-    {
-      name: "WhatsApp",
-      handle: "+31 649739457",
-      url: "https://wa.me/31649739457",
-      icon: WhatsAppIcon,
-      description: "For quick responses and easy communication, feel free to reach out via WhatsApp.",
-      cta: "Message Me"
-    },
-    {
-      name: "Email",
-      handle: "regina.shaydullina@gmail.com",
-      url: "mailto:regina.shaydullina@gmail.com?subject=Contact%20from%20website",
-      icon: MailIcon,
-      description: "Send me a detailed message about your project or inquiry.",
-      cta: "Send Email"
-    },
-    {
-      name: "Facebook",
-      handle: "Regina Shaydullina",
-      url: "https://facebook.com/regina.shaydullina.5",
-      icon: FacebookIcon,
-      description: "Connect with me on Facebook to stay updated with my latest work.",
-      cta: "Connect"
+const contactOptions = [
+  {
+    name: "Instagram",
+    handle: "@marymeberry",
+    url: "https://instagram.com/marymeberry",
+    icon: InstagramIcon,
+  },
+  {
+    name: "WhatsApp",
+    handle: "+31 649739457",
+    url: "https://wa.me/31649739457",
+    icon: WhatsAppIcon,
+  },
+  {
+    name: "Email",
+    handle: "regina.shaydullina@gmail.com",
+    url: "mailto:regina.shaydullina@gmail.com?subject=Contact%20from%20website",
+    icon: MailIcon,
+  },
+  {
+    name: "Facebook",
+    handle: "Regina Shaydullina",
+    url: "https://facebook.com/regina.shaydullina.5",
+    icon: FacebookIcon,
+  }
+];
+
+interface ContactProps {
+  lang: Language;
+}
+
+export default function Contact({ lang }: ContactProps) {
+  const content = contactContent[lang];
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferredLanguage', lang);
+      document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
     }
-  ];
+  }, [lang]);
 
   return (
     <>
       <Head>
-        <title>Contact | Studio Regina</title>
-        <meta name="description" content="Get in touch with Studio Regina for your photography and videography needs. Connect via Instagram, WhatsApp, email, or Facebook." />
+        <title>{content.title}</title>
+        <meta name="description" content={content.metaDescription} />
+        {Object.keys(contactContent).map((l) => (
+          l !== lang && (
+            <link 
+              key={l}
+              rel="alternate" 
+              hrefLang={l} 
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact/${l}`}
+            />
+          )
+        ))}
+        <link 
+          rel="canonical" 
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact/${lang}`}
+        />
       </Head>
       <main className="mx-auto max-w-4xl px-4 pt-8 text-gray-900">
         <section className="text-center mb-12">
-          <h1 className="text-3xl font-bold tracking-wider mb-4">LET'S CONNECT</h1>
+          <h1 className="text-3xl font-bold tracking-wider mb-4">{content.heading}</h1>
           <div className="max-w-2xl mx-auto">
             <p className="text-gray-600 text-lg mb-4">
-              I'm excited to hear about your story and discuss how we can create something beautiful together! Whether it's a wedding, family portrait, commercial project, or any other creative endeavor, I'm here to help bring your vision to life.
+              {content.intro.primary}
             </p>
             <p className="text-gray-600 text-lg">
-              Choose your preferred way to connect with me below:
+              {content.intro.secondary}
             </p>
           </div>
         </section>
 
         <section className="grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
-          {contactOptions.map((option) => (
+          {contactOptions.map((option, index) => (
             <Card key={option.name}>
               <CardHeader>
                 <div className="flex items-center my-2">
@@ -84,10 +107,12 @@ export default function Contact() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p>{option.description}</p>
+                <p>{content.contactOptions[index].description}</p>
               </CardContent>
               <CardFooter>
-                <StyledButton href={option.url} external className="w-[150px]">{option.cta}</StyledButton>
+                <StyledButton href={option.url} external className="w-[165px]">
+                  {content.contactOptions[index].cta}
+                </StyledButton>
               </CardFooter>
             </Card>
           ))}
@@ -95,10 +120,35 @@ export default function Contact() {
 
         <section className="mt-12 text-center">
           <p className="text-gray-600 text-lg">
-            I typically respond within 24 hours. Looking forward to connecting with you!
+            {content.responseTime}
           </p>
         </section>
       </main>
     </>
   );
-} 
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: Object.keys(contactContent).map(lang => ({
+      params: { lang }
+    })),
+    fallback: false
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const lang = params?.lang as Language;
+  
+  if (!Object.keys(contactContent).includes(lang)) {
+    return {
+      notFound: true
+    };
+  }
+
+  return {
+    props: {
+      lang
+    }
+  };
+}; 

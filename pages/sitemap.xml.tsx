@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { aboutContent } from '../content/about';
+import { contactContent } from '../content/contact';
 
 const Sitemap = () => null;
 
@@ -19,9 +20,25 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
           />`).join('')}
         <changefreq>monthly</changefreq>
       </url>
+      <url>
+        <loc>${baseUrl}/contact</loc>
+        ${Object.keys(contactContent).map((lang) => `
+          <xhtml:link 
+            rel="alternate"
+            hreflang="${lang}"
+            href="${baseUrl}/contact/${lang}"
+          />`).join('')}
+        <changefreq>monthly</changefreq>
+      </url>
       ${Object.keys(aboutContent).map((lang) => `
         <url>
           <loc>${baseUrl}/about/${lang}</loc>
+          <changefreq>monthly</changefreq>
+        </url>
+      `).join('')}
+      ${Object.keys(contactContent).map((lang) => `
+        <url>
+          <loc>${baseUrl}/contact/${lang}</loc>
           <changefreq>monthly</changefreq>
         </url>
       `).join('')}

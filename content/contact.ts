@@ -1,0 +1,132 @@
+export const contactContent = {
+  en: {
+    title: "Contact | Studio Regina",
+    metaDescription: "Get in touch with Studio Regina for your photography and videography needs. Connect via Instagram, WhatsApp, email, or Facebook.",
+    heading: "LET'S CONNECT",
+    intro: {
+      primary: "I'm excited to hear about your story and discuss how we can create something beautiful together! Whether it's a wedding, family portrait, commercial project, or any other creative endeavor, I'm here to help bring your vision to life.",
+      secondary: "Choose your preferred way to connect with me below:"
+    },
+    contactOptions: [
+      {
+        name: "Instagram",
+        description: "Follow my creative journey and let's connect! This is my preferred way to communicate as it helps us build a stronger creative community.",
+        cta: "Connect"
+      },
+      {
+        name: "WhatsApp",
+        description: "For quick responses and easy communication, feel free to reach out via WhatsApp.",
+        cta: "Message Me"
+      },
+      {
+        name: "Email",
+        description: "Send me a detailed message about your project or inquiry.",
+        cta: "Send Email"
+      },
+      {
+        name: "Facebook",
+        description: "Connect with me on Facebook to stay updated with my latest work.",
+        cta: "Connect"
+      }
+    ],
+    responseTime: "I typically respond within 24 hours. Looking forward to connecting with you!"
+  },
+  nl: {
+    title: "Contact | Studio Regina",
+    metaDescription: "Neem contact op met Studio Regina voor al uw fotografie en videografie wensen. Verbind via Instagram, WhatsApp, e-mail of Facebook.",
+    heading: "LATEN WE VERBINDEN",
+    intro: {
+      primary: "Ik ben enthousiast om over uw verhaal te horen en te bespreken hoe we samen iets moois kunnen creëren! Of het nu gaat om een bruiloft, familieportret, commercieel project of een ander creatief project, ik help graag uw visie tot leven te brengen.",
+      secondary: "Kies hieronder uw voorkeursmanier om contact met mij op te nemen:"
+    },
+    contactOptions: [
+      {
+        name: "Instagram",
+        description: "Volg mijn creatieve reis en laten we verbinden! Dit is mijn voorkeursmanier van communiceren omdat het ons helpt een sterkere creatieve gemeenschap op te bouwen.",
+        cta: "Verbinden"
+      },
+      {
+        name: "WhatsApp",
+        description: "Voor snelle reacties en eenvoudige communicatie kunt u contact opnemen via WhatsApp.",
+        cta: "Bericht Sturen"
+      },
+      {
+        name: "Email",
+        description: "Stuur me een gedetailleerd bericht over uw project of vraag.",
+        cta: "Bericht Sturen"
+      },
+      {
+        name: "Facebook",
+        description: "Verbind met mij op Facebook om op de hoogte te blijven van mijn laatste werk.",
+        cta: "Verbinden"
+      }
+    ],
+    responseTime: "Ik reageer meestal binnen 24 uur. Ik kijk ernaar uit om met u in contact te komen!"
+  },
+  ru: {
+    title: "Контакты | Studio Regina",
+    metaDescription: "Свяжитесь со Studio Regina для ваших фото и видео проектов. Доступны Instagram, WhatsApp, email и Facebook.",
+    heading: "ДАВАЙТЕ ОБЩАТЬСЯ",
+    intro: {
+      primary: "Я с нетерпением жду возможности услышать вашу историю и обсудить, как мы можем создать что-то прекрасное вместе! Будь то свадьба, семейный портрет, коммерческий проект или любой другой творческий замысел, я здесь, чтобы помочь воплотить вашу идею в жизнь.",
+      secondary: "Выберите удобный для вас способ связи:"
+    },
+    contactOptions: [
+      {
+        name: "Instagram",
+        description: "Следите за моим творческим путём и давайте общаться! Это мой предпочтительный способ коммуникации, так как он помогает нам создавать более крепкое творческое сообщество.",
+        cta: "Подписаться"
+      },
+      {
+        name: "WhatsApp",
+        description: "Для быстрой связи и удобного общения, пишите мне в WhatsApp.",
+        cta: "Написать"
+      },
+      {
+        name: "Email",
+        description: "Отправьте мне подробное сообщение о вашем проекте или запросе.",
+        cta: "Написать"
+      },
+      {
+        name: "Facebook",
+        description: "Присоединяйтесь ко мне в Facebook, чтобы быть в курсе моих последних работ.",
+        cta: "Подписаться"
+      }
+    ],
+    responseTime: "Обычно я отвечаю в течение 24 часов. Жду нашего общения!"
+  },
+  ua: {
+    title: "Контакти | Studio Regina",
+    metaDescription: "Зв'яжіться зі Studio Regina для ваших фото та відео проектів. Доступні Instagram, WhatsApp, email та Facebook.",
+    heading: "ДАВАЙТЕ СПІЛКУВАТИСЯ",
+    intro: {
+      primary: "Я з нетерпінням чекаю можливості почути вашу історію та обговорити, як ми можемо створити щось прекрасне разом! Чи то весілля, сімейний портрет, комерційний проект чи будь-який інший творчий задум, я тут, щоб допомогти втілити вашу ідею в життя.",
+      secondary: "Оберіть зручний для вас спосіб зв'язку:"
+    },
+    contactOptions: [
+      {
+        name: "Instagram",
+        description: "Слідкуйте за моїм творчим шляхом та давайте спілкуватися! Це мій бажаний спосіб комунікації, оскільки він допомагає нам створювати міцнішу творчу спільноту.",
+        cta: "Підписатися"
+      },
+      {
+        name: "WhatsApp",
+        description: "Для швидкого зв'язку та зручного спілкування, пишіть мені у WhatsApp.",
+        cta: "Написати"
+      },
+      {
+        name: "Email",
+        description: "Надішліть мені детальне повідомлення про ваш проект чи запит.",
+        cta: "Написати"
+      },
+      {
+        name: "Facebook",
+        description: "Приєднуйтесь до мене у Facebook, щоб бути в курсі моїх останніх робіт.",
+        cta: "Підписатися"
+      }
+    ],
+    responseTime: "Зазвичай я відповідаю протягом 24 годин. Чекаю на наше спілкування!"
+  }
+};
+
+export type Language = keyof typeof contactContent; 
