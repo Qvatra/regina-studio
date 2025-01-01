@@ -29,7 +29,8 @@ export default function PhotographyServices() {
       price: "€500",
       features: [
         "3-4 hours shooting duration",
-        "100 color-graded photos"
+        "100 color-graded photos",
+        "up to 30 seconds video as a present"
       ]
     }
   ];

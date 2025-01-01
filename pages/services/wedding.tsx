@@ -13,7 +13,7 @@ export default function WeddingServices() {
         "6 hours of coverage",
         "150+ color-graded photos",
         "Unposed documentary session",
-        "1-2 minute video as a present"
+        "up to 1 minute video as a present"
       ]
     },
     {
@@ -23,8 +23,7 @@ export default function WeddingServices() {
       features: [
         "6 hours of coverage",
         "4-6 minute wedding film",
-        "Licensed music",
-        "Multiple revisions"
+        "Licensed music"
       ]
     }
   ];
@@ -33,7 +32,7 @@ export default function WeddingServices() {
     "Pre-wedding consultation",
     "Professional equipment",
     "High-resolution files",
-    "Post production",
+    "Post production"
   ];
 
   return (

@@ -36,10 +36,8 @@ export default function VideographyServices() {
 
   const allPackagesDetails = [
     "Professional video equipment",
-    "Professional audio recording",
     "Post production",
-    "Music licensing",
-    "Multiple revisions"
+    "Music licensing"
   ];
 
   return (
