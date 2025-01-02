@@ -37,10 +37,11 @@ export default function Modal({
     setCurIndex(newVal);
     router.push(
       {
+        pathname: '/portfolio/photography',
         query: { photoId: newVal },
       },
-      `/portfolio/photography/${newVal}`,
-      { shallow: true },
+      undefined,
+      { shallow: true }
     );
   }
 

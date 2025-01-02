@@ -60,7 +60,6 @@ const PhotographyPortfolio: NextPage = ({ images }: { images: ImageProps[] }) =>
                 pathname: '/portfolio/photography',
                 query: { photoId: id },
               }}
-              as={`/portfolio/photography/${id}`}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               shallow
               className="overflow-hidden after:content group relative mb-5 block w-full cursor-pointer after:pointer-events-none after:absolute after:inset-0"
