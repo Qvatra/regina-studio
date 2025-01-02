@@ -46,7 +46,6 @@ export default function Navigation() {
   const menuItems = getMenuItems(content, currentLang);
   
   const isActive = (path: string) => {
-    console.log(pathname, path);
     if (path === '/portfolio') {
       return pathname.includes(path);
     }

@@ -9,7 +9,8 @@ export function middleware(request: NextRequest) {
       request.nextUrl.pathname === '/services/photography' ||
       request.nextUrl.pathname === '/services/videography' ||
       request.nextUrl.pathname === '/services/wedding' ||
-      request.nextUrl.pathname === '/portfolio/videography') {
+      request.nextUrl.pathname === '/portfolio/videography' ||
+      request.nextUrl.pathname === '/portfolio/photography') {
     const preferredLanguage = request.cookies.get('preferredLanguage')?.value;
     if (preferredLanguage) {
       if (request.nextUrl.pathname === '/') {
@@ -30,6 +31,7 @@ export const config = {
     '/services/photography', 
     '/services/videography',
     '/services/wedding',
-    '/portfolio/videography'
+    '/portfolio/videography',
+    '/portfolio/photography'
   ],
 }; 

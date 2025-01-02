@@ -10,7 +10,7 @@ export default function VideographyPortfolioIndex() {
         <title>Videography Portfolio | Studio Regina</title>
         <meta 
           name="description" 
-          content="Professional videography portfolio showcasing our work in various styles and settings." 
+          content="Explore our collection of professional videography work including weddings, events, commercial videos, and creative productions." 
         />
         {Object.keys(portfolioContent).map((lang) => (
           <link 
