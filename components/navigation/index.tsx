@@ -10,13 +10,7 @@ import MobileMenu from './MobileMenu';
 import LanguageSelector from './LanguageSelector';
 import MobileMenuButton from './MobileMenuButton';
 import { getMenuItems } from './utils';
-
-const languages: { [key in Language]: string } = {
-  en: 'English',
-  nl: 'Nederlands',
-  ru: 'Русский',
-  ua: 'Українська'
-};
+import { languages } from '../../config/languages';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,7 +68,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-22">
           <div className="flex-0">
-            <Link href="/" className="flex justify-start my-4">
+            <Link href={`/${currentLang}`} className="flex justify-start my-4">
               <Logo className="h-[50px] w-auto" />
             </Link>
           </div>

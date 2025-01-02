@@ -11,14 +11,14 @@ export const homeContent = {
         description: "From intimate portraits to grand events, we capture the essence of every moment.",
         items: ["Weddings", "Family Portraits", "Events", "Product Photography", "Personal Shoots"],
         image: "/assets/photo.jpg",
-        link: "/portfolio/photography"
+        link: "/portfolio/photography/en"
       },
       {
         title: "Videography",
         description: "Professional video production that tells your story in motion.",
         items: ["Wedding Films", "Commercial Videos", "Social Media Content", "Event Coverage", "Family Stories"],
         image: "/assets/video.jpg",
-        link: "/portfolio/videography"
+        link: "/portfolio/videography/en"
       }
     ],
     citations: [
@@ -74,14 +74,14 @@ export const homeContent = {
         description: "Van intieme portretten tot grote evenementen, wij vangen de essentie van elk moment.",
         items: ["Bruiloften", "Familieportretten", "Evenementen", "Productfotografie", "Persoonlijke Shoots"],
         image: "/assets/photo.jpg",
-        link: "/portfolio/photography"
+        link: "/portfolio/photography/nl"
       },
       {
         title: "Videografie",
         description: "Professionele videoproductie die uw verhaal in beweging vertelt.",
         items: ["Trouwfilms", "Commerciële Video's", "Social Media Content", "Evenementregistratie", "Familieverhalen"],
         image: "/assets/video.jpg",
-        link: "/portfolio/videography"
+        link: "/portfolio/videography/nl"
       }
     ],
     citations: [
@@ -137,14 +137,14 @@ export const homeContent = {
         description: "От интимных портретов до масштабных мероприятий, мы запечатлеем суть каждого момента.",
         items: ["Свадьбы", "Семейные Портреты", "Мероприятия", "Предметная Съёмка", "Личные Фотосессии"],
         image: "/assets/photo.jpg",
-        link: "/portfolio/photography"
+        link: "/portfolio/photography/ru"
       },
       {
         title: "Видеосъёмка",
         description: "Профессиональное видеопроизводство, рассказывающее вашу историю в движении.",
         items: ["Свадебные Фильмы", "Рекламные Видео", "Контент для Соцсетей", "Освещение Мероприятий", "Семейные Истории"],
         image: "/assets/video.jpg",
-        link: "/portfolio/videography"
+        link: "/portfolio/videography/ru"
       }
     ],
     citations: [
@@ -200,14 +200,14 @@ export const homeContent = {
         description: "Від інтимних портретів до масштабних заходів, ми закарбуємо суть кожного моменту.",
         items: ["Весілля", "Сімейні Портрети", "Заходи", "Предметна Зйомка", "Особисті Фотосесії"],
         image: "/assets/photo.jpg",
-        link: "/portfolio/photography"
+        link: "/portfolio/photography/ua"
       },
       {
         title: "Відеозйомка",
         description: "Професійне відеовиробництво, що розповідає вашу історію в русі.",
         items: ["Весільні Фільми", "Рекламні Відео", "Контент для Соцмереж", "Висвітлення Заходів", "Сімейні Історії"],
         image: "/assets/video.jpg",
-        link: "/portfolio/videography"
+        link: "/portfolio/videography/ua"
       }
     ],
     citations: [

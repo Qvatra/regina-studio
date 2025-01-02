@@ -9,21 +9,21 @@ export const servicesContent = {
     services: [
       {
         title: "Photography",
-        path: "/services/photography",
+        path: "/services/photography/en",
         description: "Final price is calculated based on shooting time, number of photos, and travel distance. Click below to explore packages.",
         price: "from €200",
         priceDetails: "per 1 hour session / 25 colorgraded photos"
       },
       {
         title: "Videography",
-        path: "/services/videography",
+        path: "/services/videography/en",
         description: "Final price is calculated based on shooting duration, post-production work complexity, and travel distance. Click below to explore packages.",
         price: "from €250",
         priceDetails: "per 1 hour session / 1 min final video"
       },
       {
         title: "Wedding",
-        path: "/services/wedding",
+        path: "/services/wedding/en",
         description: "Package price varies depending on your chosen services, coverage duration, and additional options. Click below to explore wedding packages.",
         price: "from €1.100",
         priceDetails: "for half-day photo or video coverage"
@@ -39,21 +39,21 @@ export const servicesContent = {
     services: [
       {
         title: "Fotografie",
-        path: "/services/photography",
+        path: "/services/photography/nl",
         description: "De uiteindelijke prijs wordt berekend op basis van opnametijd, aantal foto's en reisafstand. Klik hieronder om pakketten te bekijken.",
         price: "vanaf €200",
         priceDetails: "per 1 uur sessie / 25 kleurbewerkte foto's"
       },
       {
         title: "Videografie",
-        path: "/services/videography",
+        path: "/services/videography/nl",
         description: "De uiteindelijke prijs wordt berekend op basis van opnameduur, complexiteit van postproductie en reisafstand. Klik hieronder om pakketten te bekijken.",
         price: "vanaf €250",
         priceDetails: "per 1 uur sessie / 1 min eindvideo"
       },
       {
         title: "Bruiloft",
-        path: "/services/wedding",
+        path: "/services/wedding/nl",
         description: "Pakketprijs varieert afhankelijk van uw gekozen diensten, dekkingsduur en aanvullende opties. Klik hieronder om bruiloftspakketten te bekijken.",
         price: "vanaf €1.100",
         priceDetails: "voor halve dag foto of video dekking"
@@ -69,21 +69,21 @@ export const servicesContent = {
     services: [
       {
         title: "Фотография",
-        path: "/services/photography",
+        path: "/services/photography/ru",
         description: "Окончательная цена рассчитывается исходя из времени съёмки, количества фотографий и расстояния поездки. Нажмите ниже, чтобы ознакомиться с пакетами.",
         price: "от €200",
         priceDetails: "за 1 час съёмки / 25 обработанных фото"
       },
       {
         title: "Видеосъёмка",
-        path: "/services/videography",
+        path: "/services/videography/ru",
         description: "Окончательная цена рассчитывается исходя из продолжительности съёмки, сложности постпродакшна и расстояния поездки. Нажмите ниже, чтобы ознакомиться с пакетами.",
         price: "от €250",
         priceDetails: "за 1 час съёмки / 1 мин финального видео"
       },
       {
         title: "Свадьба",
-        path: "/services/wedding",
+        path: "/services/wedding/ru",
         description: "Стоимость пакета варьируется в зависимости от выбранных услуг, продолжительности съёмки и дополнительных опций. Нажмите ниже, чтобы ознакомиться со свадебными пакетами.",
         price: "от €1.100",
         priceDetails: "за полдня фото или видео съёмки"
@@ -99,21 +99,21 @@ export const servicesContent = {
     services: [
       {
         title: "Фотографія",
-        path: "/services/photography",
+        path: "/services/photography/ua",
         description: "Кінцева ціна розраховується виходячи з часу зйомки, кількості фотографій та відстані поїздки. Натисніть нижче, щоб ознайомитися з пакетами.",
         price: "від €200",
         priceDetails: "за 1 годину зйомки / 25 оброблених фото"
       },
       {
         title: "Відеозйомка",
-        path: "/services/videography",
+        path: "/services/videography/ua",
         description: "Кінцева ціна розраховується виходячи з тривалості зйомки, складності постпродакшну та відстані поїздки. Натисніть нижче, щоб ознайомитися з пакетами.",
         price: "від €250",
         priceDetails: "за 1 годину зйомки / 1 хв фінального відео"
       },
       {
         title: "Весілля",
-        path: "/services/wedding",
+        path: "/services/wedding/ua",
         description: "Вартість пакету варіюється залежно від обраних послуг, тривалості зйомки та додаткових опцій. Натисніть нижче, щоб ознайомитися з весільними пакетами.",
         price: "від €1.100",
         priceDetails: "за півдня фото або відео зйомки"
