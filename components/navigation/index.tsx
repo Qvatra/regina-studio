@@ -51,9 +51,10 @@ export default function Navigation() {
       return pathname.includes(path);
     }
     if (path === '/') {
-      return pathname === '/' || pathname === `/${currentLang}`;
+      return pathname === `/${currentLang}`;
     }
-    return pathname === path;
+
+    return pathname === `${path}/${currentLang}` || pathname === path;
   };
 
   const isSubActive = (path: string) => pathname === path;
