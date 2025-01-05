@@ -13,7 +13,6 @@ interface MobileMenuProps {
 export default function MobileMenu({
   isOpen,
   menuItems,
-  handlePortfolioClick,
   setIsOpen,
   isActive,
   isSubActive
@@ -23,7 +22,9 @@ export default function MobileMenu({
       isItemActive ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
     }`;
 
-  if (!isOpen) return null;
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <div className="md:hidden bg-white">
@@ -32,8 +33,8 @@ export default function MobileMenu({
           item.children ? (
             <div key={item.path}>
               <div
-                className={mobileNavItemClassName(isActive(''))}
-                onClick={handlePortfolioClick}
+                className={mobileNavItemClassName(isActive(item.path))}
+                onClick={item.onClick}
               >
                 {item.label}
               </div>

@@ -1,149 +1,64 @@
 import { GetServerSideProps } from 'next';
 import { aboutContent } from '../content/about';
-import { contactContent } from '../content/contact';
-import { servicesContent } from '../content/services';
-import { photographyServicesContent } from '../content/photographyServices';
-import { videographyServicesContent } from '../content/videographyServices';
-import { weddingServicesContent } from '../content/weddingServices';
-import { portfolioContent } from '../content/portfolio';
 
-const Sitemap = () => null;
+const languages = Object.keys(aboutContent);
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+function generateSiteMap(languages: string[]) {
   const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-            xmlns:xhtml="http://www.w3.org/1999/xhtml">
-      <url>
-        <loc>${baseUrl}/about</loc>
-        ${Object.keys(aboutContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/about/${lang}"
-          />`).join('')}
-        <changefreq>monthly</changefreq>
-      </url>
-      <url>
-        <loc>${baseUrl}/contact</loc>
-        ${Object.keys(contactContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/contact/${lang}"
-          />`).join('')}
-        <changefreq>monthly</changefreq>
-      </url>
-      <url>
-        <loc>${baseUrl}/services</loc>
-        ${Object.keys(servicesContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/services/${lang}"
-          />`).join('')}
-        <changefreq>monthly</changefreq>
-      </url>
-      <url>
-        <loc>${baseUrl}/services/photography</loc>
-        ${Object.keys(photographyServicesContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/services/photography/${lang}"
-          />`).join('')}
-        <changefreq>monthly</changefreq>
-      </url>
-      <url>
-        <loc>${baseUrl}/services/videography</loc>
-        ${Object.keys(videographyServicesContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/services/videography/${lang}"
-          />`).join('')}
-        <changefreq>monthly</changefreq>
-      </url>
-      <url>
-        <loc>${baseUrl}/services/wedding</loc>
-        ${Object.keys(weddingServicesContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/services/wedding/${lang}"
-          />`).join('')}
-        <changefreq>monthly</changefreq>
-      </url>
-      <url>
-        <loc>${baseUrl}/portfolio/photography</loc>
-        ${Object.keys(portfolioContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/portfolio/photography/${lang}"
-          />`).join('')}
-        <changefreq>weekly</changefreq>
-      </url>
-      <url>
-        <loc>${baseUrl}/portfolio/videography</loc>
-        ${Object.keys(portfolioContent).map((lang) => `
-          <xhtml:link 
-            rel="alternate"
-            hreflang="${lang}"
-            href="${baseUrl}/portfolio/videography/${lang}"
-          />`).join('')}
-        <changefreq>weekly</changefreq>
-      </url>
-      ${Object.keys(aboutContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/about/${lang}</loc>
-          <changefreq>monthly</changefreq>
-        </url>
-      `).join('')}
-      ${Object.keys(contactContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/contact/${lang}</loc>
-          <changefreq>monthly</changefreq>
-        </url>
-      `).join('')}
-      ${Object.keys(servicesContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/services/${lang}</loc>
-          <changefreq>monthly</changefreq>
-        </url>
-      `).join('')}
-      ${Object.keys(photographyServicesContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/services/photography/${lang}</loc>
-          <changefreq>monthly</changefreq>
-        </url>
-      `).join('')}
-      ${Object.keys(videographyServicesContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/services/videography/${lang}</loc>
-          <changefreq>monthly</changefreq>
-        </url>
-      `).join('')}
-      ${Object.keys(weddingServicesContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/services/wedding/${lang}</loc>
-          <changefreq>monthly</changefreq>
-        </url>
-      `).join('')}
-      ${Object.keys(portfolioContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/portfolio/photography/${lang}</loc>
-          <changefreq>weekly</changefreq>
-        </url>
-      `).join('')}
-      ${Object.keys(portfolioContent).map((lang) => `
-        <url>
-          <loc>${baseUrl}/portfolio/videography/${lang}</loc>
-          <changefreq>weekly</changefreq>
-        </url>
-      `).join('')}
-    </urlset>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <!-- Add the home page for each language -->
+     ${languages.map(lang => `
+       <url>
+         <loc>${baseUrl}/${lang}</loc>
+       </url>
+     `).join('')}
+     
+     <!-- Add portfolio pages -->
+     ${languages.map(lang => `
+       <url>
+         <loc>${baseUrl}/${lang}/portfolio/photography</loc>
+       </url>
+       <url>
+         <loc>${baseUrl}/${lang}/portfolio/videography</loc>
+       </url>
+     `).join('')}
+
+     <!-- Add service pages -->
+     ${languages.map(lang => `
+       <url>
+         <loc>${baseUrl}/${lang}/services/photography</loc>
+       </url>
+       <url>
+         <loc>${baseUrl}/${lang}/services/videography</loc>
+       </url>
+       <url>
+         <loc>${baseUrl}/${lang}/services/wedding</loc>
+       </url>
+     `).join('')}
+
+     <!-- Add other pages -->
+     ${languages.map(lang => `
+       <url>
+         <loc>${baseUrl}/${lang}/about</loc>
+       </url>
+       <url>
+         <loc>${baseUrl}/${lang}/contact</loc>
+       </url>
+     `).join('')}
+   </urlset>
+ `;
+}
+
+function SiteMap() {
+  // getServerSideProps will handle the XML generation
+  return null;
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+  const languages = Object.keys(aboutContent);
+  const sitemap = generateSiteMap(languages);
 
   res.setHeader('Content-Type', 'text/xml');
   res.write(sitemap);
@@ -154,4 +69,4 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   };
 };
 
-export default Sitemap; 
+export default SiteMap; 

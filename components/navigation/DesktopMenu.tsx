@@ -10,7 +10,6 @@ interface DesktopMenuProps {
 
 export default function DesktopMenu({
   menuItems,
-  handlePortfolioClick,
   isActive,
   isSubActive
 }: DesktopMenuProps) {
@@ -27,7 +26,7 @@ export default function DesktopMenu({
         item.children ? (
           <div key={item.path} className="relative group w-[90px]">
             <button 
-              onClick={handlePortfolioClick}
+              onClick={item.onClick}
               className={`${navItemClassName(isActive(item.path))} text-center w-full`}
             >
               {item.label}

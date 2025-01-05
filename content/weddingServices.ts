@@ -5,6 +5,7 @@ export const weddingServicesContent = {
     title: "Wedding Services | Regina Photo Video Studio",
     metaDescription: "Complete wedding photography and videography packages for your special day.",
     heading: "Wedding Packages",
+    subtitle: "Professional wedding photography and videography services tailored to your needs. Package price varies depending on your chosen services, coverage duration, and additional options. Contact me for custom packages and special requirements.",
     packages: [
       {
         title: "Photo Only",
@@ -60,6 +61,7 @@ export const weddingServicesContent = {
     title: "Bruiloft Diensten | Regina Photo Video Studio",
     metaDescription: "Complete bruiloft fotografie en videografie pakketten voor uw speciale dag.",
     heading: "Bruiloft Pakketten",
+    subtitle: "Professionele bruiloft fotografie en videografie diensten op maat. Pakketprijs varieert afhankelijk van uw gekozen diensten, dekkingsduur en aanvullende opties. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
     packages: [
       {
         title: "Alleen Foto",
@@ -115,6 +117,7 @@ export const weddingServicesContent = {
     title: "Свадебные Услуги | Regina Photo Video Studio",
     metaDescription: "Полные пакеты свадебной фото и видеосъёмки для вашего особенного дня.",
     heading: "Свадебные Пакеты",
+    subtitle: "Профессиональные услуги свадебной фото и видеосъёмки, адаптированные под ваши потребности. Стоимость пакета варьируется в зависимости от выбранных услуг, продолжительности съёмки и дополнительных опций. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
     packages: [
       {
         title: "Только Фото",
@@ -170,6 +173,7 @@ export const weddingServicesContent = {
     title: "Весільні Послуги | Regina Photo Video Studio",
     metaDescription: "Повні пакети весільної фото та відеозйомки для вашого особливого дня.",
     heading: "Весільні Пакети",
+    subtitle: "Професійні послуги весільної фото та відеозйомки, адаптовані під ваші потреби. Вартість пакету варіюється залежно від обраних послуг, тривалості зйомки та додаткових опцій. Зв'яжіться зі мною для індивідуальних пакетів та особливих вимог.",
     packages: [
       {
         title: "Тільки Фото",

@@ -42,7 +42,8 @@ export default function VideographyServices({ lang }: VideographyServicesProps) 
         />
       </Head>
       <main className="mx-auto max-w-5xl px-4 py-12">
-        <h1 className="text-4xl font-bold tracking-wider mb-8">{content.heading}</h1>
+        <h1 className="text-4xl font-bold tracking-wider mb-4">{content.heading}</h1>
+        <p className="text-gray-600 text-lg mb-8">{content.subtitle}</p>
         
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-12">
           {content.packages.map((pkg) => (

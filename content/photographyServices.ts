@@ -5,6 +5,7 @@ export const photographyServicesContent = {
     title: "Photography Services | Regina Photo Video Studio",
     metaDescription: "Professional photography services including commercial photos, events, and creative productions.",
     heading: "Photography Packages",
+    subtitle: "Professional photography services tailored to your needs. Package price is calculated based on shooting time, number of photos, and travel distance. Contact me for custom packages and special requirements.",
     packages: [
       {
         title: "Minimum",
@@ -61,6 +62,7 @@ export const photographyServicesContent = {
     title: "Fotografie Diensten | Regina Photo Video Studio",
     metaDescription: "Professionele fotografie diensten inclusief commerciële foto's, evenementen en creatieve producties.",
     heading: "Fotografie Pakketten",
+    subtitle: "Professionele fotografie diensten op maat. Pakketprijs wordt berekend op basis van opnametijd, aantal foto's en reisafstand. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
     packages: [
       {
         title: "Minimum",
@@ -117,6 +119,7 @@ export const photographyServicesContent = {
     title: "Услуги Фотографии | Regina Photo Video Studio",
     metaDescription: "Профессиональные услуги фотографии, включая коммерческие фото, мероприятия и креативные проекты.",
     heading: "Пакеты Фотосъёмки",
+    subtitle: "Профессиональные услуги фотографии, адаптированные под ваши потребности. Стоимость пакета рассчитывается исходя из времени съёмки, количества фотографий и расстояния поездки. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
     packages: [
       {
         title: "Минимальный",
@@ -173,6 +176,7 @@ export const photographyServicesContent = {
     title: "Послуги Фотографії | Regina Photo Video Studio",
     metaDescription: "Професійні послуги фотографії, включаючи комерційні фото, заходи та креативні проекти.",
     heading: "Пакети Фотозйомки",
+    subtitle: "Професійні послуги фотографії, адаптовані під ваші потреби. Вартість пакету розраховується виходячи з часу зйомки, кількості фотографій та відстані поїздки. Зв'яжіться зі мною для індивідуальних пакетів та особливих вимог.",
     packages: [
       {
         title: "Мінімальний",

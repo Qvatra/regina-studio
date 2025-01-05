@@ -42,22 +42,7 @@ export default function Navigation() {
     setIsLangOpen(false);
   };
 
-  const menuItems = getMenuItems(content, currentLang);
   
-  const isActive = (path: string) => {
-    if (path === `/${currentLang}/portfolio`) {
-      return pathname.includes(path);
-    } else if (path === `/${currentLang}/services`) {
-      return pathname.includes(path);
-    } else if (path === `/${currentLang}`) {
-      return pathname === path;
-    } else {
-    return pathname === path;
-    }
-  };
-
-  const isSubActive = (path: string) => pathname === path;
-
   const handlePortfolioClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsOpen(false);
@@ -68,6 +53,21 @@ export default function Navigation() {
       router.push(`/${currentLang}/#portfolio`);
     }
   };
+
+  const menuItems = getMenuItems(content, currentLang, { handlePortfolioClick });
+  
+  const isActive = (path: string) => {
+    console.log(pathname, path);
+    if (path === `/${currentLang}/portfolio`) {
+      return pathname.includes(path);
+    } else if (path === `/${currentLang}/services`) {
+      return pathname.includes(path);
+    } else {
+      return pathname === path;
+    }
+  };
+
+  const isSubActive = (path: string) => pathname === path;
 
   return (
     <nav className="sticky top-0 bg-white z-50 shadow-sm">

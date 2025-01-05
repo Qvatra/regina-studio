@@ -59,7 +59,8 @@ export const homeContent = {
       videography: "Videography",
       services: "Services",
       about: "About",
-      contact: "Contact"
+      contact: "Contact",
+      wedding: "Wedding"
     }
   },
   nl: {
@@ -122,7 +123,8 @@ export const homeContent = {
       videography: "Videografie",
       services: "Diensten",
       about: "Over",
-      contact: "Contact"
+      contact: "Contact",
+      wedding: "Bruiloft"
     }
   },
   ru: {
@@ -185,7 +187,8 @@ export const homeContent = {
       videography: "Видеосъёмка",
       services: "Услуги",
       about: "Обо мне",
-      contact: "Контакты"
+      contact: "Контакты",
+      wedding: "Свадьба"
     }
   },
   ua: {
@@ -248,7 +251,8 @@ export const homeContent = {
       videography: "Відеозйомка",
       services: "Послуги",
       about: "Про мене",
-      contact: "Контакти"
+      contact: "Контакти",
+      wedding: "Весілля"
     }
   }
 };
