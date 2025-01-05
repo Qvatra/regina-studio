@@ -11,16 +11,19 @@ import LanguageSelector from './LanguageSelector';
 import MobileMenuButton from './MobileMenuButton';
 import { getMenuItems } from './utils';
 import { languages } from '../../config/languages';
+import { getCookie } from 'cookies-next';
 
-export default function Navigation() {
+interface NavigationProps {
+  preferredLanguage?: Language;
+}
+
+export default function Navigation({ preferredLanguage }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  
-  const currentLang = (router.query.lang as Language) || 
-    (typeof window !== 'undefined' ? localStorage.getItem('preferredLanguage') as Language : null) || 
-    'en';
+
+  const currentLang = (preferredLanguage || router.query.lang || getCookie('preferredLanguage') || 'en') as Language;
 
   const content = homeContent[currentLang];
   
@@ -30,13 +33,16 @@ export default function Navigation() {
     }
   }, [currentLang]);
 
-  // Hide navigation on root path (this page is only showed for SEO crawlers, foe user middleware redirects to a home page with language)
-  if (router.pathname === '/') {
-    return null;
-  }
-
   const switchLanguage = (lang: Language) => {
-    localStorage.setItem('preferredLanguage', lang);
+    document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
+    
+    // Handle root path specially
+    if (router.pathname === '/') {
+      router.push(`/${lang}`);
+      return;
+    }
+    
+    // For other paths, replace [lang] parameter
     const newPath = router.pathname.replace('[lang]', lang);
     router.push(newPath);
     setIsLangOpen(false);

@@ -8,6 +8,7 @@ import TypeWriter from '../../components/TypeWriter';
 import Citations from '../../components/Citations';
 import StyledButton from '../../components/StyledButton';
 import { homeContent, Language } from '../../content/home';
+import { languages } from '../../config/languages';
 
 interface HomeProps {
   lang: Language;
@@ -29,20 +30,29 @@ export default function LocalizedHome({ lang }: HomeProps) {
       <Head>
         <title>{content.title}</title>
         <meta name="description" content={content.metaDescription} />
-        {Object.keys(homeContent).map((l) => (
-          l !== lang && (
-            <link 
-              key={l}
-              rel="alternate" 
-              hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}`}
-            />
-          )
-        ))}
+        
+        {/* Canonical URL for this language version */}
         <link 
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`}
         />
+        
+        {/* Link to language selector page as x-default */}
+        <link 
+          rel="alternate" 
+          hrefLang="x-default" 
+          href={process.env.NEXT_PUBLIC_WEBSITE_URL}
+        />
+        
+        {/* Links to all language versions */}
+        {Object.keys(languages).map((l) => (
+          <link 
+            key={l}
+            rel="alternate" 
+            hrefLang={l} 
+            href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}`}
+          />
+        ))}
       </Head>
 
       <main className="text-gray-900">
