@@ -30,6 +30,11 @@ export default function Navigation() {
     }
   }, [currentLang]);
 
+  // Hide navigation on root path (this page is only showed for SEO crawlers, foe user middleware redirects to a home page with language)
+  if (router.pathname === '/') {
+    return null;
+  }
+
   const switchLanguage = (lang: Language) => {
     localStorage.setItem('preferredLanguage', lang);
     const newPath = router.pathname.replace('[lang]', lang);
