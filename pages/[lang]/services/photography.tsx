@@ -2,17 +2,17 @@ import { useEffect } from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { videographyServicesContent } from '../../../content/videographyServices';
+import { photographyServicesContent } from '../../../content/photographyServices';
 import { Language } from '../../../content/about';
 import StyledButton from '../../../components/StyledButton';
 import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
 
-interface VideographyServicesProps {
+interface PhotographyServicesProps {
   lang: Language;
 }
 
-export default function VideographyServices({ lang }: VideographyServicesProps) {
-  const content = videographyServicesContent[lang];
+export default function PhotographyServices({ lang }: PhotographyServicesProps) {
+  const content = photographyServicesContent[lang];
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,19 +26,19 @@ export default function VideographyServices({ lang }: VideographyServicesProps) 
       <Head>
         <title>{content.title}</title>
         <meta name="description" content={content.metaDescription} />
-        {Object.keys(videographyServicesContent).map((l) => (
+        {Object.keys(photographyServicesContent).map((l) => (
           l !== lang && (
             <link 
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/videography/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}/services/photography`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/videography/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`}
         />
       </Head>
       <main className="mx-auto max-w-5xl px-4 py-12">
@@ -62,7 +62,7 @@ export default function VideographyServices({ lang }: VideographyServicesProps) 
               </CardContent>
               <CardFooter>
                 <p className="text-3xl font-bold text-gray-900 mb-4">{pkg.price}</p>
-                <StyledButton href={`/contact/${lang}`}>{content.cta}</StyledButton>
+                <StyledButton href={`/${lang}/contact`}>{content.cta}</StyledButton>
               </CardFooter>
             </Card>
           ))}
@@ -94,7 +94,7 @@ export default function VideographyServices({ lang }: VideographyServicesProps) 
         <div className="text-center">
           <p className="text-gray-600">
             {content.customPackage.text}{' '}
-            <Link href={`/contact/${lang}`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
+            <Link href={`/${lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
               {content.customPackage.link}
             </Link>
             {' '}{content.customPackage.suffix}
@@ -107,7 +107,7 @@ export default function VideographyServices({ lang }: VideographyServicesProps) 
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: Object.keys(videographyServicesContent).map(lang => ({
+    paths: Object.keys(photographyServicesContent).map(lang => ({
       params: { lang }
     })),
     fallback: false
@@ -117,7 +117,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const lang = params?.lang as Language;
   
-  if (!Object.keys(videographyServicesContent).includes(lang)) {
+  if (!Object.keys(photographyServicesContent).includes(lang)) {
     return {
       notFound: true
     };

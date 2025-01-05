@@ -2,17 +2,17 @@ import { useEffect } from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { photographyServicesContent } from '../../../content/photographyServices';
+import { weddingServicesContent } from '../../../content/weddingServices';
 import { Language } from '../../../content/about';
 import StyledButton from '../../../components/StyledButton';
 import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
 
-interface PhotographyServicesProps {
+interface WeddingServicesProps {
   lang: Language;
 }
 
-export default function PhotographyServices({ lang }: PhotographyServicesProps) {
-  const content = photographyServicesContent[lang];
+export default function WeddingServices({ lang }: WeddingServicesProps) {
+  const content = weddingServicesContent[lang];
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,19 +26,19 @@ export default function PhotographyServices({ lang }: PhotographyServicesProps) 
       <Head>
         <title>{content.title}</title>
         <meta name="description" content={content.metaDescription} />
-        {Object.keys(photographyServicesContent).map((l) => (
+        {Object.keys(weddingServicesContent).map((l) => (
           l !== lang && (
             <link 
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/photography/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}/services/wedding`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/photography/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`}
         />
       </Head>
       <main className="mx-auto max-w-5xl px-4 py-12">
@@ -62,7 +62,7 @@ export default function PhotographyServices({ lang }: PhotographyServicesProps) 
               </CardContent>
               <CardFooter>
                 <p className="text-3xl font-bold text-gray-900 mb-4">{pkg.price}</p>
-                <StyledButton href={`/contact/${lang}`}>{content.cta}</StyledButton>
+                <StyledButton href={`/${lang}/contact`}>{content.cta}</StyledButton>
               </CardFooter>
             </Card>
           ))}
@@ -81,6 +81,10 @@ export default function PhotographyServices({ lang }: PhotographyServicesProps) 
           <h2 className="text-2xl font-bold mb-4">{content.additionalFees.title}</h2>
           <div className="space-y-4">
             <p>
+              <span className="font-semibold">{content.additionalFees.extendedHours.label}</span>{' '}
+              {content.additionalFees.extendedHours.text}
+            </p>
+            <p>
               <span className="font-semibold">{content.additionalFees.travelFee.label}</span>{' '}
               {content.additionalFees.travelFee.text}
             </p>
@@ -94,7 +98,7 @@ export default function PhotographyServices({ lang }: PhotographyServicesProps) 
         <div className="text-center">
           <p className="text-gray-600">
             {content.customPackage.text}{' '}
-            <Link href={`/contact/${lang}`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
+            <Link href={`/${lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
               {content.customPackage.link}
             </Link>
             {' '}{content.customPackage.suffix}
@@ -107,7 +111,7 @@ export default function PhotographyServices({ lang }: PhotographyServicesProps) 
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: Object.keys(photographyServicesContent).map(lang => ({
+    paths: Object.keys(weddingServicesContent).map(lang => ({
       params: { lang }
     })),
     fallback: false
@@ -117,7 +121,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const lang = params?.lang as Language;
   
-  if (!Object.keys(photographyServicesContent).includes(lang)) {
+  if (!Object.keys(weddingServicesContent).includes(lang)) {
     return {
       notFound: true
     };

@@ -45,14 +45,15 @@ export default function Navigation() {
   const menuItems = getMenuItems(content, currentLang);
   
   const isActive = (path: string) => {
-    if (path === '/portfolio') {
+    if (path === `/${currentLang}/portfolio`) {
       return pathname.includes(path);
+    } else if (path === `/${currentLang}/services`) {
+      return pathname.includes(path);
+    } else if (path === `/${currentLang}`) {
+      return pathname === path;
+    } else {
+    return pathname === path;
     }
-    if (path === '/') {
-      return pathname === `/${currentLang}`;
-    }
-
-    return pathname === `${path}/${currentLang}` || pathname === path;
   };
 
   const isSubActive = (path: string) => pathname === path;

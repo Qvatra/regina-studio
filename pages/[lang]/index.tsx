@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import TypeWriter from '../components/TypeWriter';
-import Citations from '../components/Citations';
-import StyledButton from '../components/StyledButton';
-import { homeContent, Language } from '../content/home';
+import TypeWriter from '../../components/TypeWriter';
+import Citations from '../../components/Citations';
+import StyledButton from '../../components/StyledButton';
+import { homeContent, Language } from '../../content/home';
 
 interface HomeProps {
   lang: Language;

@@ -2,17 +2,17 @@ import { useEffect } from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { weddingServicesContent } from '../../../content/weddingServices';
+import { videographyServicesContent } from '../../../content/videographyServices';
 import { Language } from '../../../content/about';
 import StyledButton from '../../../components/StyledButton';
 import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
 
-interface WeddingServicesProps {
+interface VideographyServicesProps {
   lang: Language;
 }
 
-export default function WeddingServices({ lang }: WeddingServicesProps) {
-  const content = weddingServicesContent[lang];
+export default function VideographyServices({ lang }: VideographyServicesProps) {
+  const content = videographyServicesContent[lang];
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,19 +26,19 @@ export default function WeddingServices({ lang }: WeddingServicesProps) {
       <Head>
         <title>{content.title}</title>
         <meta name="description" content={content.metaDescription} />
-        {Object.keys(weddingServicesContent).map((l) => (
+        {Object.keys(videographyServicesContent).map((l) => (
           l !== lang && (
             <link 
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/wedding/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}/services/videography`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/wedding/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`}
         />
       </Head>
       <main className="mx-auto max-w-5xl px-4 py-12">
@@ -62,7 +62,7 @@ export default function WeddingServices({ lang }: WeddingServicesProps) {
               </CardContent>
               <CardFooter>
                 <p className="text-3xl font-bold text-gray-900 mb-4">{pkg.price}</p>
-                <StyledButton href={`/contact/${lang}`}>{content.cta}</StyledButton>
+                <StyledButton href={`/${lang}/contact`}>{content.cta}</StyledButton>
               </CardFooter>
             </Card>
           ))}
@@ -81,10 +81,6 @@ export default function WeddingServices({ lang }: WeddingServicesProps) {
           <h2 className="text-2xl font-bold mb-4">{content.additionalFees.title}</h2>
           <div className="space-y-4">
             <p>
-              <span className="font-semibold">{content.additionalFees.extendedHours.label}</span>{' '}
-              {content.additionalFees.extendedHours.text}
-            </p>
-            <p>
               <span className="font-semibold">{content.additionalFees.travelFee.label}</span>{' '}
               {content.additionalFees.travelFee.text}
             </p>
@@ -98,7 +94,7 @@ export default function WeddingServices({ lang }: WeddingServicesProps) {
         <div className="text-center">
           <p className="text-gray-600">
             {content.customPackage.text}{' '}
-            <Link href={`/contact/${lang}`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
+            <Link href={`/${lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
               {content.customPackage.link}
             </Link>
             {' '}{content.customPackage.suffix}
@@ -111,7 +107,7 @@ export default function WeddingServices({ lang }: WeddingServicesProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: Object.keys(weddingServicesContent).map(lang => ({
+    paths: Object.keys(videographyServicesContent).map(lang => ({
       params: { lang }
     })),
     fallback: false
@@ -121,7 +117,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const lang = params?.lang as Language;
   
-  if (!Object.keys(weddingServicesContent).includes(lang)) {
+  if (!Object.keys(videographyServicesContent).includes(lang)) {
     return {
       notFound: true
     };

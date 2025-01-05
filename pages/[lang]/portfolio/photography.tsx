@@ -44,7 +44,7 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
             images={images}
             onClose={() => {
               setLastViewedPhoto(photoId);
-              router.push(`/portfolio/photography/${lang}`, undefined, { shallow: true });
+              router.push(`/${lang}/portfolio/photography`, undefined, { shallow: true });
             }}
           />
         )}
@@ -53,7 +53,7 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
             <Link
               key={id}
               href={{
-                pathname: `/portfolio/photography/${lang}`,
+                pathname: `/${lang}/portfolio/photography`,
                 query: { photoId: id },
               }}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
@@ -78,7 +78,7 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
       </main>
       <ScrollToTop />
       <StyledLink 
-        href={`/services/${lang}`} 
+        href={`/${lang}/services`} 
         text={portfolioContent[lang].bookSession} 
       />
     </>

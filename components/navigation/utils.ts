@@ -9,12 +9,12 @@ export function getMenuItems(content: typeof homeContent[Language], currentLang:
       label: content.navigation.portfolio, 
       path: '/portfolio',
       children: [
-        { label: content.navigation.photography, path: `/portfolio/photography/${currentLang}` },
-        { label: content.navigation.videography, path: `/portfolio/videography/${currentLang}` },
+        { label: content.navigation.photography, path: `/${currentLang}/portfolio/photography` },
+        { label: content.navigation.videography, path: `/${currentLang}/portfolio/videography` },
       ]
     },
-    { label: content.navigation.services, path: `/services/${currentLang}` },
-    { label: content.navigation.about, path: `/about/${currentLang}` },
-    { label: content.navigation.contact, path: `/contact/${currentLang}` },
+    { label: content.navigation.services, path: `/${currentLang}/services` },
+    { label: content.navigation.about, path: `/${currentLang}/about` },
+    { label: content.navigation.contact, path: `/${currentLang}/contact` },
   ];
 } 

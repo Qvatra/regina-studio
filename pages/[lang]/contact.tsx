@@ -75,13 +75,13 @@ export default function Contact({ lang }: ContactProps) {
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}/contact`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`}
         />
       </Head>
       <main className="mx-auto max-w-4xl px-4 pt-8 text-gray-900">

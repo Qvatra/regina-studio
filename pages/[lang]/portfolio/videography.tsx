@@ -41,13 +41,13 @@ const VideographyPortfolio: NextPage<VideographyPortfolioPageProps> = ({ oneCol,
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/portfolio/videography/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}/portfolio/videography`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/portfolio/videography/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/portfolio/videography`}
         />
       </Head>
       <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
@@ -59,7 +59,7 @@ const VideographyPortfolio: NextPage<VideographyPortfolioPageProps> = ({ oneCol,
       </main>
       <ScrollToTop />
       <StyledLink 
-        href={`/services/${lang}`} 
+        href={`/${lang}/services`} 
         text={content.bookSession} 
       />
     </>

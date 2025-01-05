@@ -32,13 +32,13 @@ export default function About({ lang }: AboutProps) {
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/about/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}/about`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/about/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`}
         />
       </Head>
 

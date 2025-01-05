@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { servicesContent } from '../../content/services';
-import { Language } from '../../content/about';
-import { Card, CardHeader, CardContent, CardFooter } from '../../components/Card';
-import StyledButton from '../../components/StyledButton';
+import { servicesContent } from '../../../content/services';
+import { Language } from '../../../content/about';
+import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
+import StyledButton from '../../../components/StyledButton';
 
 interface ServicesProps {
   lang: Language;
@@ -31,13 +31,13 @@ export default function Services({ lang }: ServicesProps) {
               key={l}
               rel="alternate" 
               hrefLang={l} 
-              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/${l}`}
+              href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}/services`}
             />
           )
         ))}
         <link 
           rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/services/${lang}`}
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services`}
         />
       </Head>
 
