@@ -1,4 +1,4 @@
-import { VideoProps, VideoPair, LayoutProp } from '../../../../types/videography'
+import { VideoProps, VideoPair, LayoutProp } from './types'
 import { YTVideo } from '../../../../components/YTVideo'
 
 const RemainingVideos = ({ videos }: { videos: VideoProps[] }) => (
