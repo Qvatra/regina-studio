@@ -6,7 +6,7 @@ import { LayoutProps, VideoProps, LayoutProp } from '../../../../types/videograp
 import ScrollToTop from '../../../../components/ScrollToTop'
 import StyledLink from '../../../../components/StyledLink'
 import { portfolioContent } from '../../../../content/portfolio'
-import { Language } from '../../../../content/about'
+import { Language } from '../../../../config/languages'
 import Head from 'next/head'
 
 interface VideographyPortfolioPageProps extends LayoutProps {

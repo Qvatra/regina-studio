@@ -5,8 +5,8 @@ import Link from "next/link";
 import TypeWriter from '../../components/TypeWriter';
 import Citations from '../../components/Citations';
 import StyledButton from '../../components/StyledButton';
-import { homeContent, Language } from '../../content/home';
-import { languages } from '../../config/languages';
+import { homeContent } from '../../content/home';
+import { languages, Language } from '../../config/languages';
 
 interface HomeProps {
   lang: Language;

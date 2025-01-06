@@ -52,5 +52,3 @@ export const aboutContent = {
     kvk: "Реєстраційний номер KVK: 95169903"
   }
 };
-
-export type Language = keyof typeof aboutContent; 

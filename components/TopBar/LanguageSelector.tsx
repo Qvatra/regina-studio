@@ -1,4 +1,5 @@
-import { Language } from '../../content/about';
+import { Language } from '../../config/languages';
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 interface LanguageSelectorProps {
   isLangOpen: boolean;
@@ -22,14 +23,7 @@ export default function LanguageSelector({
         className="flex items-center space-x-1 text-gray-600 hover:text-gray-900"
       >
         <span className="text-sm">{languages[currentLang]}</span>
-        <svg
-          className={`w-4 h-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        <ChevronDownIcon className={`w-5 h-5 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} aria-hidden="true" /> 
       </button>
 
       {isLangOpen && (

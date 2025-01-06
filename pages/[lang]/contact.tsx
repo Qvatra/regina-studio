@@ -7,7 +7,7 @@ import {
 import { Card, CardHeader, CardContent, CardFooter } from '../../components/Card';
 import StyledButton from '../../components/StyledButton';
 import { contactContent } from '../../content/contact';
-import { Language } from '../../content/about';
+import { Language } from '../../config/languages';
 
 // Custom Instagram and Facebook icons since they're not available in Heroicons
 const InstagramIcon = ({ className = "h-6 w-6" }) => (

@@ -1,5 +1,3 @@
-import { Language } from './about';
-
 export const portfolioContent = {
   en: {
     title: "Photography Portfolio | Studio Regina",

@@ -1,4 +1,4 @@
-import { Language } from '../content/about';
+export type Language = 'en' | 'nl' | 'ru' | 'ua'; 
 
 export const languages: { [key in Language]: string } = {
   en: 'English',

@@ -27,7 +27,7 @@ export default function MobileMenu({
   }
 
   return (
-    <div className="md:hidden bg-white">
+    <div className="md:hidden">
       <div className="px-2 pt-2 pb-3 space-y-1">
         {menuItems.map((item) => (
           item.children ? (

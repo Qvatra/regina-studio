@@ -52,16 +52,6 @@ export const homeContent = {
       text: "Let's work together to capture your special moments or bring your creative vision to life.",
       button: "Get in Touch"
     },
-    navigation: {
-      home: "Home",
-      portfolio: "Portfolio",
-      photography: "Photography",
-      videography: "Videography",
-      services: "Services",
-      about: "About",
-      contact: "Contact",
-      wedding: "Wedding"
-    }
   },
   nl: {
     title: "Studio Regina | Creatieve Fotografie & Videografie Diensten",
@@ -116,16 +106,6 @@ export const homeContent = {
       text: "Laten we samenwerken om uw speciale momenten vast te leggen of uw creatieve visie tot leven te brengen.",
       button: "Neem Contact Op"
     },
-    navigation: {
-      home: "Home",
-      portfolio: "Portfolio",
-      photography: "Fotografie",
-      videography: "Videografie",
-      services: "Diensten",
-      about: "Over",
-      contact: "Contact",
-      wedding: "Bruiloft"
-    }
   },
   ru: {
     title: "Studio Regina | Креативная Фото и Видеосъёмка",
@@ -180,16 +160,6 @@ export const homeContent = {
       text: "Давайте работать вместе, чтобы запечатлеть ваши особенные моменты или воплотить ваше творческое видение в жизнь.",
       button: "Связаться"
     },
-    navigation: {
-      home: "Главная",
-      portfolio: "Портфолио",
-      photography: "Фотография",
-      videography: "Видеосъёмка",
-      services: "Услуги",
-      about: "Обо мне",
-      contact: "Контакты",
-      wedding: "Свадьба"
-    }
   },
   ua: {
     title: "Studio Regina | Креативна Фото та Відеозйомка",
@@ -244,17 +214,5 @@ export const homeContent = {
       text: "Давайте працювати разом, щоб закарбувати ваші особливі моменти або втілити ваше творче бачення в життя.",
       button: "Зв'язатися"
     },
-    navigation: {
-      home: "Головна",
-      portfolio: "Портфоліо",
-      photography: "Фотографія",
-      videography: "Відеозйомка",
-      services: "Послуги",
-      about: "Про мене",
-      contact: "Контакти",
-      wedding: "Весілля"
-    }
   }
 };
-
-export type Language = keyof typeof homeContent; 

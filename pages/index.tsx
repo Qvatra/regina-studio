@@ -1,6 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { Language } from '../content/about';
-import { languages } from '../config/languages';
+import { languages, Language } from '../config/languages';
 
 export default function Home() {
   return null;

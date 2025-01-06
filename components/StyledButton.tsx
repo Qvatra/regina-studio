@@ -36,21 +36,14 @@ export default function StyledButton({
       );
     }
     return (
-      <Link
-        href={href}
-        className={combinedStyles}
-        onClick={onClick}
-      >
+      <Link href={href} className={combinedStyles} onClick={onClick}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button
-      className={combinedStyles}
-      onClick={onClick}
-    >
+    <button className={combinedStyles} onClick={onClick}>
       {children}
     </button>
   );

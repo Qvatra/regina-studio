@@ -1,7 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from "next/head";
 import Image from "next/image";
-import { aboutContent, Language } from '../../content/about';
+import { aboutContent } from '../../content/about';
+import { Language } from '../../config/languages';
 
 interface AboutProps {
   lang: Language;

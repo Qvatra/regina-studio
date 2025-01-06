@@ -2,15 +2,14 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Logo from '../Logo';
-import { Language } from '../../content/about';
-import { homeContent } from '../../content/home';
-import DesktopMenu from './DesktopMenu';
-import MobileMenu from './MobileMenu';
+import Logo from './Logo';
+import { navigationContent } from '../../content/navigation';
+import DesktopNavigation from './DesktopNavigation';
+import MobileNavigation from './MobileNavigation';
 import LanguageSelector from './LanguageSelector';
 import MobileMenuButton from './MobileMenuButton';
 import { getMenuItems } from './utils';
-import { languages } from '../../config/languages';
+import { languages, Language } from '../../config/languages';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +19,7 @@ export default function Navigation() {
 
   const currentLang = (router.query.lang || 'en') as Language;
 
-  const content = homeContent[currentLang];
+  const content = navigationContent[currentLang];
   
   const switchLanguage = (lang: Language) => {
     document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
@@ -67,7 +66,7 @@ export default function Navigation() {
             </Link>
           </div>
 
-          <DesktopMenu
+          <DesktopNavigation
             menuItems={menuItems}
             handlePortfolioClick={handlePortfolioClick}
             isActive={isActive}
@@ -85,7 +84,7 @@ export default function Navigation() {
           <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
 
-        <MobileMenu
+        <MobileNavigation
           isOpen={isOpen}
           menuItems={menuItems}
           handlePortfolioClick={handlePortfolioClick}

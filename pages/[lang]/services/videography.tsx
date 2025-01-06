@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { videographyServicesContent } from '../../../content/videographyServices';
-import { Language } from '../../../content/about';
+import { Language } from '../../../config/languages';
 import StyledButton from '../../../components/StyledButton';
 import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
 

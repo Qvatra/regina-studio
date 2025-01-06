@@ -4,15 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
-import Modal from "../../../components/Modal";
-import cloudinary from "../../../utils/cloudinary";
-import getBase64ImageUrl from "../../../utils/generateBlurPlaceholder";
-import type { ImageProps } from "../../../utils/types";
-import { useLastViewedPhoto } from "../../../utils/useLastViewedPhoto";
-import ScrollToTop from '../../../components/ScrollToTop';
-import StyledLink from '../../../components/StyledLink';
-import { portfolioContent } from "../../../content/portfolio";
-import { Language } from "../../../content/about";
+import Modal from "../../../../components/Modal";
+import cloudinary from "../../../../utils/cloudinary";
+import getBase64ImageUrl from "../../../../utils/generateBlurPlaceholder";
+import type { ImageProps } from "../../../../utils/types";
+import { useLastViewedPhoto } from "../../../../utils/useLastViewedPhoto";
+import ScrollToTop from '../../../../components/ScrollToTop';
+import StyledLink from '../../../../components/StyledLink';
+import { portfolioContent } from "../../../../content/portfolio";
+import { Language } from "../../../../config/languages";
 import { GetStaticPaths } from 'next';
 
 const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> = ({ images, lang }) => {
