@@ -1,10 +1,10 @@
-import Head from "next/head";
-import Link from "next/link";
-import { GetStaticProps, GetStaticPaths } from 'next';
-import { weddingServicesContent } from '../../../content/weddingServices';
-import { Language } from '../../../content/about';
-import StyledButton from '../../../components/StyledButton';
-import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
+import Head from 'next/head'
+import Link from 'next/link'
+import { GetStaticProps, GetStaticPaths } from 'next'
+import { weddingServicesContent } from '../../../content/weddingServices'
+import { Language } from '../../../content/about'
+import StyledButton from '../../../components/StyledButton'
+import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card'
 
 interface WeddingServicesProps {
   lang: Language;

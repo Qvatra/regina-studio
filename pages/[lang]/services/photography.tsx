@@ -1,5 +1,5 @@
-import Head from "next/head";
-import Link from "next/link";
+import Head from 'next/head';
+import Link from 'next/link';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { photographyServicesContent } from '../../../content/photographyServices';
 import { Language } from '../../../content/about';

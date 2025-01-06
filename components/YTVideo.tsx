@@ -1,6 +1,6 @@
-import { VideoProps } from '../../../types/videography'
+import { VideoProps } from '../types/videography'
 
-export const VideoComponent = ({ video }: { video: VideoProps }) => (
+export const YTVideo = ({ video }: { video: VideoProps }) => (
   <div className="relative">
     <div className={`relative overflow-hidden ${
       video.isVertical 
