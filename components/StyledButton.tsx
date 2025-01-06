@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import ArrowIcon from './icons/ArrowIcon';
+import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
 interface ButtonProps {
   children: ReactNode;
@@ -10,9 +10,9 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export default function StyledButton({ 
-  children, 
-  href, 
+export default function StyledButton({
+  children,
+  href,
   external = false,
   className = "",
   onClick
@@ -31,12 +31,12 @@ export default function StyledButton({
           onClick={onClick}
         >
           {children}
-          <ArrowIcon className="ml-2 w-4 h-4" />
+          <ArrowRightIcon className="ml-2 h-4 w-4" />
         </a>
       );
     }
     return (
-      <Link 
+      <Link
         href={href}
         className={combinedStyles}
         onClick={onClick}
@@ -47,7 +47,7 @@ export default function StyledButton({
   }
 
   return (
-    <button 
+    <button
       className={combinedStyles}
       onClick={onClick}
     >

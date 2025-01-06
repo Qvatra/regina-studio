@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { languages } from '../config/languages';
-import { usePathname } from 'next/navigation';
 
 const socialLinks = [
   {
@@ -51,8 +50,6 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const pathname = usePathname();
-
   return (
     <footer className="mt-auto pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8">
@@ -69,7 +66,7 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      { Object.keys(languages).map(l => `/${l}`).includes(pathname) ? <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8">
         <div className="mt-8 flex justify-center items-center gap-4">
           {Object.entries(languages).map(([lang, name]) => (
             <Link
@@ -82,7 +79,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-      </div> : null}
+      </div>
     </footer>
   );
 } 
