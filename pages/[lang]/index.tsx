@@ -2,8 +2,6 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import TypeWriter from '../../components/TypeWriter';
 import Citations from '../../components/Citations';
 import StyledButton from '../../components/StyledButton';
@@ -16,14 +14,6 @@ interface HomeProps {
 
 export default function LocalizedHome({ lang }: HomeProps) {
   const content = homeContent[lang];
-  const router = useRouter();
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('preferredLanguage', lang);
-      document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
-    }
-  }, [lang]);
 
   return (
     <>
@@ -31,28 +21,71 @@ export default function LocalizedHome({ lang }: HomeProps) {
         <title>{content.title}</title>
         <meta name="description" content={content.metaDescription} />
         
-        {/* Canonical URL for this language version */}
+        {/* Add Open Graph and Twitter meta tags */}
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`} />
+        <meta property="og:locale" content={lang} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Professional Photography and Videography" />
+        
+        {/* Add alternate locales for Open Graph */}
+        {Object.keys(languages).map((l) => (
+          l !== lang && (
+            <meta key={l} property="og:locale:alternate" content={l} />
+          )
+        ))}
+        
+        {/* Canonical URL */}
         <link 
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`}
         />
         
-        {/* Link to language selector page as x-default */}
-        <link 
-          rel="alternate" 
-          hrefLang="x-default" 
-          href={process.env.NEXT_PUBLIC_WEBSITE_URL}
-        />
-        
-        {/* Links to all language versions */}
+        {/* Language alternates with proper region codes */}
         {Object.keys(languages).map((l) => (
           <link 
             key={l}
             rel="alternate" 
-            hrefLang={l} 
+            hrefLang={l}
             href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}`}
           />
         ))}
+        
+        {/* Default version for unlisted languages */}
+        <link 
+          rel="alternate" 
+          hrefLang="x-default" 
+          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/en`}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": content.title,
+              "description": content.metaDescription,
+              "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`,
+              "inLanguage": lang,
+              "provider": {
+                "@type": "Organization",
+                "name": "Regina Photography",
+                "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Amsterdam",
+                  "addressRegion": "North Holland",
+                  "addressCountry": "NL"
+                }
+              }
+            })
+          }}
+        />
       </Head>
 
       <main className="text-gray-900">

@@ -2,9 +2,6 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from "next/head";
 import Image from "next/image";
 import { aboutContent, Language } from '../../content/about';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import generateBlurPlaceholder from '../../utils/generateBlurPlaceholder';
 
 interface AboutProps {
   lang: Language;
@@ -12,14 +9,6 @@ interface AboutProps {
 
 export default function About({ lang }: AboutProps) {
   const content = aboutContent[lang];
-  const router = useRouter();
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('preferredLanguage', lang);
-      document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
-    }
-  }, [lang]);
 
   return (
     <>

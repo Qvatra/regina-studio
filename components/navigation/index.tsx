@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -11,7 +11,6 @@ import LanguageSelector from './LanguageSelector';
 import MobileMenuButton from './MobileMenuButton';
 import { getMenuItems } from './utils';
 import { languages } from '../../config/languages';
-import { getCookie } from 'cookies-next';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,25 +18,15 @@ export default function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const currentLang = (router.query.lang || getCookie('preferredLanguage') || 'en') as Language;
+  const currentLang = (router.query.lang || 'en') as Language;
 
   const content = homeContent[currentLang];
   
-  useEffect(() => {
-    if (currentLang) {
-      localStorage.setItem('preferredLanguage', currentLang);
-    }
-  }, [currentLang]);
-
   const switchLanguage = (lang: Language) => {
     document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
-    
-    if (router.pathname === '/') {
-      router.push(`/${lang}`);
-    } else {
-      const newPath = router.pathname.replace('[lang]', lang);
-      router.push(newPath);
-    }
+
+    const newPath = router.pathname.replace('[lang]', lang);
+    router.push(newPath);
     
     setIsLangOpen(false);
   };
@@ -73,7 +62,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-22">
           <div className="flex-0">
-            <Link href={`/${currentLang}`} className="flex justify-start my-4">
+            <Link href="/" className="flex justify-start my-4">
               <Logo className="h-[50px] w-auto" />
             </Link>
           </div>

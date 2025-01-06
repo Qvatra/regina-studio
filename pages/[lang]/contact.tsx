@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from 'next';
 import {
@@ -56,13 +55,6 @@ interface ContactProps {
 
 export default function Contact({ lang }: ContactProps) {
   const content = contactContent[lang];
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('preferredLanguage', lang);
-      document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
-    }
-  }, [lang]);
 
   return (
     <>

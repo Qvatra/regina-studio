@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from 'next';
@@ -13,13 +12,6 @@ interface WeddingServicesProps {
 
 export default function WeddingServices({ lang }: WeddingServicesProps) {
   const content = weddingServicesContent[lang];
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('preferredLanguage', lang);
-      document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
-    }
-  }, [lang]);
 
   return (
     <>

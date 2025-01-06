@@ -23,13 +23,6 @@ interface GroupConfig {
 const VideographyPortfolio: NextPage<VideographyPortfolioPageProps> = ({ oneCol, twoCols, threeCols, lang }) => {
   const content = portfolioContent[lang];
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('preferredLanguage', lang);
-      document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
-    }
-  }, [lang]);
-
   return (
     <>
       <Head>

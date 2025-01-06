@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { languages } from '../config/languages';
+import { usePathname } from 'next/navigation';
 
 const socialLinks = [
   {
@@ -49,7 +51,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const linkClassName = "text-gray-900 hover:text-gray-500 transition-all hover:scale-125 transform-gpu origin-center";
+  const pathname = usePathname();
 
   return (
     <footer className="mt-auto pt-20 pb-10">
@@ -60,13 +62,27 @@ export default function Footer() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={linkClassName}
+            className="text-gray-900 hover:text-gray-500 transition-all hover:scale-125 transform-gpu origin-center"
           >
             <span className="sr-only">{label}</span>
             {icon}
           </a>
         ))}
       </div>
+      { Object.keys(languages).map(l => `/${l}`).includes(pathname) ? <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8">
+        <div className="mt-8 flex justify-center items-center gap-4">
+          {Object.entries(languages).map(([lang, name]) => (
+            <Link
+              key={lang}
+              href={`/${lang}`}
+              className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              {name}
+              <span className="ml-4 last:hidden text-gray-300">|</span>
+            </Link>
+          ))}
+        </div>
+      </div> : null}
     </footer>
   );
 } 

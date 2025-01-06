@@ -3,7 +3,7 @@ import Navigation from "../components/navigation";
 import Footer from "../components/Footer";
 import "../styles/index.css";
 
-export default function MyApp({ Component, pageProps }: AppProps<CustomPageProps>) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
