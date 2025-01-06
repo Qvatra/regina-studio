@@ -9,11 +9,6 @@ import { weddingServicesContent } from './weddingServices';
 const baseSchema = (lang: string) => ({
     "@context": "https://schema.org",
     "inLanguage": lang,
-    "sameAs": [
-        process.env.INSTAGRAM,
-        process.env.FACEBOOK,
-        process.env.YOUTUBE
-    ]
 });
 
 const organizationInfo = {
@@ -23,8 +18,14 @@ const organizationInfo = {
     "@type": "PostalAddress",
     "addressLocality": "Amsterdam",
     "addressRegion": "North Holland",
-    "addressCountry": "NL"
+    "addressCountry": "NL",
   },
+  "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`,
+  "sameAs": [
+    process.env.NEXT_PUBLIC_INSTAGRAM,
+    process.env.NEXT_PUBLIC_FACEBOOK,
+    process.env.NEXT_PUBLIC_YOUTUBE
+  ]
 };
 
 export const getHomeSchema = (lang: string) => ({
@@ -33,62 +34,68 @@ export const getHomeSchema = (lang: string) => ({
   "name": homeContent[lang].title,
   "description": homeContent[lang].description,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`,
-  "mainEntity": {
-    ...organizationInfo,
-    "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`,
-  }
+  "about": organizationInfo,
 });
 
 export const getContactSchema = (lang: string) => ({
-    ...baseSchema(lang),
-    "@type": "ContactPage",
-    "name": contactContent[lang].title,
-    "description": contactContent[lang].metaDescription,
-    "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`,
-    "mainEntity": {
-        ...organizationInfo,
-        "contactPoint": [
+  ...baseSchema(lang),
+  "@type": "ContactPage",
+  "name": contactContent[lang].title,
+  "description": contactContent[lang].metaDescription,
+  "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`,
+  "mainEntity": {
+      ...organizationInfo,
+      "areaServed": {
+        "@type": "Place",
+        "name": "Noord Holland"
+      },
+      "contactPoint": [
         {
             "@type": "ContactPoint",
             "contactType": "customer service",
             "availableLanguage": ["en", "nl", "ru", "ua"],
-            "url": process.env.WATSAPP,
+            "url": process.env.NEXT_PUBLIC_WATSAPP,
             "contactOption": "WhatsApp"
+        },
+        {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["en", "nl", "ru", "ua"],
+            "url": process.env.NEXT_PUBLIC_INSTAGRAM,
+            "contactOption": "Instagram"
         }
-        ]
-    }
+      ]
+  }
 });
 
 export const getAboutSchema = (lang: string) => ({
-    ...baseSchema(lang),
+  ...baseSchema(lang),
   "@type": "AboutPage",
   "name": aboutContent[lang].title,
   "description": aboutContent[lang].metaDescription,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`,
   "mainEntity": {
-    ...organizationInfo,
-    "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/about.jpg`,
+    "@type": "Person",
+    "name": "Regina Shaydullina",
+    "jobTitle": "Professional Photographer and Videographer",
+    "knowsLanguage": ["en", "nl", "ru", "ua"],
     "description": aboutContent[lang].bio.join(' '),
-    "founder": {
-      "@type": "Person",
-      "name": "Regina Shaydullina",
-      "jobTitle": "Professional Photographer and Videographer",
-      "knowsLanguage": ["en", "nl", "ru", "ua"]
-    }
+    "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/about.jpg`,
+    "worksFor": organizationInfo
   }
 });
 
 export const getPhotographyPortfolioSchema = (lang: string) => ({
-    ...baseSchema(lang),
+  ...baseSchema(lang),
   "@type": "CollectionPage",
   "name": portfolioContent[lang].title,
   "description": portfolioContent[lang].metaDescription,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/portfolio/photography`,
   "mainEntity": {
     "@type": "ImageGallery",
-    "provider": organizationInfo,
     "name": "Photography Portfolio",
     "description": portfolioContent[lang].metaDescription,
+    "provider": organizationInfo,
     "image": {
       "@type": "ImageObject",
       "contentUrl": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/photo.jpg`
@@ -97,16 +104,16 @@ export const getPhotographyPortfolioSchema = (lang: string) => ({
 });
 
 export const getVideographyPortfolioSchema = (lang: string) => ({
-    ...baseSchema(lang),
+  ...baseSchema(lang),
   "@type": "CollectionPage",
   "name": portfolioContent[lang].videoTitle,
   "description": portfolioContent[lang].videoMetaDescription,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/portfolio/videography`,
   "mainEntity": {
     "@type": "VideoGallery",
-    "provider": organizationInfo,
     "name": "Videography Portfolio",
     "description": portfolioContent[lang].videoMetaDescription,
+    "provider": organizationInfo,
     "image": {
       "@type": "ImageObject",
       "contentUrl": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/video.jpg`
@@ -115,21 +122,27 @@ export const getVideographyPortfolioSchema = (lang: string) => ({
 });
 
 export const getPhotographyServicesSchema = (lang: string) => ({
-    ...baseSchema(lang),
+  ...baseSchema(lang),
   "@type": "WebPage",
   "name": photographyServicesContent[lang].title,
   "description": photographyServicesContent[lang].metaDescription,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`,
   "mainEntity": {
-    ...organizationInfo,
     "@type": "Service",
     "serviceType": "Photography",
+    "provider": organizationInfo,
+    "areaServed": {
+      "@type": "Place",
+      "name": "Noord Holland"
+    },
     "offers": photographyServicesContent[lang].packages.map(pkg => ({
       "@type": "Offer",
       "name": pkg.title,
       "description": pkg.description,
       "price": pkg.price.replace('€', ''),
-      "priceCurrency": "EUR"
+      "priceCurrency": "EUR",
+      "areaServed": "Noord Holland",
+      "availability": "https://schema.org/InStock",
     }))
   }
 });
@@ -141,15 +154,21 @@ export const getVideographyServicesSchema = (lang: string) => ({
   "description": videographyServicesContent[lang].metaDescription,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`,
   "mainEntity": {
-    ...organizationInfo,
     "@type": "Service",
     "serviceType": "Videography",
+    "provider": organizationInfo,
+    "areaServed": {
+      "@type": "Place",
+      "name": "Noord Holland"
+    },
     "offers": videographyServicesContent[lang].packages.map(pkg => ({
       "@type": "Offer",
       "name": pkg.title,
       "description": pkg.description,
       "price": pkg.price.replace('€', ''),
-      "priceCurrency": "EUR"
+      "priceCurrency": "EUR",
+      "areaServed": "Noord Holland",
+      "availability": "https://schema.org/InStock",
     }))
   }
 });
@@ -161,15 +180,21 @@ export const getWeddingServicesSchema = (lang: string) => ({
   "description": weddingServicesContent[lang].metaDescription,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`,
   "mainEntity": {
-    ...organizationInfo,
     "@type": "Service",
     "serviceType": "Wedding Photography and Videography",
+    "provider": organizationInfo,
+    "areaServed": {
+      "@type": "Place",
+      "name": "Noord Holland"
+    },
     "offers": weddingServicesContent[lang].packages.map(pkg => ({
       "@type": "Offer",
       "name": pkg.title,
       "description": pkg.description,
       "price": pkg.price.replace('€', ''),
-      "priceCurrency": "EUR"
+      "priceCurrency": "EUR",
+      "areaServed": "Noord Holland",
+      "availability": "https://schema.org/InStock",
     }))
   }
 });

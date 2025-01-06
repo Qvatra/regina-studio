@@ -8,27 +8,27 @@ import EmailIcon from './icons/EmailIcon';
 
 const socialLinks = [
   {
-    href: process.env.FACEBOOK,
+    href: process.env.NEXT_PUBLIC_FACEBOOK,
     label: "Facebook",
     icon: FacebookIcon()
   },
   {
-    href: process.env.INSTAGRAM,
+    href: process.env.NEXT_PUBLIC_INSTAGRAM,
     label: "Instagram",
     icon: InstagramIcon()
   },
   {
-    href: process.env.YOUTUBE,
+    href: process.env.NEXT_PUBLIC_YOUTUBE,
     label: "YouTube",
     icon: YoutubeIcon()
   },
   {
-    href: process.env.WATSAPP,
+    href: process.env.NEXT_PUBLIC_WATSAPP,
     label: "WhatsApp",
     icon: WhatsappIcon()
   },
   {
-    href: process.env.EMAIL,
+    href: process.env.NEXT_PUBLIC_EMAIL,
     label: "Email",
     icon: EmailIcon()
   }

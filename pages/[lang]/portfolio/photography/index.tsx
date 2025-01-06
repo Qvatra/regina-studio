@@ -40,7 +40,7 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getPhotographyPortfolioSchema(lang, images.length)) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getPhotographyPortfolioSchema(lang)) }}
         />
       </Head>
       <main className="mx-auto max-w-7xl p-4">

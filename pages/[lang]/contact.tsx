@@ -13,22 +13,22 @@ import { getContactSchema } from '../../content/schema';
 const contactOptions = [
   {
     name: "Instagram",
-    url: process.env.INSTAGRAM,
+    url: process.env.NEXT_PUBLIC_INSTAGRAM,
     icon: InstagramIcon,
   },
   {
     name: "WhatsApp",
-    url: process.env.WATSAPP,
+    url: process.env.NEXT_PUBLIC_WATSAPP,
     icon: WhatsappIcon,
   },
   {
     name: "Email",
-    url: process.env.EMAIL,
+    url: process.env.NEXT_PUBLIC_EMAIL,
     icon: EmailIcon,
   },
   {
     name: "Facebook",
-    url: process.env.FACEBOOK,
+    url: process.env.NEXT_PUBLIC_FACEBOOK,
     icon: FacebookIcon,
   }
 ];
