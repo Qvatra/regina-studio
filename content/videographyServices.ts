@@ -1,5 +1,3 @@
-import { Language } from './about';
-
 export const videographyServicesContent = {
   en: {
     title: "Videography Services | Regina Photo Video Studio",
