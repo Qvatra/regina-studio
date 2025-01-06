@@ -1,14 +1,14 @@
 import { GetServerSideProps } from 'next';
-import LocalizedHome from './[lang]/index';
 
 export default function Home() {
-  return <LocalizedHome lang="en" />;
+  return null;
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
-    props: {
-      preferredLanguage: 'en',
+    redirect: {
+      destination: '/en',
+      permanent: true, // This will send 308 status code
     },
   };
 };

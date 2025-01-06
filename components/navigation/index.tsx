@@ -13,17 +13,13 @@ import { getMenuItems } from './utils';
 import { languages } from '../../config/languages';
 import { getCookie } from 'cookies-next';
 
-interface NavigationProps {
-  preferredLanguage?: Language;
-}
-
-export default function Navigation({ preferredLanguage }: NavigationProps) {
+export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
-  const currentLang = (preferredLanguage || router.query.lang || getCookie('preferredLanguage') || 'en') as Language;
+  const currentLang = (router.query.lang || getCookie('preferredLanguage') || 'en') as Language;
 
   const content = homeContent[currentLang];
   
@@ -36,15 +32,13 @@ export default function Navigation({ preferredLanguage }: NavigationProps) {
   const switchLanguage = (lang: Language) => {
     document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
     
-    // Handle root path specially
     if (router.pathname === '/') {
       router.push(`/${lang}`);
-      return;
+    } else {
+      const newPath = router.pathname.replace('[lang]', lang);
+      router.push(newPath);
     }
     
-    // For other paths, replace [lang] parameter
-    const newPath = router.pathname.replace('[lang]', lang);
-    router.push(newPath);
     setIsLangOpen(false);
   };
 
