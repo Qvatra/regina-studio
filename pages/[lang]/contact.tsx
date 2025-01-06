@@ -8,6 +8,7 @@ import FacebookIcon from '../../components/icons/FacebookIcon';
 import InstagramIcon from '../../components/icons/InstagramIcon';
 import WhatsappIcon from '../../components/icons/WhatsappIcon';
 import EmailIcon from '../../components/icons/EmailIcon';
+import { getContactSchema } from '../../content/schema';
 
 const contactOptions = [
   {
@@ -57,6 +58,10 @@ export default function Contact({ lang }: ContactProps) {
         <link 
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getContactSchema(lang)) }}
         />
       </Head>
       <main className="mx-auto max-w-4xl px-4 pt-8 text-gray-900">

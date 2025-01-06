@@ -5,6 +5,7 @@ import { weddingServicesContent } from '../../../content/weddingServices'
 import { Language } from '../../../config/languages'
 import StyledButton from '../../../components/StyledButton'
 import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card'
+import { getWeddingServicesSchema } from '../../../content/schema'
 
 interface WeddingServicesProps {
   lang: Language;
@@ -31,6 +32,10 @@ export default function WeddingServices({ lang }: WeddingServicesProps) {
         <link 
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getWeddingServicesSchema(lang)) }}
         />
       </Head>
       <main className="mx-auto max-w-5xl px-4 py-12">

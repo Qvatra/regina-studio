@@ -7,6 +7,7 @@ import Citations from '../../components/Citations';
 import StyledButton from '../../components/StyledButton';
 import { homeContent } from '../../content/home';
 import { languages, Language } from '../../config/languages';
+import { getHomeSchema } from '../../content/schema';
 
 interface HomeProps {
   lang: Language;
@@ -68,27 +69,7 @@ export default function LocalizedHome({ lang }: HomeProps) {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": content.title,
-              "description": content.metaDescription,
-              "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`,
-              "inLanguage": lang,
-              "provider": {
-                "@type": "Organization",
-                "name": "Regina Photography",
-                "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`,
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Amsterdam",
-                  "addressRegion": "North Holland",
-                  "addressCountry": "NL"
-                }
-              }
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomeSchema(lang)) }}
         />
       </Head>
 

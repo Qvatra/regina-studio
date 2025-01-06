@@ -8,6 +8,7 @@ import StyledLink from '../../../../components/StyledLink'
 import { portfolioContent } from '../../../../content/portfolio'
 import { Language } from '../../../../config/languages'
 import Head from 'next/head'
+import { getVideographyPortfolioSchema } from '../../../../content/schema'
 
 interface VideographyPortfolioPageProps extends LayoutProps {
   lang: Language;
@@ -40,6 +41,10 @@ const VideographyPortfolio: NextPage<VideographyPortfolioPageProps> = ({ oneCol,
         <link 
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/portfolio/videography`}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getVideographyPortfolioSchema(lang)) }}
         />
       </Head>
       <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">

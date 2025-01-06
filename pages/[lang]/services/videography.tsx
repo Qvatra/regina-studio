@@ -5,6 +5,7 @@ import { videographyServicesContent } from '../../../content/videographyServices
 import { Language } from '../../../config/languages';
 import StyledButton from '../../../components/StyledButton';
 import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
+import { getVideographyServicesSchema } from '../../../content/schema';
 
 interface VideographyServicesProps {
   lang: Language;
@@ -31,6 +32,10 @@ export default function VideographyServices({ lang }: VideographyServicesProps) 
         <link 
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getVideographyServicesSchema(lang)) }}
         />
       </Head>
       <main className="mx-auto max-w-5xl px-4 py-12">

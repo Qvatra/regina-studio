@@ -3,29 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { aboutContent } from '../../content/about';
 import { Language } from '../../config/languages';
+import { getAboutSchema } from '../../content/schema';
 
 interface AboutProps {
   lang: Language;
 }
-
-const getAboutSchema = (content: typeof aboutContent[Language], lang: Language) => ({
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": content.title,
-  "description": content.metaDescription,
-  "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`,
-  "author": {
-    "@type": "Person",
-    "name": "Regina Shaydullina",
-    "jobTitle": "Professional Photographer and Videographer",
-    "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/about.jpg`,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Amsterdam",
-      "addressCountry": "NL"
-    }
-  }
-});
 
 export default function About({ lang }: AboutProps) {
   const content = aboutContent[lang];
@@ -51,7 +33,7 @@ export default function About({ lang }: AboutProps) {
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getAboutSchema(content, lang)) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getAboutSchema(lang)) }}
         />
       </Head>
 

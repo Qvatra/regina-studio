@@ -5,6 +5,7 @@ import { photographyServicesContent } from '../../../content/photographyServices
 import { Language } from '../../../config/languages';
 import StyledButton from '../../../components/StyledButton';
 import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
+import { getPhotographyServicesSchema } from '../../../content/schema';
 
 interface PhotographyServicesProps {
   lang: Language;
@@ -37,6 +38,10 @@ export default function PhotographyServices({ lang }: PhotographyServicesProps) 
         <link 
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getPhotographyServicesSchema(lang)) }}
         />
       </Head>
       <main className="mx-auto max-w-5xl px-4 py-12">

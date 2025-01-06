@@ -14,6 +14,7 @@ import StyledLink from '../../../../components/StyledLink';
 import { portfolioContent } from "../../../../content/portfolio";
 import { Language } from "../../../../config/languages";
 import { GetStaticPaths } from 'next';
+import { getPhotographyPortfolioSchema } from '../../../../content/schema';
 
 const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> = ({ images, lang }) => {
   const router = useRouter();
@@ -29,16 +30,6 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
     }
   }, [photoId, lastViewedPhoto, setLastViewedPhoto]);
 
-  // Add structured data for photo gallery
-  const photographySchema = {
-    "@context": "https://schema.org",
-    "@type": "ImageGallery",
-    "name": "Photography Portfolio",
-    "description": "Professional photography portfolio showcasing weddings, portraits, and events",
-    "numberOfItems": images.length,
-    "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/portfolio/photography`
-  };
-
   return (
     <>
       <Head>
@@ -49,7 +40,7 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(photographySchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getPhotographyPortfolioSchema(lang, images.length)) }}
         />
       </Head>
       <main className="mx-auto max-w-7xl p-4">
