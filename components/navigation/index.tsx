@@ -63,7 +63,6 @@ export default function Navigation({ preferredLanguage }: NavigationProps) {
   const menuItems = getMenuItems(content, currentLang, { handlePortfolioClick });
   
   const isActive = (path: string) => {
-    console.log(pathname, path);
     if (path === `/${currentLang}/portfolio`) {
       return pathname.includes(path);
     } else if (path === `/${currentLang}/services`) {

@@ -98,6 +98,8 @@ export default function LocalizedHome({ lang }: HomeProps) {
                         src={service.image}
                         alt={`Studio Regina ${service.title} Services - ${service.description}`}
                         fill
+                        priority
+                        sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 604px"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:bg-black/50" />
