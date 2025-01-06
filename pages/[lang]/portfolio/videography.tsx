@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
 import { google } from 'googleapis'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { MobileLayout, TabletLayout, DesktopLayout } from './layouts'
-import { LayoutProps, VideoProps, LayoutProp } from './types'
-import ScrollToTop from '../../../../components/ScrollToTop'
-import StyledLink from '../../../../components/StyledLink'
-import { portfolioContent } from '../../../../content/portfolio'
-import { Language } from '../../../../config/languages'
+import { MobileLayout, TabletLayout, DesktopLayout } from '../../../components/VideoLayout'
+import { LayoutProps, VideoProps, LayoutProp } from '../../../types/videography'
+import ScrollToTop from '../../../components/ScrollToTop'
+import StyledLink from '../../../components/StyledLink'
+import { portfolioContent } from '../../../content/portfolio'
+import { Language } from '../../../config/languages'
 import Head from 'next/head'
-import { getVideographyPortfolioSchema } from '../../../../content/schema'
+import { getVideographyPortfolioSchema } from '../../../content/schema'
 
 interface VideographyPortfolioPageProps extends LayoutProps {
   lang: Language;

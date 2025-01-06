@@ -1,4 +1,4 @@
-import { VideoProps } from '../pages/[lang]/portfolio/videography/types'
+import { VideoProps } from '../types/videography'
 
 export const YTVideo = ({ video }: { video: VideoProps }) => (
   <div className="relative">
