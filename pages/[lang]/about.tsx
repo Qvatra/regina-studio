@@ -1,12 +1,31 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import Head from "next/head";
-import Image from "next/image";
+import Head from 'next/head';
+import Image from 'next/image';
 import { aboutContent } from '../../content/about';
 import { Language } from '../../config/languages';
 
 interface AboutProps {
   lang: Language;
 }
+
+const getAboutSchema = (content: typeof aboutContent[Language], lang: Language) => ({
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": content.title,
+  "description": content.metaDescription,
+  "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`,
+  "author": {
+    "@type": "Person",
+    "name": "Regina Shaydullina",
+    "jobTitle": "Professional Photographer and Videographer",
+    "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/about.jpg`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Amsterdam",
+      "addressCountry": "NL"
+    }
+  }
+});
 
 export default function About({ lang }: AboutProps) {
   const content = aboutContent[lang];
@@ -30,10 +49,14 @@ export default function About({ lang }: AboutProps) {
           rel="canonical" 
           href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getAboutSchema(content, lang)) }}
+        />
       </Head>
 
       <main className="mx-auto px-4 text-gray-900 max-w-3xl">
-        <div className="mb-12 mt-4">
+        <figure className="mb-12 mt-4">
           <div className="mx-auto aspect-[10/6] relative">
             <Image
               src="/assets/about.jpg"
@@ -44,10 +67,10 @@ export default function About({ lang }: AboutProps) {
               priority
             />
           </div>
-        </div>
+        </figure>
 
         <section className="mb-16 mx-auto">
-          <h2 className="text-3xl font-bold tracking-wider mb-4">{content.heading}</h2>
+          <h1 className="text-3xl font-bold tracking-wider mb-4">{content.heading}</h1>
           <div className="prose prose-lg max-w-none">
             {content.bio.map((paragraph, index) => (
               <p key={index} className="text-gray-600">
@@ -57,11 +80,9 @@ export default function About({ lang }: AboutProps) {
           </div>
         </section>
 
-        <section className="mt-20">
-          <div className="text-md text-gray-500 text-center">
-            <p>{content.kvk}</p>
-          </div>
-        </section>
+        <div className="text-md text-gray-500 text-center mt-20">
+          <p>{content.kvk}</p>
+        </div>
       </main>
     </>
   );

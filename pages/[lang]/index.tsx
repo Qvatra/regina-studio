@@ -20,6 +20,10 @@ export default function LocalizedHome({ lang }: HomeProps) {
       <Head>
         <title>{content.title}</title>
         <meta name="description" content={content.metaDescription} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Regina Shaydullina" />
+        <meta name="geo.region" content="NL" />
+        <meta name="geo.placename" content="Amsterdam" />
         
         {/* Add Open Graph and Twitter meta tags */}
         <meta property="og:title" content={content.title} />

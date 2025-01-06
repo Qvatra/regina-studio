@@ -2,35 +2,23 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
+    const lang = this.props.__NEXT_DATA__.query.lang || 'en';
+
     return (
-      <Html lang="en">
+      <Html lang={lang as string}>
         <Head>
-          <link
-            rel="icon"
-            href="/favicon.svg"
-            type="image/svg+xml"
-          />
-          <meta
-            name="description"
-            content="Professional photography and videography services in Amsterdam area. Specializing in weddings, events, portraits, and commercial projects."
-          />
-          <meta property="og:site_name" content="Studio Regina" />
-          <meta
-            property="og:description"
-            content="Professional photography and videography services in Amsterdam area. Specializing in weddings, events, portraits, and commercial projects."
-          />
-          <meta property="og:title" content="Studio Regina | Creative Photography & Videography" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Studio Regina | Creative Photography & Videography" />
-          <meta
-            name="twitter:description"
-            content="Professional photography and videography services in Amsterdam area. Specializing in weddings, events, portraits, and commercial projects."
-          />
+          <meta charSet="utf-8" />
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
           <link 
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
             rel="stylesheet" 
           />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link rel="preconnect" href="https://res.cloudinary.com" />
         </Head>
+
         <body className="bg-white antialiased">
           <Main />
           <NextScript />

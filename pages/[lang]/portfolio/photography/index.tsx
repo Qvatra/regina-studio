@@ -29,6 +29,16 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
     }
   }, [photoId, lastViewedPhoto, setLastViewedPhoto]);
 
+  // Add structured data for photo gallery
+  const photographySchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Photography Portfolio",
+    "description": "Professional photography portfolio showcasing weddings, portraits, and events",
+    "numberOfItems": images.length,
+    "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/portfolio/photography`
+  };
+
   return (
     <>
       <Head>
@@ -36,6 +46,10 @@ const PhotographyPortfolio: NextPage<{ images: ImageProps[]; lang: Language }> =
         <meta 
           name="description" 
           content="Browse through our collection of professional photography work including weddings, portraits, events, commercial photography, and creative shoots." 
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(photographySchema) }}
         />
       </Head>
       <main className="mx-auto max-w-7xl p-4">

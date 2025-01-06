@@ -18,6 +18,12 @@ export default function PhotographyServices({ lang }: PhotographyServicesProps) 
       <Head>
         <title>{content.title}</title>
         <meta name="description" content={content.metaDescription} />
+        <meta property="og:title" content={content.title} />
+        <meta property="og:description" content={content.metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/photo.jpg`} />
+        <meta property="og:locale" content={lang} />
         {Object.keys(photographyServicesContent).map((l) => (
           l !== lang && (
             <link 
