@@ -40,7 +40,7 @@ export default function About({ lang }: AboutProps) {
               alt="Regina Shaydullina - Professional Photographer and Videographer in Amsterdam"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 736px"
               priority
             />
           </div>
