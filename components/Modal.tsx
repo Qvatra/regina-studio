@@ -1,6 +1,6 @@
 import { Dialog } from "@headlessui/react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useRef, useState } from "react";
 import useKeypress from "react-use-keypress";
 import type { ImageProps } from "../utils/types";
@@ -16,7 +16,8 @@ export default function Modal({
   let overlayRef = useRef();
   const router = useRouter();
 
-  const { photoId } = router.query;
+  const searchParams = useSearchParams();
+  const photoId = searchParams.get('photoId');
   let index = Number(photoId);
 
   const [direction, setDirection] = useState(0);
@@ -39,9 +40,7 @@ export default function Modal({
       {
         pathname: '/portfolio/photography',
         query: { photoId: newVal },
-      },
-      undefined,
-      { shallow: true }
+      }
     );
   }
 
