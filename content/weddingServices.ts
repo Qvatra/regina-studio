@@ -3,7 +3,8 @@ export const weddingServicesContent = {
     title: "Wedding Services | Regina Photo Video Studio",
     metaDescription: "Complete wedding photography and videography packages for your special day.",
     heading: "Wedding Packages",
-    subtitle: "Professional wedding photography and videography services tailored to your needs. Package price varies depending on your chosen services, coverage duration, and additional options. Contact me for custom packages and special requirements.",
+    subtitle: "Professional wedding photography and videography services tailored to your needs.",
+    includedFeaturesTitle: "What's Included in All Packages",
     packages: [
       {
         title: "Photo Only",
@@ -51,15 +52,16 @@ export const weddingServicesContent = {
     customPackage: {
       text: "Every wedding is unique.",
       link: "Contact me",
-      suffix: "to create a custom package that perfectly fits your special day."
+      suffix: "to create a custom package that perfectly suits your special day."
     },
-    cta: "Book Consultation"
+    cta: "Book a Consultation"
   },
   nl: {
     title: "Bruiloft Diensten | Regina Photo Video Studio",
     metaDescription: "Complete bruiloft fotografie en videografie pakketten voor uw speciale dag.",
     heading: "Bruiloft Pakketten",
     subtitle: "Professionele bruiloft fotografie en videografie diensten op maat. Pakketprijs varieert afhankelijk van uw gekozen diensten, dekkingsduur en aanvullende opties. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
+    includedFeaturesTitle: "Wat is inbegrepen in alle pakketten",
     packages: [
       {
         title: "Alleen Foto",
@@ -116,6 +118,7 @@ export const weddingServicesContent = {
     metaDescription: "Полные пакеты свадебной фото и видеосъёмки для вашего особенного дня.",
     heading: "Свадебные Пакеты",
     subtitle: "Профессиональные услуги свадебной фото и видеосъёмки, адаптированные под ваши потребности. Стоимость пакета варьируется в зависимости от выбранных услуг, продолжительности съёмки и дополнительных опций. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
+    includedFeaturesTitle: "Что включено во все пакеты",
     packages: [
       {
         title: "Только Фото",
@@ -172,6 +175,7 @@ export const weddingServicesContent = {
     metaDescription: "Повні пакети весільної фото та відеозйомки для вашого особливого дня.",
     heading: "Весільні Пакети",
     subtitle: "Професійні послуги весільної фото та відеозйомки, адаптовані під ваші потреби. Вартість пакету варіюється залежно від обраних послуг, тривалості зйомки та додаткових опцій. Зв'яжіться зі мною для індивідуальних пакетів та особливих вимог.",
+    includedFeaturesTitle: "Що входить у всі пакети",
     packages: [
       {
         title: "Тільки Фото",

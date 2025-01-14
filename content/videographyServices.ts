@@ -4,6 +4,7 @@ export const videographyServicesContent = {
     metaDescription: "Professional videography services including commercial videos, events, and creative productions.",
     heading: "Videography Packages",
     subtitle: "Professional videography services tailored to your needs. Package price is calculated based on shooting duration, post-production work complexity, and travel distance. Contact me for custom packages and special requirements.",
+    includedFeaturesTitle: "What's Included in All Packages",
     packages: [
       {
         title: "Minimum",
@@ -61,6 +62,7 @@ export const videographyServicesContent = {
     metaDescription: "Professionele videografie diensten inclusief commerciële video's, evenementen en creatieve producties.",
     heading: "Videografie Pakketten",
     subtitle: "Professionele videografie diensten op maat. Pakketprijs wordt berekend op basis van opnameduur, complexiteit van postproductie en reisafstand. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
+    includedFeaturesTitle: "Wat is inbegrepen in alle pakketten",
     packages: [
       {
         title: "Minimum",
@@ -118,6 +120,7 @@ export const videographyServicesContent = {
     metaDescription: "Профессиональные услуги видеосъёмки, включая коммерческие видео, мероприятия и креативные проекты.",
     heading: "Пакеты Видеосъёмки",
     subtitle: "Профессиональные услуги видеосъёмки, адаптированные под ваши потребности. Стоимость пакета рассчитывается исходя из продолжительности съёмки, сложности постпродакшна и расстояния поездки. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
+    includedFeaturesTitle: "Что включено во все пакеты",
     packages: [
       {
         title: "Минимальный",
@@ -175,6 +178,7 @@ export const videographyServicesContent = {
     metaDescription: "Професійні послуги відеозйомки, включаючи комерційні відео, заходи та креативні проекти.",
     heading: "Пакети Відеозйомки",
     subtitle: "Професійні послуги відеозйомки, адаптовані під ваші потреби. Вартість пакету розраховується виходячи з тривалості зйомки, складності постпродакшну та відстані поїздки. Зв'яжіться зі мною для індивідуальних пакетів та особливих вимог.",
+    includedFeaturesTitle: "Що входить у всі пакети",
     packages: [
       {
         title: "Мінімальний",

@@ -4,6 +4,7 @@ export const photographyServicesContent = {
     metaDescription: "Professional photography services including commercial photos, events, and creative productions.",
     heading: "Photography Packages",
     subtitle: "Professional photography services tailored to your needs. Package price is calculated based on shooting time, number of photos, and travel distance. Contact me for custom packages and special requirements.",
+    includedFeaturesTitle: "What's Included in All Packages",
     packages: [
       {
         title: "Minimum",
@@ -61,6 +62,7 @@ export const photographyServicesContent = {
     metaDescription: "Professionele fotografie diensten inclusief commerciële foto's, evenementen en creatieve producties.",
     heading: "Fotografie Pakketten",
     subtitle: "Professionele fotografie diensten op maat. Pakketprijs wordt berekend op basis van opnametijd, aantal foto's en reisafstand. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
+    includedFeaturesTitle: "Wat is inbegrepen in alle pakketten",
     packages: [
       {
         title: "Minimum",
@@ -118,6 +120,7 @@ export const photographyServicesContent = {
     metaDescription: "Профессиональные услуги фотографии, включая коммерческие фото, мероприятия и креативные проекты.",
     heading: "Пакеты Фотосъёмки",
     subtitle: "Профессиональные услуги фотографии, адаптированные под ваши потребности. Стоимость пакета рассчитывается исходя из времени съёмки, количества фотографий и расстояния поездки. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
+    includedFeaturesTitle: "Что включено во все пакеты",
     packages: [
       {
         title: "Минимальный",
@@ -175,6 +178,7 @@ export const photographyServicesContent = {
     metaDescription: "Професійні послуги фотографії, включаючи комерційні фото, заходи та креативні проекти.",
     heading: "Пакети Фотозйомки",
     subtitle: "Професійні послуги фотографії, адаптовані під ваші потреби. Вартість пакету розраховується виходячи з часу зйомки, кількості фотографій та відстані поїздки. Зв'яжіться зі мною для індивідуальних пакетів та особливих вимог.",
+    includedFeaturesTitle: "Що входить у всі пакети",
     packages: [
       {
         title: "Мінімальний",

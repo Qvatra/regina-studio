@@ -1,5 +1,3 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import TypeWriter from '../../components/TypeWriter';
@@ -8,71 +6,49 @@ import StyledButton from '../../components/StyledButton';
 import { homeContent } from '../../content/home';
 import { languages, Language } from '../../config/languages';
 import { getHomeSchema } from '../../content/schema';
+import { Metadata } from 'next';
 
-interface HomeProps {
-  lang: Language;
+// Generate static params for all languages
+export async function generateStaticParams() {
+  return Object.keys(languages).map((lang) => ({
+    lang,
+  }));
 }
 
-export default function LocalizedHome({ lang }: HomeProps) {
-  const content = homeContent[lang];
+// Generate metadata for the page
+export async function generateMetadata({ params }: { params: { lang: Language } }): Promise<Metadata> {
+  const { lang } = await params;
+  const content = homeContent[lang as Language];
+  
+  return {
+    title: content.title,
+    description: content.metaDescription,
+    openGraph: {
+      title: content.title,
+      description: content.metaDescription,
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`,
+      images: [{
+        url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Professional Photography and Videography"
+      }],
+      locale: lang,
+      alternateLocale: Object.keys(languages).filter(l => l !== lang)
+    }
+  };
+}
+
+export default async function Home({ params }: { params: { lang: Language } }) {
+  const { lang } = await params;
+  const content = homeContent[lang as Language];
 
   return (
-    <>
-      <Head>
-        <title>{content.title}</title>
-        <meta name="description" content={content.metaDescription} />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Regina Shaydullina" />
-        <meta name="geo.region" content="NL" />
-        <meta name="geo.placename" content="Amsterdam" />
-        
-        {/* Add Open Graph and Twitter meta tags */}
-        <meta property="og:title" content={content.title} />
-        <meta property="og:description" content={content.metaDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`} />
-        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`} />
-        <meta property="og:locale" content={lang} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Professional Photography and Videography" />
-        
-        {/* Add alternate locales for Open Graph */}
-        {Object.keys(languages).map((l) => (
-          l !== lang && (
-            <meta key={l} property="og:locale:alternate" content={l} />
-          )
-        ))}
-        
-        {/* Canonical URL */}
-        <link 
-          rel="canonical" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`}
-        />
-        
-        {/* Language alternates with proper region codes */}
-        {Object.keys(languages).map((l) => (
-          <link 
-            key={l}
-            rel="alternate" 
-            hrefLang={l}
-            href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${l}`}
-          />
-        ))}
-        
-        {/* Default version for unlisted languages */}
-        <link 
-          rel="alternate" 
-          hrefLang="x-default" 
-          href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/en`}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomeSchema(lang)) }}
-        />
-      </Head>
-
+    <section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomeSchema(lang)) }}
+      />
       <main className="text-gray-900">
         {/* Hero Banner */}
         <div className="relative w-full">
@@ -164,31 +140,6 @@ export default function LocalizedHome({ lang }: HomeProps) {
           </div>
         </div>
       </main>
-    </>
+    </section>
   );
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: Object.keys(homeContent).map(lang => ({
-      params: { lang }
-    })),
-    fallback: false
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const lang = params?.lang as Language;
-  
-  if (!Object.keys(homeContent).includes(lang)) {
-    return {
-      notFound: true
-    };
-  }
-
-  return {
-    props: {
-      lang
-    }
-  };
-}; 
+} 

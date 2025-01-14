@@ -1,6 +1,7 @@
+"use client";
+
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Logo from './Logo';
 import { navigationContent } from '../../content/navigation';
@@ -17,16 +18,14 @@ export default function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const currentLang = (router.query.lang || 'en') as Language;
+  const currentLang = (pathname?.split('/')[1] || 'en') as Language;
 
   const content = navigationContent[currentLang];
   
   const switchLanguage = (lang: Language) => {
     document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
-
-    const newPath = router.pathname.replace('[lang]', lang);
-    router.push(newPath);
     
+    router.push(`/${lang}`);
     setIsLangOpen(false);
   };
 
@@ -46,9 +45,9 @@ export default function Navigation() {
   
   const isActive = (path: string) => {
     if (path === `/${currentLang}/portfolio`) {
-      return pathname.includes(path);
+      return !!pathname?.includes(path);
     } else if (path === `/${currentLang}/services`) {
-      return pathname.includes(path);
+      return !!pathname?.includes(path);
     } else {
       return pathname === path;
     }
