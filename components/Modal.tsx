@@ -1,22 +1,20 @@
 import { Dialog } from "@headlessui/react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 import { useRef, useState } from "react";
 import useKeypress from "react-use-keypress";
 import type { ImageProps } from "../utils/types";
 import SharedModal from "./SharedModal";
 
-export default function Modal({
-  images,
-  onClose,
-}: {
-  images: ImageProps[];
-  onClose?: () => void;
-}) {
-  let overlayRef = useRef();
-  const router = useRouter();
+export default function Modal({ 
+  images, 
+  onClose, 
+  onPhotoIdChange 
+}: { images: ImageProps[]; onClose?: () => void; onPhotoIdChange: (id: number) => void; }) {
+  let overlayRef = useRef<any>();
 
-  const { photoId } = router.query;
+  const searchParams = useSearchParams();
+  const photoId = searchParams?.get('photoId');
   let index = Number(photoId);
 
   const [direction, setDirection] = useState(0);
@@ -29,20 +27,9 @@ export default function Modal({
   }
 
   function changePhotoId(newVal: number) {
-    if (newVal > index) {
-      setDirection(1);
-    } else {
-      setDirection(-1);
-    }
+    setDirection(newVal > index ? 1 : -1);
     setCurIndex(newVal);
-    router.push(
-      {
-        pathname: '/portfolio/photography',
-        query: { photoId: newVal },
-      },
-      undefined,
-      { shallow: true }
-    );
+    onPhotoIdChange(newVal);
   }
 
   useKeypress("ArrowRight", () => {
