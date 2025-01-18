@@ -4,6 +4,7 @@ import TopBar from '../../components/TopBar'
 import Footer from '../../components/Footer'
 import { headers } from 'next/headers'
 import '../../styles/index.css'
+import ReactDOM from 'react-dom'
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
     const headersList = await headers()
@@ -33,8 +34,18 @@ export default async function RootLayout({
 }) {
   const { lang } = await params;
 
+  ReactDOM.preconnect('https://fonts.googleapis.com')
+  ReactDOM.preconnect('https://fonts.gstatic.com', { crossOrigin: 'anonymous' })
+  ReactDOM.preconnect('https://res.cloudinary.com')
+
   return (
     <html lang={lang}>
+      <head>
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet" 
+        />
+      </head>
       <body className="bg-white antialiased">
         <div className="flex flex-col min-h-screen">
           <TopBar />

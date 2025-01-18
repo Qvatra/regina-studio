@@ -25,7 +25,8 @@ export default function Navigation() {
   const switchLanguage = (lang: Language) => {
     document.cookie = `preferredLanguage=${lang}; path=/; max-age=31536000`;
     
-    router.push(`/${lang}`);
+    const newPathname = pathname?.replace(`/${currentLang}`, `/${lang}`);
+    router.push(newPathname || `/${lang}`);
     setIsLangOpen(false);
   };
 
