@@ -38,7 +38,7 @@ export const MobileLayout = ({ groups, remainingVerticalVideos, remainingHorizon
     {groups.map((group, index) => (
       <div key={`ml-group-${index}`}>
         <YTVideo key={group.horizontal[0].id} video={group.horizontal[0]} />
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 mt-4">
           <YTVideo key={group.vertical[0].id} video={group.vertical[0]} />
           <YTVideo key={group.vertical[1].id} video={group.vertical[1]} />
         </div>

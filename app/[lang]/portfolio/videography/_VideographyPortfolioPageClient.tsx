@@ -17,17 +17,20 @@ export default function VideographyPortfolioPageClient({ lang, data }: { lang: s
     const content = portfolioContent[lang];
 
     return (
-        <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
-            <section>
-                <MobileLayout {...oneCol} />
-                <TabletLayout {...twoCols} />
-                <DesktopLayout {...threeCols} />
-            </section>
+        <>
+            <main className="mx-auto max-w-7xl p-4 bg-white space-y-8">
+                <section>
+                    <MobileLayout {...oneCol} />
+                    <TabletLayout {...twoCols} />
+                    <DesktopLayout {...threeCols} />
+                </section>
+
+            </main>
             <ScrollToTop />
             <StyledLink 
                 href={`/${lang}/services/videography`} 
                 text={content.bookSession} 
             />
-        </main>
+        </>
     );
 } 

@@ -22,14 +22,10 @@ const createPairs = ({ verticalVideos, horizontalVideos, colCount = 2 }: GroupCo
 };
 
 const createTrios = ({ verticalVideos, horizontalVideos }: GroupConfig): LayoutProp => {
-  const verticalPairs = verticalVideos
-    .slice(verticalVideos.length % 2)
-    .reduce<VideoProps[][]>((acc, video, index) => {
-      if (index % 2 === 0) {
-        acc.push([video, verticalVideos[index + 1]]);
-      }
-      return acc;
-    }, []);
+  const verticalPairs: [VideoProps, VideoProps][] = [];
+  for (let i = 0; i < verticalVideos.length - 1; i += 2) {
+    verticalPairs.push([verticalVideos[i], verticalVideos[i + 1]]);
+  }
 
   const triosToUse = Math.min(verticalPairs.length, horizontalVideos.length);
 
@@ -38,8 +34,8 @@ const createTrios = ({ verticalVideos, horizontalVideos }: GroupConfig): LayoutP
       vertical: verticalPairs[i],
       horizontal: [horizontalVideos[i]],
     })),
-    remainingVerticalVideos: verticalVideos.length % 2 ? [verticalVideos[0]] : [],
-    remainingHorizontalVideos: horizontalVideos.slice(triosToUse)
+    remainingVerticalVideos: verticalVideos.slice(triosToUse * 2),
+    remainingHorizontalVideos: horizontalVideos.slice(triosToUse),
   };
 };
 
