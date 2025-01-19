@@ -33,29 +33,31 @@ const contactOptions = [
 ];
 
 interface ContactPageProps {
-  params: {
+  params: Promise<{
     lang: Language;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
-  const content = contactContent[params.lang];
+  const { lang } = await params;
+  const content = contactContent[lang];
 
   return {
     title: content.title,
     description: content.metaDescription,
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/contact`,
-      languages: Object.keys(languages).reduce((acc, lang) => ({
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`,
+      languages: Object.keys(languages).reduce((acc, item) => ({
         ...acc,
-        [lang]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`,
+        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/contact`,
       }), {}),
     },
   };
 }
 
-export default function ContactPage({ params }: ContactPageProps) {
-  const content = contactContent[params.lang];
+export default async function ContactPage({ params }: ContactPageProps): Promise<any> {
+  const { lang } = await params;
+  const content = contactContent[lang];
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-12">
@@ -95,7 +97,7 @@ export default function ContactPage({ params }: ContactPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify(getContactSchema(params.lang)) 
+          __html: JSON.stringify(getContactSchema(lang)) 
         }}
       />
     </main>

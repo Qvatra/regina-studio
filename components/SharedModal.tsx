@@ -26,13 +26,13 @@ export default function SharedModal({
 }: SharedModalProps) {
   const [loaded, setLoaded] = useState(false);
 
-  let filteredImages = images?.filter((img: ImageProps) =>
+  const filteredImages = images?.filter((img: ImageProps) =>
     range(index - 15, index + 15).includes(img.id),
   );
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      if (index < images?.length - 1) {
+      if (images?.length && (index < images.length - 1)) {
         changePhotoId(index + 1);
       }
     },
@@ -44,7 +44,7 @@ export default function SharedModal({
     trackMouse: true,
   });
 
-  let currentImage = images ? images[index] : currentPhoto;
+  const currentImage = images ? images[index] : currentPhoto;
 
   return (
     <MotionConfig
@@ -75,8 +75,8 @@ export default function SharedModal({
                   src={`https://res.cloudinary.com/${
                     process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
                   }/image/upload/c_scale,${navigation ? "w_1280" : "w_1920"}/${
-                    currentImage.public_id
-                  }.${currentImage.format}`}
+                    currentImage?.public_id
+                  }.${currentImage?.format}`}
                   width={navigation ? 1280 : 1920}
                   height={navigation ? 853 : 1280}
                   priority
@@ -105,7 +105,7 @@ export default function SharedModal({
                       <ChevronLeftIcon className="h-6 w-6" />
                     </button>
                   )}
-                  {index + 1 < images.length && (
+                  {!!images?.length && (index + 1 < images.length) && (
                     <button
                       className="absolute right-3 top-[calc(50%-56px)] rounded-full bg-white/90 p-3 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white focus:outline-none"
                       onClick={() => changePhotoId(index + 1)}
@@ -120,7 +120,7 @@ export default function SharedModal({
               <div className="absolute top-[32px] right-0 flex items-center gap-2 p-3 text-white">
                 {navigation ? (
                   <a
-                    href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`}
+                    href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage?.public_id}.${currentImage?.format}`}
                     className="rounded-full bg-white/90 p-2 text-gray-800 shadow-md backdrop-blur-lg transition hover:bg-white"
                     target="_blank"
                     title="Open fullsize version"
@@ -132,7 +132,7 @@ export default function SharedModal({
                 <button
                   onClick={() =>
                     downloadPhoto(
-                      `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`,
+                      `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage?.public_id}.${currentImage?.format}`,
                       `${index}.jpg`,
                     )
                   }
@@ -168,7 +168,7 @@ export default function SharedModal({
               className="mx-auto mt-6 mb-6 flex aspect-[3/2] h-14"
             >
               <AnimatePresence initial={false}>
-                {filteredImages.map(({ public_id, format, id }) => (
+                {filteredImages?.map(({ public_id, format, id }) => (
                   <motion.button
                     initial={{
                       width: "0%",

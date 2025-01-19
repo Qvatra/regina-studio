@@ -7,13 +7,14 @@ import { Card, CardHeader, CardContent, CardFooter } from '../../../../component
 import { getWeddingServicesSchema } from '../../../../content/schema';
 
 interface WeddingServicesPageProps {
-  params: {
+  params: Promise<{
     lang: Language;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: WeddingServicesPageProps): Promise<Metadata> {
-  const content = weddingServicesContent[params.lang];
+  const { lang } = await params;
+  const content = weddingServicesContent[lang];
 
   return {
     title: content.title,
@@ -22,23 +23,24 @@ export async function generateMetadata({ params }: WeddingServicesPageProps): Pr
       title: content.title,
       description: content.metaDescription,
       type: 'website',
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/services/wedding`,
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`,
       images: [{
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/wedding.jpg`,
       }],
     },
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/services/wedding`,
-      languages: Object.keys(languages).reduce((acc, lang) => ({
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`,
+      languages: Object.keys(languages).reduce((acc, item) => ({
         ...acc,
-        [lang]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`,
+        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/services/wedding`,
       }), {}),
     },
   };
 }
 
-export default function WeddingServicesPage({ params }: WeddingServicesPageProps) {
-  const content = weddingServicesContent[params.lang];
+export default async function WeddingServicesPage({ params }: WeddingServicesPageProps): Promise<any> {
+  const { lang } = await params;
+  const content = weddingServicesContent[lang];
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-12">
@@ -63,7 +65,7 @@ export default function WeddingServicesPage({ params }: WeddingServicesPageProps
               </ul>
             </CardContent>
             <CardFooter>
-              <StyledButton href={`/${params.lang}/contact`} className="w-full">
+              <StyledButton href={`/${lang}/contact`} className="w-full">
                 {content.cta}
               </StyledButton>
             </CardFooter>
@@ -101,7 +103,7 @@ export default function WeddingServicesPage({ params }: WeddingServicesPageProps
       <div className="text-center">
         <p className="text-gray-600">
           {content.customPackage.text}{' '}
-          <Link href={`/${params.lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
+          <Link href={`/${lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
             {content.customPackage.link}
           </Link>
           {' '}{content.customPackage.suffix}
@@ -111,7 +113,7 @@ export default function WeddingServicesPage({ params }: WeddingServicesPageProps
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify(getWeddingServicesSchema(params.lang)) 
+          __html: JSON.stringify(getWeddingServicesSchema(lang)) 
         }}
       />
     </main>

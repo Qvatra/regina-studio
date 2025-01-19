@@ -7,13 +7,14 @@ import { Card, CardHeader, CardContent, CardFooter } from '../../../../component
 import { getVideographyServicesSchema } from '../../../../content/schema';
 
 interface VideographyServicesPageProps {
-  params: {
+  params: Promise<{
     lang: Language;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: VideographyServicesPageProps): Promise<Metadata> {
-  const content = videographyServicesContent[params.lang];
+  const { lang } = await params;
+  const content = videographyServicesContent[lang];
 
   return {
     title: content.title,
@@ -22,23 +23,24 @@ export async function generateMetadata({ params }: VideographyServicesPageProps)
       title: content.title,
       description: content.metaDescription,
       type: 'website',
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/services/videography`,
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`,
       images: [{
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/video.jpg`,
       }],
     },
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/services/videography`,
-      languages: Object.keys(languages).reduce((acc, lang) => ({
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`,
+      languages: Object.keys(languages).reduce((acc, item) => ({
         ...acc,
-        [lang]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`,
+        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/services/videography`,
       }), {}),
     },
   };
 }
 
-export default function VideographyServicesPage({ params }: VideographyServicesPageProps) {
-  const content = videographyServicesContent[params.lang];
+export default async function VideographyServicesPage({ params }: VideographyServicesPageProps): Promise<any> {
+  const { lang } = await params;
+  const content = videographyServicesContent[lang];
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-12">
@@ -63,7 +65,7 @@ export default function VideographyServicesPage({ params }: VideographyServicesP
               </ul>
             </CardContent>
             <CardFooter>
-              <StyledButton href={`/${params.lang}/contact`} className="w-full">
+              <StyledButton href={`/${lang}/contact`} className="w-full">
                 {content.cta}
               </StyledButton>
             </CardFooter>
@@ -97,7 +99,7 @@ export default function VideographyServicesPage({ params }: VideographyServicesP
       <div className="text-center">
         <p className="text-gray-600">
           {content.customPackage.text}{' '}
-          <Link href={`/${params.lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
+          <Link href={`/${lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
             {content.customPackage.link}
           </Link>
           {' '}{content.customPackage.suffix}
@@ -107,7 +109,7 @@ export default function VideographyServicesPage({ params }: VideographyServicesP
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify(getVideographyServicesSchema(params.lang)) 
+          __html: JSON.stringify(getVideographyServicesSchema(lang)) 
         }}
       />
     </main>

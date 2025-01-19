@@ -5,19 +5,20 @@ import { languages, Language } from '../../../config/languages';
 import { getAboutSchema } from '../../../content/schema';
 
 interface AboutPageProps {
-  params: {
+  params: Promise<{
     lang: Language;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
-  const content = aboutContent[params.lang];
+  const { lang } = await params;
+  const content = aboutContent[lang];
 
   return {
     title: content.title,
     description: content.metaDescription,
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/about`,
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`,
       languages: Object.keys(languages).reduce((acc, lang) => ({
         ...acc,
         [lang]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`,
@@ -26,8 +27,9 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
   };
 }
 
-export default function AboutPage({ params }: AboutPageProps) {
-  const content = aboutContent[params.lang];
+export default async function AboutPage({ params }: AboutPageProps): Promise<any> {
+  const { lang } = await params;
+  const content = aboutContent[lang];
 
   return (
     <main className="mx-auto px-4 text-gray-900 max-w-3xl">
@@ -62,7 +64,7 @@ export default function AboutPage({ params }: AboutPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify(getAboutSchema(params.lang)) 
+          __html: JSON.stringify(getAboutSchema(lang)) 
         }}
       />
     </main>

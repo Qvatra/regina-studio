@@ -11,11 +11,11 @@ export default function Modal({
   onClose, 
   onPhotoIdChange 
 }: { images: ImageProps[]; onClose?: () => void; onPhotoIdChange: (id: number) => void; }) {
-  let overlayRef = useRef<any>();
+  const overlayRef = useRef<any>();
 
   const searchParams = useSearchParams();
   const photoId = searchParams?.get('photoId');
-  let index = Number(photoId);
+  const index = Number(photoId);
 
   const [direction, setDirection] = useState(0);
   const [curIndex, setCurIndex] = useState(index);

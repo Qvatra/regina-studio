@@ -8,6 +8,12 @@ import { languages, Language } from '../../config/languages';
 import { getHomeSchema } from '../../content/schema';
 import { Metadata } from 'next';
 
+interface HomePageProps {
+  params: Promise<{
+    lang: Language;
+  }>;
+}
+
 // Generate static params for all languages
 export async function generateStaticParams() {
   return Object.keys(languages).map((lang) => ({
@@ -16,9 +22,9 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for the page
-export async function generateMetadata({ params }: { params: { lang: Language } }): Promise<Metadata> {
+export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { lang } = await params;
-  const content = homeContent[lang as Language];
+  const content = homeContent[lang];
   
   return {
     title: content.title,
@@ -39,9 +45,9 @@ export async function generateMetadata({ params }: { params: { lang: Language } 
   };
 }
 
-export default async function Home({ params }: { params: { lang: Language } }) {
+export default async function Home({ params }: HomePageProps): Promise<any> {
   const { lang } = await params;
-  const content = homeContent[lang as Language];
+  const content = homeContent[lang];
 
   return (
     <section>

@@ -34,7 +34,7 @@ export default function Citations({ citations, interval = 5000 }: CitationsProps
         }`}
       >
         <p className="text-2xl md:text-3xl italic mb-4 text-gray-800 font-heading">
-          "{citations[currentCitation].text}"
+          &quot;{citations[currentCitation].text}&quot;
         </p>
         <p className="text-gray-600">
           — {citations[currentCitation].author}

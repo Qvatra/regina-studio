@@ -7,13 +7,14 @@ import { Card, CardHeader, CardContent, CardFooter } from '../../../../component
 import { getPhotographyServicesSchema } from '../../../../content/schema';
 
 interface PhotographyServicesPageProps {
-  params: {
+  params: Promise<{
     lang: Language;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PhotographyServicesPageProps): Promise<Metadata> {
-  const content = photographyServicesContent[params.lang];
+  const { lang } = await params;
+  const content = photographyServicesContent[lang];
 
   return {
     title: content.title,
@@ -22,23 +23,24 @@ export async function generateMetadata({ params }: PhotographyServicesPageProps)
       title: content.title,
       description: content.metaDescription,
       type: 'website',
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/services/photography`,
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`,
       images: [{
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/photo.jpg`,
       }],
     },
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}/services/photography`,
-      languages: Object.keys(languages).reduce((acc, lang) => ({
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`,
+      languages: Object.keys(languages).reduce((acc, item) => ({
         ...acc,
-        [lang]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`,
+        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/services/photography`,
       }), {}),
     },
   };
 }
 
-export default function PhotographyServicesPage({ params }: PhotographyServicesPageProps) {
-  const content = photographyServicesContent[params.lang];
+export default async function PhotographyServicesPage({ params }: PhotographyServicesPageProps): Promise<any> {
+  const { lang } = await params;
+  const content = photographyServicesContent[lang];
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-12">
@@ -63,7 +65,7 @@ export default function PhotographyServicesPage({ params }: PhotographyServicesP
               </ul>
             </CardContent>
             <CardFooter>
-              <StyledButton href={`/${params.lang}/contact`} className="w-full">
+              <StyledButton href={`/${lang}/contact`} className="w-full">
                 {content.cta}
               </StyledButton>
             </CardFooter>
@@ -97,7 +99,7 @@ export default function PhotographyServicesPage({ params }: PhotographyServicesP
       <div className="text-center">
         <p className="text-gray-600">
           {content.customPackage.text}{' '}
-          <Link href={`/${params.lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
+          <Link href={`/${lang}/contact`} className="text-gray-900 hover:text-gray-500 transition-colors font-semibold underline">
             {content.customPackage.link}
           </Link>
           {' '}{content.customPackage.suffix}
@@ -107,7 +109,7 @@ export default function PhotographyServicesPage({ params }: PhotographyServicesP
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify(getPhotographyServicesSchema(params.lang)) 
+          __html: JSON.stringify(getPhotographyServicesSchema(lang)) 
         }}
       />
     </main>

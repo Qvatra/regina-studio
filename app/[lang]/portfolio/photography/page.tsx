@@ -1,7 +1,13 @@
-import { languages } from "../../../../config/languages";
+import { Language, languages } from "../../../../config/languages";
 import PhotographyPortfolioPageClient from "./_PhotographyPortfolioPageClient";
 import { fetchPhotographyPortfolioData } from "../../../../utils/fetchPhotographyData";
 import { getPhotographyPortfolioSchema } from "../../../../content/schema";
+
+interface PhotographyPortfolioPageProps {
+  params: Promise<{
+    lang: Language;
+  }>;
+}
 
 export async function generateStaticParams() {
   return Object.keys(languages).map((lang) => ({
@@ -9,7 +15,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PhotographyPortfolioPage({ params }: { params: { lang: string } }) {
+export default async function PhotographyPortfolioPage({ params }: PhotographyPortfolioPageProps) {
   const { lang } = await params;
   const images = await fetchPhotographyPortfolioData();
 

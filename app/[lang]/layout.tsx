@@ -6,7 +6,7 @@ import { headers } from 'next/headers'
 import '../../styles/index.css'
 import ReactDOM from 'react-dom'
 
-export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
     const headersList = await headers()
     const path = headersList.get('x-invoke-path') || '/'
     const langCodes = Object.keys(languages)

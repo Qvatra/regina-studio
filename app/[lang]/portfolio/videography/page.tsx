@@ -1,15 +1,15 @@
-import { languages } from "../../../../config/languages";
+import { Language, languages } from "../../../../config/languages";
 import VideographyPortfolioPageClient from "./_VideographyPortfolioPageClient";
 import { getVideographyPortfolioSchema } from "../../../../content/schema";
 import { fetchVideographyPortfolioData } from "../../../../utils/fetchVideographyData";
 
-export async function generateStaticParams() {
-  return Object.keys(languages).map((lang) => ({
-    lang,
-  }));
+interface VideographyPortfolioPage {
+  params: Promise<{
+    lang: Language;
+  }>;
 }
 
-export default async function PhotographyPortfolioPage({ params }: { params: { lang: string } }) {
+export default async function VideographyPortfolioPage({ params }: VideographyPortfolioPage) {
   const { lang } = await params;
   const data = await fetchVideographyPortfolioData();
   
@@ -22,4 +22,10 @@ export default async function PhotographyPortfolioPage({ params }: { params: { l
       <VideographyPortfolioPageClient lang={lang} data={data} />;
     </>
   )
+}
+
+export async function generateStaticParams() {
+  return Object.keys(languages).map((lang) => ({
+    lang,
+  }));
 }
