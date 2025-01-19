@@ -6,3 +6,10 @@ export const languages: { [key in Language]: string } = {
   ru: 'Русский',
   ua: 'Українська'
 } as const; 
+
+export const languageCodes: { [key in Language]: string } = {
+  en: 'en',
+  nl: 'nl',
+  ru: 'ru',
+  ua: 'uk'
+} as const; 
