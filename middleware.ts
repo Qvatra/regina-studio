@@ -1,9 +1,8 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { Language, languages } from './config/languages';
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+  // const pathname = request.nextUrl.pathname;
   
   // if (pathname === '/') {
   //   const preferredLanguage = request.cookies.get('preferredLanguage')?.value;
