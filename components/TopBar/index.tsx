@@ -65,7 +65,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-22">
           <div className="flex-0">
-            <Link href="/" className="flex justify-start my-4">
+            <Link href="/" className="flex justify-start my-4" aria-label="Home page link">
               <Logo className="h-[50px] w-auto" />
             </Link>
           </div>
