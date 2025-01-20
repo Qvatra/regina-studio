@@ -43,7 +43,7 @@ export default async function Home({ params }: HomePageProps): Promise<any> {
   const content = homeContent[lang];
 
   return isValidLang(lang) ? (
-    <section>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomeSchema(lang)) }}
@@ -140,7 +140,7 @@ export default async function Home({ params }: HomePageProps): Promise<any> {
           </div>
         </div>
       </main>
-    </section>
+    </>
   ) : notFound();
 } 
 

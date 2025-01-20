@@ -1,44 +1,44 @@
 export const aboutContent = {
   en: {
-    title: "About | Regina photography",
-    metaDescription: "Learn about Regina, her journey in photography and videography, and her passion for creative storytelling.",
+    title: "About | Professional Photographer and Videographer",
+    metaDescription: "Discover Regina's journey in photography and videography and her passion for creative storytelling.",
     heading: "MY STORY",
     bio: [
-      "My journey into the world of visual storytelling began in 2006 when I first picked up a camera at the age of 18. What started as a hobby quickly blossomed into an all-consuming passion that would eventually become my profession.",
-      "Born in Siberia and having lived in Ukraine before making the Netherlands my home, I bring a rich multicultural perspective to my work. Speaking English, Dutch, Russian, and Ukrainian helps me connect with clients from diverse backgrounds, making everyone feel comfortable during our sessions.",
-      "Though my path wasn't straightforward – I earned a Bachelor's degree in Law and even spent time as a chef in an Italian restaurant – these experiences have enriched my perspective and approach to creative work. Each chapter of my life has contributed to how I tell stories through my lens.",
-      "Today, I specialize in both photography and videography, creating everything from intimate family portraits to dynamic advertising content. My work is particularly focused on capturing genuine moments and emotions, whether that's at a wedding, during a family session, or while filming a commercial.",
-      "Based in Beverwijk, near Amsterdam, I find endless inspiration in the beauty of the Netherlands – from its stunning sunsets to its cozy corners. My love for flowers and natural beauty often finds its way into my work, creating images that are both authentic and aesthetically pleasing."
+      "I started my journey in visual storytelling in 2006 when I picked up a camera for the first time at 18. What began as a hobby quickly turned into a deep passion that eventually became my career.",
+      "I was born in Siberia, lived in Ukraine, and now call the Netherlands home. This multicultural background enriches my work. I speak English, Dutch, Russian, and Ukrainian, which helps me connect with clients from various backgrounds and make them feel at ease during our sessions.",
+      "My path wasn't straightforward — I earned a Bachelor's degree in Law and even worked as a chef in an Italian restaurant. These experiences have broadened my perspective and approach to creative work. Each phase of my life has shaped how I tell stories through my lens.",
+      "Today, I specialize in both photography and videography, creating everything from family portraits to dynamic advertising content. My work focuses on capturing genuine moments and emotions, whether at a wedding, during a family session, or while filming a commercial.",
+      "Based in Beverwijk, near Amsterdam, I draw endless inspiration from the beauty of the Netherlands — from its stunning sunsets to its cozy corners. My love for flowers and natural beauty often appears in my work, creating images that are both authentic and visually appealing."
     ],
     kvk: "Chamber of Commerce (KVK) Number: 95169903",
-    imageAlt: "Professional Photographer and Videographer in Amsterdam area"
+    imageAlt: "Professional Photographer and Videographer in the Amsterdam area"
   },
   nl: {
-    title: "Over mij | Regina Fotografie",
-    metaDescription: "Ontdek Regina's reis in fotografie en videografie, en haar passie voor het vertellen van verhalen door beeld.",
+    title: "Over mij | Professionele Fotograaf en Videograaf",
+    metaDescription: "Lees over Regina's reis in fotografie en videografie en haar passie voor verhalen vertellen met beelden.",
     heading: "MIJN VERHAAL",
     bio: [
-      "Mijn reis in de wereld van visuele storytelling begon in 2006 toen ik als 18-jarige voor het eerst een camera vastpakte. Wat begon als hobby groeide al snel uit tot een allesomvattende passie die uiteindelijk mijn beroep werd.",
-      "Geboren in Siberië en na een periode in Oekraïne te hebben gewoond voordat ik Nederland mijn thuis maakte, breng ik een rijk multicultureel perspectief in mijn werk. Door mijn beheersing van Engels, Nederlands, Russisch en Oekraïens kan ik een goede band opbouwen met klanten uit verschillende culturen, waardoor iedereen zich op zijn gemak voelt tijdens onze sessies.",
-      "Mijn pad was niet direct – ik behaalde een Bachelor in Rechten en werkte zelfs als chef-kok in een Italiaans restaurant – maar deze ervaringen hebben mijn visie en benadering van creatief werk verrijkt. Elke fase van mijn leven heeft bijgedragen aan hoe ik verhalen vertel door mijn lens.",
-      "Vandaag de dag ben ik gespecialiseerd in zowel fotografie als videografie, waarbij ik alles maak van intieme familieportretten tot dynamische reclame-content. Mijn werk richt zich vooral op het vastleggen van pure momenten en emoties, of het nu gaat om een bruiloft, een familiesessie, of een commercial.",
+      "Mijn avontuur in de wereld van visuele verhalen begon in 2006, toen ik op 18-jarige leeftijd voor het eerst een camera oppakte. Wat als hobby begon, groeide al snel uit tot een grote passie die uiteindelijk mijn beroep werd.",
+      "Ik ben geboren in Siberië, heb een tijd in Oekraïne gewoond en noem nu Nederland mijn thuis. Deze multiculturele achtergrond verrijkt mijn werk. Ik spreek Engels, Nederlands, Russisch en Oekraïens, wat me helpt om een goede band op te bouwen met klanten uit verschillende culturen en hen op hun gemak te stellen tijdens onze sessies.",
+      "Mijn pad was niet rechtlijnig – ik behaalde een bachelor in Rechten en werkte zelfs als chef-kok in een Italiaans restaurant. Deze ervaringen hebben mijn kijk op en benadering van creatief werk verrijkt. Elke fase van mijn leven heeft bijgedragen aan hoe ik verhalen vertel door mijn lens.",
+      "Tegenwoordig ben ik gespecialiseerd in zowel fotografie als videografie, en maak ik alles van familieportretten tot dynamische reclamecontent. Mijn werk richt zich vooral op het vastleggen van echte momenten en emoties, of het nu gaat om een bruiloft, een familiesessie of een commercial.",
       "Vanuit mijn basis in Beverwijk, vlakbij Amsterdam, vind ik eindeloze inspiratie in de schoonheid van Nederland – van prachtige zonsondergangen tot gezellige hoekjes. Mijn liefde voor bloemen en natuurlijke schoonheid zie je vaak terug in mijn werk, wat resulteert in beelden die zowel authentiek als esthetisch zijn."
     ],
     kvk: "KVK-nummer: 95169903",
-    imageAlt: "Professionele Fotograaf en Videograaf in Amsterdam gebied"
+    imageAlt: "Professionele Fotograaf en Videograaf in de omgeving van Amsterdam"
   },
   ru: {
-    title: "Обо мне | Regina Photography",
-    metaDescription: "Познакомьтесь с историей Регины, её путём в фотографии и видеосъёмке, и её страстью к визуальному повествованию.",
+    title: "Обо мне | Professional Photographer and Videographer",
+    metaDescription: "История Регины, её путь в фотографии и видеосъёмке, и её страсть к визуальному повествованию.",
     heading: "МОЯ ИСТОРИЯ",
     bio: [
-      "Мой путь в мир визуального искусства начался в 2006 году, когда в 18 лет я впервые взяла в руки камеру. То, что начиналось как увлечение, быстро переросло в настоящую страсть, ставшую моей профессией.",
-      "Родившись в Сибири и прожив часть жизни в Украине прежде чем обрести дом в Нидерландах, я привношу богатый мультикультурный опыт в свою работу. Владение английским, нидерландским, русским и украинским языками помогает мне находить подход к клиентам из разных культур, создавая непринуждённую атмосферу во время съёмок.",
-      "Мой путь не был прямым – я получила степень бакалавра права и даже работала шеф-поваром в итальянском ресторане – но именно эти разнообразные опыты обогатили моё видение и подход к творчеству. Каждый этап моей жизни внёс свой вклад в то, как я рассказываю истории через объектив.",
-      "Сегодня я специализируюсь как на фотографии, так и на видеосъёмке, создавая всё: от душевных семейных портретов до динамичного рекламного контента. В своей работе я особенно стремлюсь запечатлеть искренние моменты и эмоции, будь то свадьба, семейная съёмка или рекламный проект.",
-      "Работая в Бевервейке, недалеко от Амстердама, я черпаю бесконечное вдохновение в красоте Нидерландов – от великолепных закатов до уютных уголков. Моя любовь к цветам и природной красоте часто отражается в работах, создавая образы, которые сочетают в себе подлинность и эстетическую привлекательность."
+      "Мой путь в мир визуального искусства начался в 2006 году, когда в 18 лет я впервые взяла в руки камеру. То, что начиналось как увлечение, быстро стало настоящей страстью и моей профессией.",
+      "Я родилась в Сибири, жила в Украине, а теперь живу в Нидерландах. Этот мультикультурный опыт обогащает мою работу. Я говорю на английском, нидерландском, русском и украинском, что помогает мне находить общий язык с клиентами из разных культур и создавать комфортную атмосферу во время съёмок.",
+      "Мой путь был непростым — я получила степень бакалавра гражданского права и даже работала шеф-поваром в итальянском ресторане. Эти разнообразные опыты расширили моё видение и подход к творчеству. Каждый этап моей жизни повлиял на то, как я рассказываю истории через объектив.",
+      "Сегодня я занимаюсь как фотографией, так и видеосъёмкой, создавая всё: от душевных семейных портретов до динамичного рекламного контента. В своей работе я стремлюсь запечатлеть искренние моменты и эмоции, будь то свадьба, семейная съёмка или рекламный проект.",
+      "Работая в Бевервейке, недалеко от Амстердама, я черпаю вдохновение в красоте Нидерландов — от великолепных закатов до уютных уголков. Моя любовь к цветам и природной красоте часто отражается в моих работах, создавая образы, которые сочетают в себе подлинность и эстетическую привлекательность."
     ],
-    kvk: "Регистрационный номер KVK: 95169903",
-    imageAlt: "Профессиональная Фото и Видеосъёмка в Амстердаме"
+    kvk: "Регистрационный (KVK) номер: 95169903",
+    imageAlt: "Профессиональная фото- и видеосъёмка в Амстердаме"
   },
 };

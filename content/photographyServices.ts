@@ -1,36 +1,36 @@
 export const photographyServicesContent = {
   en: {
-    title: "Photography Services | Regina Photo Video Studio",
-    metaDescription: "Professional photography services including commercial photos, events, and creative productions.",
+    title: "Photography Services | Regina Photo Studio",
+    metaDescription: "Offering professional photography for family/love stories, commercial projects, events, and creative endeavors.",
     heading: "Photography Packages",
-    subtitle: "Professional photography services tailored to your needs. Package price is calculated based on shooting time, number of photos, and travel distance. Contact me for custom packages and special requirements.",
-    includedFeaturesTitle: "What's Included in All Packages",
-    imageAlt: "Professional Photography in Amsterdam area",
+    subtitle: "Professional photography services tailored to your needs. Package prices are based on shooting time, the number of photos, and travel distance. Reach out for custom packages and special requests.",
+    includedFeaturesTitle: "Included in Every Package",
+    imageAlt: "Professional Photography in the Amsterdam area",
     packages: [
       {
         title: "Minimum",
-        description: "Perfect for headshots, personal branding, or small projects",
+        description: "Ideal for headshots, personal branding, or small projects",
         price: "€200",
         features: [
-          "1 hour shooting duration",
+          "1 hour of shooting",
           "25 edited photos"
         ]
       },
       {
         title: "Basic",
-        description: "Great for family sessions, events, or product photography",
+        description: "Perfect for family sessions, events, or product photography",
         price: "€350",
         features: [
-          "2 hours shooting duration",
+          "2 hours of shooting",
           "50 edited photos"
         ]
       },
       {
         title: "Extended",
-        description: "Ideal for larger events, commercial projects, or extensive photo needs",
+        description: "Great for larger events, commercial projects, or extensive photo needs",
         price: "€600",
         features: [
-          "4 hours shooting duration",
+          "4 hours of shooting",
           "100 edited photos"
         ]
       }
@@ -48,48 +48,48 @@ export const photographyServicesContent = {
       },
       confidentialityFee: {
         label: "Confidentiality Fee:",
-        text: "A fee of €50 applies if you wish to prevent the photos from being used in my portfolio. This ensures your complete privacy while allowing me to maintain a fair pricing structure."
+        text: "A €50 fee applies if you prefer your photos not to be used in my portfolio. This ensures your privacy while maintaining fair pricing."
       }
     },
     customPackage: {
-      text: "Need a custom package?",
+      text: "Looking for a custom package?",
       link: "Contact me",
-      suffix: "to discuss your specific requirements."
+      suffix: "to discuss your specific needs."
     },
     cta: "Book Now"
   },
   nl: {
-    title: "Fotografie Diensten | Regina Photo Video Studio",
-    metaDescription: "Professionele fotografie diensten inclusief commerciële foto's, evenementen en creatieve producties.",
-    heading: "Fotografie Pakketten",
-    subtitle: "Professionele fotografie diensten op maat. Pakketprijs wordt berekend op basis van opnametijd, aantal foto's en reisafstand. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
-    includedFeaturesTitle: "Wat is inbegrepen in alle pakketten",
-    imageAlt: "Professionele Fotografie in Amsterdam gebied",
+    title: "Fotografiediensten | Regina Photo Studio",
+    metaDescription: "Professionele fotografiediensten voor familie/liefdesverhalen, commerciële projecten, evenementen en creatieve producties.",
+    heading: "Fotografiepakketten",
+    subtitle: "Professionele fotografie diensten op maat. Pakketprijzen zijn gebaseerd op opnametijd, aantal foto's en reisafstand. Neem contact op voor aangepaste pakketten en speciale verzoeken.",
+    includedFeaturesTitle: "Inbegrepen in elk pakket",
+    imageAlt: "Professionele fotografie in de regio Amsterdam",
     packages: [
       {
         title: "Minimum",
-        description: "Perfect voor headshots, personal branding of kleine projecten",
+        description: "Ideaal voor portretten, personal branding of kleine projecten",
         price: "€200",
         features: [
-          "1 uur fotosessie",
+          "1 uur fotograferen",
           "25 bewerkte foto's"
         ]
       },
       {
         title: "Basis",
-        description: "Ideaal voor familiesessies, evenementen of productfotografie",
+        description: "Perfect voor familiesessies, evenementen of productfotografie",
         price: "€350",
         features: [
-          "2 uur fotosessie",
+          "2 uur fotograferen",
           "50 bewerkte foto's"
         ]
       },
       {
         title: "Uitgebreid",
-        description: "Perfect voor grotere evenementen, commerciële projecten of uitgebreide fotografie",
+        description: "Geweldig voor grotere evenementen, commerciële projecten of uitgebreide fotobehoeften",
         price: "€600",
         features: [
-          "4 uur fotosessie",
+          "4 uur fotograferen",
           "100 bewerkte foto's"
         ]
       }
@@ -107,23 +107,23 @@ export const photographyServicesContent = {
       },
       confidentialityFee: {
         label: "Vertrouwelijkheidskosten:",
-        text: "Een toeslag van €50 is van toepassing als u niet wilt dat de foto's in mijn portfolio worden gebruikt. Dit zorgt voor uw volledige privacy terwijl ik een eerlijke prijsstructuur kan handhaven."
+        text: "Een toeslag van €50 is van toepassing als u niet wilt dat de foto's in mijn portfolio worden gebruikt. Dit zorgt voor uw privacy terwijl ik een eerlijke prijsstructuur kan handhaven."
       }
     },
     customPackage: {
-      text: "Behoefte aan een aangepast pakket?",
+      text: "Op zoek naar een aangepast pakket?",
       link: "Neem contact op",
       suffix: "om uw specifieke wensen te bespreken."
     },
     cta: "Nu Boeken"
   },
   ru: {
-    title: "Услуги Фотографии | Regina Photo Video Studio",
-    metaDescription: "Профессиональные услуги фотографии, включая коммерческие фото, мероприятия и креативные проекты.",
+    title: "Фотографические Услуги | Regina Photo Studio",
+    metaDescription: "Профессиональные услуги фотографии для семейных/любовных историй, коммерческих проектов, мероприятий и креативных начинаний.",
     heading: "Пакеты Фотосъёмки",
-    subtitle: "Профессиональные услуги фотографии, адаптированные под ваши потребности. Стоимость пакета рассчитывается исходя из времени съёмки, количества фотографий и расстояния поездки. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
-    includedFeaturesTitle: "Что включено во все пакеты",
-    imageAlt: "Профессиональная Фотосъёмка в Амстердаме",
+    subtitle: "Профессиональные услуги фотографии адаптированы под ваши нужды. Стоимость пакета рассчитывается на основе времени съёмки, количества фотографий и расстояния поездки. Свяжитесь с нами для индивидуальных пакетов и особых запросов.",
+    includedFeaturesTitle: "Что включено в каждый пакет",
+    imageAlt: "Профессиональная фотосъёмка в районе Амстердама",
     packages: [
       {
         title: "Минимальный",
@@ -145,7 +145,7 @@ export const photographyServicesContent = {
       },
       {
         title: "Расширенный",
-        description: "Идеально для больших мероприятий, коммерческих проектов или масштабных съёмок",
+        description: "Отлично подходит для больших мероприятий, коммерческих проектов или масштабных съёмок",
         price: "€600",
         features: [
           "4 часа съёмки",
@@ -162,17 +162,17 @@ export const photographyServicesContent = {
       title: "Дополнительные Расходы",
       travelFee: {
         label: "Транспортные расходы:",
-        text: "€0,40 за километр от Бевервейка будет добавлено к стоимости пакета."
+        text: "€0,40 за километр от Beverwijk будет добавлено к стоимости пакета."
       },
       confidentialityFee: {
         label: "Плата за конфиденциальность:",
-        text: "Доплата в размере €50 применяется, если вы не хотите, чтобы фотографии использовались в моем портфолио. Это обеспечивает вашу полную конфиденциальность, позволяя мне поддерживать справедливую ценовую структуру."
+        text: "Доплата в размере €50 применяется, если вы не хотите, чтобы фотографии использовались в моем портфолио. Это обеспечивает вашу конфиденциальность, позволяя мне поддерживать справедливую ценовую структуру."
       }
     },
     customPackage: {
-      text: "Нужен индивидуальный пакет?",
+      text: "Ищете индивидуальный пакет?",
       link: "Свяжитесь со мной",
-      suffix: "чтобы обсудить ваши требования."
+      suffix: "чтобы обсудить ваши пожелания."
     },
     cta: "Забронировать"
   },

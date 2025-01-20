@@ -60,47 +60,46 @@ export default async function ContactPage({ params }: ContactPageProps): Promise
   const content = contactContent[lang];
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-12">
-      <section className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-wider mb-8">{content.heading}</h1>
-        <p className="text-gray-600 text-lg mb-4">{content.intro.primary}</p>
-        <p className="text-gray-600">{content.intro.secondary}</p>
-      </section>
-
-      <section className="grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
-        {contactOptions.map((option, index) => (
-          <Card key={option.name}>
-            <CardHeader>
-              <div className="flex items-center my-2">
-                <option.icon />
-                <h2 className="ml-2">{option.name}</h2>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p>{content.contactOptions[index].description}</p>
-            </CardContent>
-            <CardFooter>
-              <StyledButton href={option.url} external className="w-[165px]">
-                {content.contactOptions[index].cta}
-              </StyledButton>
-            </CardFooter>
-          </Card>
-        ))}
-      </section>
-
-      <section className="mt-12 text-center">
-        <p className="text-gray-600 text-lg">
-          {content.responseTime}
-        </p>
-      </section>
-
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify(getContactSchema(lang)) 
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getContactSchema(lang)) }}
       />
-    </main>
+      <main className="mx-auto max-w-5xl px-4 py-12">
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold tracking-wider mb-8">{content.heading}</h1>
+          <p className="text-gray-600 text-lg mb-8">{content.intro.primary}</p>
+          <p className="text-gray-600 text-lg">{content.intro.secondary}</p>
+        </section>
+
+        <section className="grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
+          {contactOptions.map((option, index) => (
+            <Card key={option.name}>
+              <CardHeader>
+                <div className="flex items-center my-2">
+                  <option.icon />
+                  <h2 className="ml-2">{option.name}</h2>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p>{content.contactOptions[index].description}</p>
+              </CardContent>
+              <CardFooter>
+                <StyledButton href={option.url} external className="w-[165px]">
+                  {content.contactOptions[index].cta}
+                </StyledButton>
+              </CardFooter>
+            </Card>
+          ))}
+        </section>
+
+        <section className="mt-16 text-center">
+          <p className="text-gray-600 text-lg">
+            {content.responseTime}
+          </p>
+        </section>
+      </main>
+    </>
   );
 }
 

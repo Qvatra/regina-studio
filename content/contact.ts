@@ -1,16 +1,16 @@
 export const contactContent = {
   en: {
-    title: "Contact | Studio Regina",
-    metaDescription: "Get in touch with Studio Regina for your photography and videography needs. Connect via Instagram, WhatsApp, email, or Facebook.",
+    title: "Contact | Professional Photographer and Videographer",
+    metaDescription: "Get in touch with Regina for your photography and videography needs. Connect via Instagram, WhatsApp, email, or Facebook.",
     heading: "LET'S CONNECT",
     intro: {
-      primary: "I'm excited to hear about your story and discuss how we can create something beautiful together! Whether it's a wedding, family portrait, commercial project, or any other creative endeavor, I'm here to help bring your vision to life.",
-      secondary: "Choose your preferred way to connect with me below:"
+      primary: "I'm thrilled to hear your story and explore how we can create something beautiful together! Whether it's a wedding, family portrait, commercial project, or any other creative endeavor, I'm here to help bring your vision to life.",
+      secondary: "Choose your preferred way to get in touch with me below:"
     },
     contactOptions: [
       {
         name: "Instagram",
-        description: "Follow my creative journey and let's connect! This is my preferred way to communicate as it helps us build a stronger creative community.",
+        description: "Follow my creative journey and let's connect! This is my favorite way to communicate as it helps us build a stronger creative community.",
         cta: "Connect"
       },
       {
@@ -29,20 +29,20 @@ export const contactContent = {
         cta: "Connect"
       }
     ],
-    responseTime: "I typically respond within 24 hours. Looking forward to connecting with you!"
+    responseTime: "I usually respond within 24 hours. Looking forward to connecting with you!"
   },
   nl: {
-    title: "Contact | Studio Regina",
-    metaDescription: "Neem contact op met Studio Regina voor al uw fotografie en videografie wensen. Verbind via Instagram, WhatsApp, e-mail of Facebook.",
+    title: "Contact | Professionele Fotograaf en Videograaf",
+    metaDescription: "Neem contact op met Regina voor al uw fotografie en videografie wensen. Verbind via Instagram, WhatsApp, e-mail of Facebook.",
     heading: "LATEN WE VERBINDEN",
     intro: {
-      primary: "Ik ben enthousiast om over uw verhaal te horen en te bespreken hoe we samen iets moois kunnen creëren! Of het nu gaat om een bruiloft, familieportret, commercieel project of een ander creatief project, ik help graag uw visie tot leven te brengen.",
-      secondary: "Kies hieronder uw voorkeursmanier om contact met mij op te nemen:"
+      primary: "Ik kijk ernaar uit om uw verhaal te horen en te bespreken hoe we samen iets moois kunnen creëren! Of het nu gaat om een bruiloft, familieportret, commercieel project of een ander creatief project, ik help graag uw visie tot leven te brengen.",
+      secondary: "Kies hieronder hoe u het liefst contact met mij opneemt:"
     },
     contactOptions: [
       {
         name: "Instagram",
-        description: "Volg mijn creatieve reis en laten we verbinden! Dit is mijn voorkeursmanier van communiceren omdat het ons helpt een sterkere creatieve gemeenschap op te bouwen.",
+        description: "Volg mijn creatieve reis en laten we verbinden! Dit is mijn favoriete manier van communiceren omdat het ons helpt een sterkere creatieve gemeenschap op te bouwen.",
         cta: "Verbinden"
       },
       {
@@ -64,8 +64,8 @@ export const contactContent = {
     responseTime: "Ik reageer meestal binnen 24 uur. Ik kijk ernaar uit om met u in contact te komen!"
   },
   ru: {
-    title: "Контакты | Studio Regina",
-    metaDescription: "Свяжитесь со Studio Regina для ваших фото и видео проектов. Доступны Instagram, WhatsApp, email и Facebook.",
+    title: "Контакты | Professional Photographer and Videographer",
+    metaDescription: "Свяжитесь с Региной для ваших фото и видео проектов. Доступны Instagram, WhatsApp, email и Facebook.",
     heading: "ДАВАЙТЕ ОБЩАТЬСЯ",
     intro: {
       primary: "Я с нетерпением жду возможности услышать вашу историю и обсудить, как мы можем создать что-то прекрасное вместе! Будь то свадьба, семейный портрет, коммерческий проект или любой другой творческий замысел, я здесь, чтобы помочь воплотить вашу идею в жизнь.",
@@ -74,7 +74,7 @@ export const contactContent = {
     contactOptions: [
       {
         name: "Instagram",
-        description: "Следите за моим творческим путём и давайте общаться! Это мой предпочтительный способ коммуникации, так как он помогает нам создавать более крепкое творческое сообщество.",
+        description: "Следите за моим творческим путём и давайте общаться! Это мой любимый способ коммуникации, так как он помогает нам создавать более крепкое творческое сообщество.",
         cta: "Подписаться"
       },
       {

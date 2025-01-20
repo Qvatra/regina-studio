@@ -17,8 +17,8 @@ export const homeContent = {
       },
       {
         title: "Videography",
-        description: "Share your story through our professional videography services, ideal for love stories, family videos, commercials, and more.",
-        items: ["Wedding Films", "Commercial Videos", "Social Media Content", "Event Coverage", "Family Stories"],
+        description: "Tell your story with our expert videography services.",
+        items: ["Wedding Films", "Commercial Videos", "Social Media Content", "Event Coverage", "Family Stories", "Love Stories"],
         image: "/assets/video.jpg",
         imageAlt: "Professional videography portfolio",
         link: "/en/portfolio/videography"
@@ -75,7 +75,7 @@ export const homeContent = {
       {
         title: "Videografie",
         description: "Professionele videoproductie die uw verhaal tot leven brengt.",
-        items: ["Trouwfilms", "Commerciële Video's", "Social Media Content", "Evenementregistratie", "Familieverhalen"],
+        items: ["Trouwfilms", "Commerciële Video's", "Social Media Content", "Evenementregistratie", "Familieverhalen", "Liefdesverhalen"],
         image: "/assets/video.jpg",
         imageAlt: "Professioneel videografie portfolio",
         link: "/nl/portfolio/videography"
@@ -131,8 +131,8 @@ export const homeContent = {
       },
       {
         title: "Видеосъёмка",
-        description: "Профессиональные услуги видеосъёмки, идеально подходящие для любовных историй, семейных видео, рекламных роликов и многого другого.",
-        items: ["Свадебные фильмы", "Рекламные видео", "Контент для соцсетей", "Освещение мероприятий", "Семейные истории"],
+        description: "Профессиональные услуги видеосъёмки. Лучший способ рассказать вашу историю.",
+        items: ["Свадебные фильмы", "Рекламные видео", "Контент для соцсетей", "Освещение мероприятий", "Семейные истории", "Любовные истории"],
         image: "/assets/video.jpg",
         imageAlt: "Портфолио профессиональной видеосъёмки",
         link: "/ru/portfolio/videography"

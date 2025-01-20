@@ -4,22 +4,22 @@ export const weddingServicesContent = {
     metaDescription: "Complete wedding photography and videography packages for your special day.",
     heading: "Wedding Packages",
     subtitle: "Professional wedding photography and videography services tailored to your needs.",
-    includedFeaturesTitle: "What's Included in All Packages",
+    includedFeaturesTitle: "Included in Every Package",
     packages: [
       {
         title: "Photo Only",
-        description: "Perfect for couples wanting quality wedding photography coverage",
+        description: "Ideal for couples seeking quality wedding photography coverage",
         price: "€1.100",
         features: [
           "6 hours of coverage",
           "150+ color-graded photos",
           "Unposed documentary session",
-          "up to 1 minute video as a present"
+          "up to 1 minute video as a gift"
         ]
       },
       {
         title: "Video Only",
-        description: "Capture your special day in cinematic motion",
+        description: "Capture your special day in cinematic style",
         price: "€1.400",
         features: [
           "6 hours of coverage",
@@ -32,7 +32,7 @@ export const weddingServicesContent = {
       "Pre-wedding consultation",
       "Professional equipment",
       "High-resolution files",
-      "Post production"
+      "Post-production"
     ],
     additionalFees: {
       title: "Additional Information",
@@ -46,7 +46,7 @@ export const weddingServicesContent = {
       },
       confidentialityFee: {
         label: "Confidentiality Fee:",
-        text: "A fee of €50 applies if you wish to prevent the work from being used in my portfolio. This ensures your complete privacy while allowing me to maintain a fair pricing structure."
+        text: "A €50 fee applies if you prefer the work not to be used in my portfolio. This ensures your privacy while maintaining fair pricing."
       }
     },
     customPackage: {
@@ -61,11 +61,11 @@ export const weddingServicesContent = {
     metaDescription: "Complete bruiloft fotografie en videografie pakketten voor uw speciale dag.",
     heading: "Bruiloft Pakketten",
     subtitle: "Professionele bruiloft fotografie en videografie diensten op maat. Pakketprijs varieert afhankelijk van uw gekozen diensten, dekkingsduur en aanvullende opties. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
-    includedFeaturesTitle: "Wat is inbegrepen in alle pakketten",
+    includedFeaturesTitle: "Inbegrepen in elk pakket",
     packages: [
       {
         title: "Alleen Foto",
-        description: "Perfect voor stellen die kwaliteit bruiloftsfotografie willen",
+        description: "Ideaal voor stellen die kwaliteit bruiloftsfotografie willen",
         price: "€1.100",
         features: [
           "6 uur dekking",
@@ -76,7 +76,7 @@ export const weddingServicesContent = {
       },
       {
         title: "Alleen Video",
-        description: "Leg uw speciale dag vast in cinematische beweging",
+        description: "Leg uw speciale dag vast in cinematische stijl",
         price: "€1.400",
         features: [
           "6 uur dekking",
@@ -103,7 +103,7 @@ export const weddingServicesContent = {
       },
       confidentialityFee: {
         label: "Vertrouwelijkheidskosten:",
-        text: "Een toeslag van €50 is van toepassing als u niet wilt dat het werk in mijn portfolio wordt gebruikt. Dit zorgt voor uw volledige privacy terwijl ik een eerlijke prijsstructuur kan handhaven."
+        text: "Een toeslag van €50 is van toepassing als u niet wilt dat het werk in mijn portfolio wordt gebruikt. Dit zorgt voor uw privacy terwijl ik een eerlijke prijsstructuur kan handhaven."
       }
     },
     customPackage: {
@@ -118,7 +118,7 @@ export const weddingServicesContent = {
     metaDescription: "Полные пакеты свадебной фото и видеосъёмки для вашего особенного дня.",
     heading: "Свадебные Пакеты",
     subtitle: "Профессиональные услуги свадебной фото и видеосъёмки, адаптированные под ваши потребности. Стоимость пакета варьируется в зависимости от выбранных услуг, продолжительности съёмки и дополнительных опций. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
-    includedFeaturesTitle: "Что включено во все пакеты",
+    includedFeaturesTitle: "Что включено в каждый пакет",
     packages: [
       {
         title: "Только Фото",
@@ -160,7 +160,7 @@ export const weddingServicesContent = {
       },
       confidentialityFee: {
         label: "Плата за Конфиденциальность:",
-        text: "Доплата в размере €50 применяется, если вы не хотите, чтобы работы использовались в моем портфолио. Это обеспечивает вашу полную конфиденциальность, позволяя мне поддерживать справедливую ценовую структуру."
+        text: "Доплата в размере €50 применяется, если вы не хотите, чтобы работы использовались в моем портфолио. Это обеспечивает вашу конфиденциальность, позволяя мне поддерживать справедливую ценовую структуру."
       }
     },
     customPackage: {

@@ -1,27 +1,27 @@
 export const videographyServicesContent = {
   en: {
-    title: "Videography Services | Regina Photo Video Studio",
-    metaDescription: "Professional videography services including commercial videos, events, and creative productions.",
+    title: "Videography Services | Regina Video Studio",
+    metaDescription: "Offering professional videography for family/love stories, commercial projects, events, and creative productions.",
     heading: "Videography Packages",
-    subtitle: "Professional videography services tailored to your needs. Package price is calculated based on shooting duration, post-production work complexity, and travel distance. Contact me for custom packages and special requirements.",
-    includedFeaturesTitle: "What's Included in All Packages",
-    imageAlt: "Professional Videography in Amsterdam area",
+    subtitle: "Professional videography services tailored to your needs. Package prices are based on shooting duration, post-production complexity, and travel distance. Reach out for custom packages and special requests.",
+    includedFeaturesTitle: "Included in Every Package",
+    imageAlt: "Professional Videography in the Amsterdam area",
     packages: [
       {
         title: "Minimum",
-        description: "Perfect for short promotional videos or social media content",
+        description: "Ideal for short promotional videos or social media content",
         price: "€250",
         features: [
-          "1 hour shooting duration",
+          "1 hour of shooting",
           "up to 1 minute final video"
         ]
       },
       {
         title: "Basic",
-        description: "Ideal for family stories, events, product videos, or longer promotional content",
+        description: "Perfect for family or love stories, events, product videos, or longer promotional content",
         price: "€450",
         features: [
-          "2 hours shooting duration",
+          "2 hours of shooting",
           "up to 2 minutes final video"
         ]
       },
@@ -30,14 +30,14 @@ export const videographyServicesContent = {
         description: "Great for conferences, celebrations, or corporate events",
         price: "€600",
         features: [
-          "4 hours shooting duration",
+          "4 hours of shooting",
           "up to 5 minutes final video"
         ]
       }
     ],
     includedFeatures: [
       "Professional video equipment",
-      "Post production",
+      "Post-production",
       "Music licensing"
     ],
     additionalFees: {
@@ -48,27 +48,27 @@ export const videographyServicesContent = {
       },
       confidentialityFee: {
         label: "Confidentiality Fee:",
-        text: "A fee of €50 applies if you wish to prevent the video from being used in my portfolio. This ensures your complete privacy while allowing me to maintain a fair pricing structure."
+        text: "A €50 fee applies if you prefer your video not to be used in my portfolio. This ensures your privacy while maintaining fair pricing."
       }
     },
     customPackage: {
-      text: "Need a custom package?",
+      text: "Looking for a custom package?",
       link: "Contact me",
-      suffix: "to discuss your specific requirements."
+      suffix: "to discuss your specific needs."
     },
     cta: "Book Now"
   },
   nl: {
-    title: "Videografie Diensten | Regina Photo Video Studio",
-    metaDescription: "Professionele videografie diensten inclusief commerciële video's, evenementen en creatieve producties.",
-    heading: "Videografie Pakketten",
-    subtitle: "Professionele videografie diensten op maat. Pakketprijs wordt berekend op basis van opnameduur, complexiteit van postproductie en reisafstand. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
-    includedFeaturesTitle: "Wat is inbegrepen in alle pakketten",
-    imageAlt: "Professionele Videografie in Amsterdam gebied",
+    title: "Videografiediensten | Regina Video Studio",
+    metaDescription: "Professionele videografiediensten voor familieverhalen en liefdesverhalen, commerciële projecten, evenementen en creatieve producties.",
+    heading: "Videografiepakketten",
+    subtitle: "Professionele videografie diensten op maat. Pakketprijzen zijn gebaseerd op opnameduur, complexiteit van postproductie en reisafstand. Neem contact op voor aangepaste pakketten en speciale verzoeken.",
+    includedFeaturesTitle: "Inbegrepen in elk pakket",
+    imageAlt: "Professionele videografie in de regio Amsterdam",
     packages: [
       {
         title: "Minimum",
-        description: "Perfect voor korte promotievideo's of social media content",
+        description: "Ideaal voor korte promotievideo's of social media content",
         price: "€250",
         features: [
           "1 uur opnametijd",
@@ -77,7 +77,7 @@ export const videographyServicesContent = {
       },
       {
         title: "Basis",
-        description: "Ideaal voor familieverhalen, evenementen, productvideo's of langere promotiecontent",
+        description: "Perfect voor familieverhalen en liefdesverhalen, evenementen, productvideo's of langere promotiecontent",
         price: "€450",
         features: [
           "2 uur opnametijd",
@@ -86,7 +86,7 @@ export const videographyServicesContent = {
       },
       {
         title: "Evenementen",
-        description: "Perfect voor conferenties, vieringen of bedrijfsevenementen",
+        description: "Geweldig voor conferenties, vieringen of bedrijfsevenementen",
         price: "€600",
         features: [
           "4 uur opnametijd",
@@ -107,23 +107,23 @@ export const videographyServicesContent = {
       },
       confidentialityFee: {
         label: "Vertrouwelijkheidskosten:",
-        text: "Een toeslag van €50 is van toepassing als u niet wilt dat de video in mijn portfolio wordt gebruikt. Dit zorgt voor uw volledige privacy terwijl ik een eerlijke prijsstructuur kan handhaven."
+        text: "Een toeslag van €50 is van toepassing als u niet wilt dat de video in mijn portfolio wordt gebruikt. Dit zorgt voor uw privacy terwijl ik een eerlijke prijsstructuur kan handhaven."
       }
     },
     customPackage: {
-      text: "Behoefte aan een aangepast pakket?",
+      text: "Op zoek naar een aangepast pakket?",
       link: "Neem contact op",
       suffix: "om uw specifieke wensen te bespreken."
     },
     cta: "Nu Boeken"
   },
   ru: {
-    title: "Услуги Видеосъёмки | Regina Photo Video Studio",
-    metaDescription: "Профессиональные услуги видеосъёмки, включая коммерческие видео, мероприятия и креативные проекты.",
+    title: "Услуги Видеосъёмки | Regina Video Studio",
+    metaDescription: "Профессиональные услуги видеосъёмки для семейных историй и любовных историй, коммерческих проектов, мероприятий и креативных начинаний.",
     heading: "Пакеты Видеосъёмки",
-    subtitle: "Профессиональные услуги видеосъёмки, адаптированные под ваши потребности. Стоимость пакета рассчитывается исходя из продолжительности съёмки, сложности постпродакшна и расстояния поездки. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
-    includedFeaturesTitle: "Что включено во все пакеты",
-    imageAlt: "Профессиональная Видеосъёмка в Амстердаме",
+    subtitle: "Профессиональные услуги видеосъёмки адаптированы под ваши нужды. Стоимость пакета рассчитывается на основе продолжительности съёмки, сложности постпродакшна и расстояния поездки. Свяжитесь с нами для индивидуальных пакетов и особых запросов.",
+    includedFeaturesTitle: "Что включено в каждый пакет",
+    imageAlt: "Профессиональная видеосъёмка в районе Амстердама",
     packages: [
       {
         title: "Минимальный",
@@ -136,7 +136,7 @@ export const videographyServicesContent = {
       },
       {
         title: "Базовый",
-        description: "Идеально для семейных историй, мероприятий, продуктовых видео или длинного промо-контента",
+        description: "Отлично подходит для семейных историй, любовных историй, мероприятий, продуктовых видео или длинного промо-контента",
         price: "€450",
         features: [
           "2 часа съёмки",
@@ -166,13 +166,13 @@ export const videographyServicesContent = {
       },
       confidentialityFee: {
         label: "Плата за конфиденциальность:",
-        text: "Доплата в размере €50 применяется, если вы не хотите, чтобы видео использовалось в моем портфолио. Это обеспечивает вашу полную конфиденциальность, позволяя мне поддерживать справедливую ценовую структуру."
+        text: "Доплата в размере €50 применяется, если вы не хотите, чтобы видео использовалось в моем портфолио. Это обеспечивает вашу конфиденциальность, позволяя мне поддерживать справедливую ценовую структуру."
       }
     },
     customPackage: {
-      text: "Нужен индивидуальный пакет?",
+      text: "Ищете индивидуальный пакет?",
       link: "Свяжитесь со мной",
-      suffix: "чтобы обсудить ваши требования."
+      suffix: "чтобы обсудить ваши пожелания."
     },
     cta: "Забронировать"
   },
