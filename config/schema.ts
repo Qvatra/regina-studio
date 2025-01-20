@@ -32,7 +32,7 @@ export const getHomeSchema = (lang: string) => ({
   ...baseSchema(lang),
   "@type": "WebPage",
   "name": homeContent[lang].title,
-  "description": homeContent[lang].description,
+  "description": homeContent[lang].metaDescription,
   "url": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`,
   "about": organizationInfo(lang),
 });

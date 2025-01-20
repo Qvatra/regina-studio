@@ -1,32 +1,32 @@
 export const homeContent = {
   en: {
-    title: "Regina photo/video | Professional Photography & Videography Services in Amsterdam, Netherlands",
-    introduction: "Welcome, I'm Regina",
-    metaDescription: "Discover professional photography and videography services in Amsterdam. Specializing in weddings, events, portraits, commercial projects, family and love stories.",
+    title: "Regina Photo/Video | Professional Photography & Videography Services in Amsterdam, Netherlands",
+    introduction: "Hello, I'm Regina",
+    metaDescription: "Explore top-notch photography and videography services in Amsterdam. I specialize in events, commercial projects, family/love stories, portraits and weddings.",
     roles: ["Photographer", "Videographer", "Blogger", "Friend"],
-    location: "- Amsterdam area based, open for travel -",
-    imageAlt: "Photographer and Videographer expert in North Holland",
+    location: "Based in the Amsterdam area, available for travel",
+    imageAlt: "Expert photographer and videographer in North Holland",
     services: [
       {
         title: "Photography",
-        description: "Capture the essence of every moment with professional photography services.",
+        description: "Capture the essence of every moment with our professional photography services.",
         items: ["Wedding Photography", "Family Portraits", "Event Photography", "Product Photography", "Personal Photoshoots", "Events"],
         image: "/assets/photo.jpg",
-        imageAlt: "Professional Photography portfolio",
+        imageAlt: "Professional photography portfolio",
         link: "/en/portfolio/photography"
       },
       {
         title: "Videography",
-        description: "Tell your story through motion with our professional videography services, perfect for love stories, family videos, commercials, and more.",
+        description: "Share your story through our professional videography services, ideal for love stories, family videos, commercials, and more.",
         items: ["Wedding Films", "Commercial Videos", "Social Media Content", "Event Coverage", "Family Stories"],
         image: "/assets/video.jpg",
-        imageAlt: "Professional Videography portfolio",
+        imageAlt: "Professional videography portfolio",
         link: "/en/portfolio/videography"
       }
     ],
     citations: [
       {
-        text: "Every photograph tells a story waiting to be discovered",
+        text: "Every photographer tells a story waiting to be discovered",
         author: "Regina"
       },
       {
@@ -35,10 +35,10 @@ export const homeContent = {
       },
       {
         text: "Where creativity meets professionalism",
-        author: "Client Review"
+        author: "Client review"
       },
       {
-        text: "Your memories deserve to be preserved beautifully",
+        text: "Your memories deserve to be beautifully preserved",
         author: "Regina"
       },
       {
@@ -57,27 +57,27 @@ export const homeContent = {
     },
   },
   nl: {
-    title: "Studio Regina | Creatieve Fotografie & Videografie Diensten",
-    introduction: "Dit ben ik, Regina:",
-    metaDescription: "Professionele fotografie en videografie diensten in de regio Amsterdam. Gespecialiseerd in bruiloften, evenementen, portretten en commerciële projecten.",
-    roles: ["Fotograaf", "Filmmaker", "Blogger", "Vriend"],
-    location: "- Gevestigd in de regio Amsterdam, bereid om te reizen -",
-    imageAlt: "Professionele Fotograaf en Videograaf in Amsterdam gebied",
+    title: "Regina foto/video | Professionele Fotografie & Videografie in Amsterdam, Nederland",
+    introduction: "Hallo, ik ben Regina",
+    metaDescription: "Ervaar professionele fotografie en videografie in Amsterdam. Gespecialiseerd in evenementen, commerciële projecten, familie- en liefdesverhalen, portretten en bruiloften.",
+    roles: ["Fotograaf", "Videograaf", "Blogger", "Vriend"],
+    location: "Gebaseerd in de regio Amsterdam, maar ik reis graag",
+    imageAlt: "Fotograaf en videograaf expert in Noord-Holland",
     services: [
       {
         title: "Fotografie",
-        description: "Van intieme portretten tot grote evenementen, wij vangen de essentie van elk moment.",
-        items: ["Bruiloften", "Familieportretten", "Evenementen", "Productfotografie", "Persoonlijke Shoots"],
+        description: "Vang de essentie van elk moment met onze professionele fotografiediensten.",
+        items: ["Bruiloften", "Familieportretten", "Evenementen", "Productfotografie", "Persoonlijke Fotoshoots"],
         image: "/assets/photo.jpg",
-        imageAlt: "Professionele Fotografie portfolio",
+        imageAlt: "Professioneel fotografie portfolio",
         link: "/nl/portfolio/photography"
       },
       {
         title: "Videografie",
-        description: "Professionele videoproductie die uw verhaal in beweging vertelt.",
+        description: "Professionele videoproductie die uw verhaal tot leven brengt.",
         items: ["Trouwfilms", "Commerciële Video's", "Social Media Content", "Evenementregistratie", "Familieverhalen"],
         image: "/assets/video.jpg",
-        imageAlt: "Professionele Videografie portfolio",
+        imageAlt: "Professioneel videografie portfolio",
         link: "/nl/portfolio/videography"
       }
     ],
@@ -91,7 +91,7 @@ export const homeContent = {
         author: "Regina"
       },
       {
-        text: "Waar creativiteit professionaliteit ontmoet",
+        text: "Waar creativiteit en professionaliteit samenkomen",
         author: "Klantrecensie"
       },
       {
@@ -108,51 +108,51 @@ export const homeContent = {
       }
     ],
     cta: {
-      heading: "Klaar om Iets Moois te Creëren?",
+      heading: "Klaar om iets moois te creëren?",
       text: "Laten we samenwerken om uw speciale momenten vast te leggen of uw creatieve visie tot leven te brengen.",
-      button: "Neem Contact Op"
+      button: "Neem contact op"
     },
   },
   ru: {
-    title: "Studio Regina | Креативная Фото и Видеосъёмка",
-    introduction: "Это я, Регина:",
-    metaDescription: "Профессиональные услуги фото и видеосъёмки в районе Амстердама. Специализация: свадьбы, мероприятия, портреты и коммерческие проекты.",
-    roles: ["Фотограф", "Режиссёр", "Блогер", "Друг"],
-    location: "- База в районе Амстердама, готова к поездкам -",
-    imageAlt: "Профессиональная Фото и Видеосъёмка в Амстердаме",
+    title: "Regina фото/видео | Профессиональные услуги фотографа и видеографа в Амстердаме, Нидерланды",
+    introduction: "Привет, я Регина",
+    metaDescription: "Познакомьтесь с профессиональными услугами фотографии и видеосъёмки в Амстердаме. Я специализируюсь на мероприятиях, коммерческих проектах, семейных и любовных историях, свадьбах, портретах.",
+    roles: ["Фотограф", "Видеограф", "Блогер", "Друг"],
+    location: "Я живу в районе Амстердама и готова к поездкам",
+    imageAlt: "Эксперт по фотографии и видеосъёмке в Северной Голландии",
     services: [
       {
         title: "Фотография",
-        description: "От интимных портретов до масштабных мероприятий, мы запечатлеем суть каждого момента.",
-        items: ["Свадьбы", "Семейные Портреты", "Мероприятия", "Предметная Съёмка", "Личные Фотосессии"],
+        description: "От личных фотосессий до крупных мероприятий, мы запечатлеем суть каждого момента.",
+        items: ["Свадебная фотография", "Семейные портреты", "Предметная съёмка", "Личные фотосессии", "Мероприятия"],
         image: "/assets/photo.jpg",
-        imageAlt: "портфолио профессиональной Фотографии",
+        imageAlt: "Портфолио профессиональной фотографии",
         link: "/ru/portfolio/photography"
       },
       {
         title: "Видеосъёмка",
-        description: "Профессиональное видеопроизводство, рассказывающее вашу историю в движении.",
-        items: ["Свадебные Фильмы", "Рекламные Видео", "Контент для Соцсетей", "Освещение Мероприятий", "Семейные Истории"],
+        description: "Профессиональные услуги видеосъёмки, идеально подходящие для любовных историй, семейных видео, рекламных роликов и многого другого.",
+        items: ["Свадебные фильмы", "Рекламные видео", "Контент для соцсетей", "Освещение мероприятий", "Семейные истории"],
         image: "/assets/video.jpg",
-        imageAlt: "портфолио профессиональной Видеосъёмки",
+        imageAlt: "Портфолио профессиональной видеосъёмки",
         link: "/ru/portfolio/videography"
       }
     ],
     citations: [
       {
-        text: "Каждая фотография рассказывает историю, ждущую своего открытия",
+        text: "Каждая фотография рассказывает свою историю",
         author: "Регина"
       },
       {
-        text: "Запечатлеваем моменты, которые остаются на всю жизнь",
+        text: "Мы запечатлеваем моменты, которые останутся с вами навсегда",
         author: "Регина"
       },
       {
-        text: "Где творчество встречается с профессионализмом",
+        text: "Творчество и профессионализм в каждом кадре",
         author: "Отзыв клиента"
       },
       {
-        text: "Ваши воспоминания заслуживают быть сохранёнными красиво",
+        text: "Ваши воспоминания заслуживают быть красиво сохранёнными",
         author: "Регина"
       },
       {
@@ -160,13 +160,13 @@ export const homeContent = {
         author: "Регина"
       },
       {
-        text: "Очень профессионально и креативно. Стоит каждого потраченного цента!",
+        text: "Очень профессионально и креативно. Стоит каждого цента!",
         author: "Алекс"
       }
     ],
     cta: {
-      heading: "Готовы Создать Что-то Прекрасное?",
-      text: "Давайте работать вместе, чтобы запечатлеть ваши особенные моменты или воплотить ваше творческое видение в жизнь.",
+      heading: "Готовы создать что-то прекрасное?",
+      text: "Давайте вместе запечатлеем ваши особенные моменты или воплотим ваше творческое видение в жизнь.",
       button: "Связаться"
     },
   },
