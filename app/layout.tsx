@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { headers } from 'next/headers'
 import '@/styles/index.css'
 import ReactDOM from 'react-dom'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export async function generateMetadata(): Promise<Metadata> {
     const headersList = await headers()
@@ -51,6 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
           <main className="flex-grow">
             {children}
+            <SpeedInsights/>
           </main>
 
           <Footer />
