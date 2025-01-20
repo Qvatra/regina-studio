@@ -1,15 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import type { ImageProps } from "../../../../utils/types";
-import Modal from "../../../../components/Modal";
+import type { ImageProps } from "@/utils/types";
+import Modal from "@/components/Modal";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { useLastViewedPhoto } from "../../../../utils/useLastViewedPhoto";
-import { portfolioContent } from "../../../../content/portfolio";
-import ScrollToTop from "../../../../components/ScrollToTop";
-import StyledLink from "../../../../components/StyledLink";
+import { useRef } from "react";
+import { useLastViewedPhoto } from "@/utils/useLastViewedPhoto";
+import { portfolioContent } from "@/content/portfolio";
+import ScrollToTop from "@/components/ScrollToTop";
+import StyledLink from "@/components/StyledLink";
 
 export default function PhotographyPortfolioPageClient({ lang, images }: { lang: string, images: ImageProps[] }) {
   const router = useRouter();

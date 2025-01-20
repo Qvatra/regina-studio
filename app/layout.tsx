@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { languages } from '@/config/languages'
+import { Language, languages } from '@/config/languages'
 import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 import { headers } from 'next/headers'
@@ -27,8 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function RootLayout({ children, params }: { children: React.ReactNode, params: { lang: string } }) {
-  const { lang } = await params;
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers()
+  const lang = (headersList.get('x-invoke-path')?.split('/')[1] || 'en') as Language;
 
   ReactDOM.preconnect('https://fonts.googleapis.com', { crossOrigin: 'anonymous' })
   ReactDOM.preconnect('https://fonts.gstatic.com', { crossOrigin: 'anonymous' })

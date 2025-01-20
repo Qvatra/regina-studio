@@ -1,7 +1,7 @@
-import { Language, languages } from "../../../../config/languages";
+import { Language, languages } from "@/config/languages";
 import VideographyPortfolioPageClient from "./_VideographyPortfolioPageClient";
-import { getVideographyPortfolioSchema } from "../../../../content/schema";
-import { fetchVideographyPortfolioData } from "../../../../utils/fetchVideographyData";
+import { getVideographyPortfolioSchema } from "@/content/schema";
+import { fetchVideographyPortfolioData } from "@/utils/fetchVideographyData";
 
 interface VideographyPortfolioPage {
   params: Promise<{

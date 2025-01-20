@@ -1,18 +1,12 @@
-import { Language, languages } from "../../../../config/languages";
+import { Language, languages } from "@/config/languages";
 import PhotographyPortfolioPageClient from "./_PhotographyPortfolioPageClient";
-import { fetchPhotographyPortfolioData } from "../../../../utils/fetchPhotographyData";
-import { getPhotographyPortfolioSchema } from "../../../../content/schema";
+import { fetchPhotographyPortfolioData } from "@/utils/fetchPhotographyData";
+import { getPhotographyPortfolioSchema } from "@/content/schema";
 
 interface PhotographyPortfolioPageProps {
   params: Promise<{
     lang: Language;
   }>;
-}
-
-export async function generateStaticParams() {
-  return Object.keys(languages).map((lang) => ({
-    lang,
-  }));
 }
 
 export default async function PhotographyPortfolioPage({ params }: PhotographyPortfolioPageProps) {
@@ -28,4 +22,10 @@ export default async function PhotographyPortfolioPage({ params }: PhotographyPo
       <PhotographyPortfolioPageClient lang={lang} images={images} />;
     </>
   )
+}
+
+export async function generateStaticParams() {
+  return Object.keys(languages).map((lang) => ({
+    lang,
+  }));
 }
