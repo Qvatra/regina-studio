@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import TypeWriter from '../../components/TypeWriter';
-import Citations from '../../components/Citations';
-import StyledButton from '../../components/StyledButton';
-import { homeContent } from '../../content/home';
-import { languages, Language } from '../../config/languages';
-import { getHomeSchema } from '../../content/schema';
+import TypeWriter from '@/components/TypeWriter';
+import Citations from '@/components/Citations';
+import StyledButton from '@/components/StyledButton';
+import { homeContent } from '@/content/home';
+import { languages, Language, isValidLang } from '@/config/languages';
+import { getHomeSchema } from '@/content/schema';
 import { Metadata } from 'next';
+import { notFound } from "next/navigation";
 
 interface HomePageProps {
   params: Promise<{
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
   const { lang } = await params;
   const content = homeContent[lang];
   
-  return {
+  return isValidLang(lang) ? {
     title: content.title,
     description: content.metaDescription,
     openGraph: {
@@ -34,14 +35,14 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
       locale: lang,
       alternateLocale: Object.keys(languages).filter(l => l !== lang)
     }
-  };
+  } : {};
 }
 
 export default async function Home({ params }: HomePageProps): Promise<any> {
   const { lang } = await params;
   const content = homeContent[lang];
 
-  return (
+  return isValidLang(lang) ? (
     <section>
       <script
         type="application/ld+json"
@@ -139,7 +140,7 @@ export default async function Home({ params }: HomePageProps): Promise<any> {
         </div>
       </main>
     </section>
-  );
+  ) : notFound();
 } 
 
 export async function generateStaticParams() {

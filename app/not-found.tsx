@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { navigationContent } from '../content/navigation'
+import { navigationContent } from '@/content/navigation'
 
 export default function NotFound() {
     return (

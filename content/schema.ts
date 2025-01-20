@@ -1,10 +1,10 @@
-import { homeContent } from './home';
-import { contactContent } from './contact';
-import { aboutContent } from './about';
-import { portfolioContent } from './portfolio';
-import { photographyServicesContent } from './photographyServices';
-import { videographyServicesContent } from './videographyServices';
-import { weddingServicesContent } from './weddingServices';
+import { homeContent } from '@/content/home';
+import { contactContent } from '@/content/contact';
+import { aboutContent } from '@/content/about';
+import { portfolioContent } from '@/content/portfolio';
+import { photographyServicesContent } from '@/content/photographyServices';
+import { videographyServicesContent } from '@/content/videographyServices';
+import { weddingServicesContent } from '@/content/weddingServices';
 
 const baseSchema = (lang: string) => ({
     "@context": "https://schema.org",

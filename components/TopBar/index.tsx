@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Logo from './Logo';
-import { navigationContent } from '../../content/navigation';
+import { navigationContent } from '@/content/navigation';
 import DesktopNavigation from './DesktopNavigation';
 import MobileNavigation from './MobileNavigation';
 import LanguageSelector from './LanguageSelector';
 import MobileMenuButton from './MobileMenuButton';
 import { getMenuItems } from './utils';
-import { languages, Language } from '../../config/languages';
+import { languages, Language, isValidLang } from '@/config/languages';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,10 @@ export default function Navigation() {
   const router = useRouter();
 
   const currentLang = (pathname?.split('/')[1] || 'en') as Language;
+
+  if (!isValidLang(currentLang)) {
+    return null;
+  }
 
   const content = navigationContent[currentLang];
   

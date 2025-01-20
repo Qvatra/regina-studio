@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
-import { languages } from '../config/languages'
-import TopBar from '../components/TopBar'
-import Footer from '../components/Footer'
+import { languages } from '@/config/languages'
+import TopBar from '@/components/TopBar'
+import Footer from '@/components/Footer'
 import { headers } from 'next/headers'
-import '../styles/index.css'
+import '@/styles/index.css'
 import ReactDOM from 'react-dom'
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -7,5 +7,17 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "@next/next/no-page-custom-font": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["."],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "alias": {
+        "map": [["@", "."]],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
