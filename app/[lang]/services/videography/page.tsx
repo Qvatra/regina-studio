@@ -22,19 +22,14 @@ export async function generateMetadata({ params }: VideographyServicesPageProps)
     openGraph: {
       title: content.title,
       description: content.metaDescription,
-      type: 'website',
       url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`,
       images: [{
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/video.jpg`,
+        alt: content.imageAlt
       }],
-    },
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/videography`,
-      languages: Object.keys(languages).reduce((acc, item) => ({
-        ...acc,
-        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/services/videography`,
-      }), {}),
-    },
+      locale: lang,
+      alternateLocale: Object.keys(languages).filter(l => l !== lang)
+    }
   };
 }
 

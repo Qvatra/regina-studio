@@ -15,28 +15,25 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     alternates: {
-      languages: {
-        'x-default': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/en${cleanPath}`,
-        'en-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/en${cleanPath}`,
-        'nl-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/nl${cleanPath}`,
-        'uk-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/uk${cleanPath}`,
-      }
+        canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/en${cleanPath}`,
+        languages: {
+            'x-default': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/en${cleanPath}`,
+            'en-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/en${cleanPath}`,
+            'nl-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/nl${cleanPath}`,
+            'ru-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/ru${cleanPath}`,
+            'uk-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/ua${cleanPath}`
+        }
     }
   }
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode
-  params: { lang: string }
-}) {
+export default async function RootLayout({ children, params }: { children: React.ReactNode, params: { lang: string } }) {
   const { lang } = await params;
 
-  ReactDOM.preconnect('https://fonts.googleapis.com')
+  ReactDOM.preconnect('https://fonts.googleapis.com', { crossOrigin: 'anonymous' })
   ReactDOM.preconnect('https://fonts.gstatic.com', { crossOrigin: 'anonymous' })
-  ReactDOM.preconnect('https://res.cloudinary.com')
+  ReactDOM.preconnect('https://res.cloudinary.com', { crossOrigin: 'anonymous' })
+  ReactDOM.preconnect('https://www.youtube.com', { crossOrigin: 'anonymous' })
 
   return (
     <html lang={lang}>
@@ -46,12 +43,15 @@ export default async function RootLayout({
           rel="stylesheet" 
         />
       </head>
+
       <body className="bg-white antialiased">
         <div className="flex flex-col min-h-screen">
           <TopBar />
+
           <main className="flex-grow">
             {children}
           </main>
+
           <Footer />
         </div>
       </body>

@@ -5,6 +5,7 @@ export const homeContent = {
     metaDescription: "Professional photography and videography services in Amsterdam area. Specializing in weddings, events, portraits, and commercial projects.",
     roles: ["Photographer", "Filmmaker", "Blogger", "Friend"],
     location: "- Amsterdam area based, open for travel -",
+    imageAlt: "Professional Photographer and Videographer in Amsterdam area",
     services: [
       {
         title: "Photography",
@@ -59,6 +60,7 @@ export const homeContent = {
     metaDescription: "Professionele fotografie en videografie diensten in de regio Amsterdam. Gespecialiseerd in bruiloften, evenementen, portretten en commerciële projecten.",
     roles: ["Fotograaf", "Filmmaker", "Blogger", "Vriend"],
     location: "- Gevestigd in de regio Amsterdam, bereid om te reizen -",
+    imageAlt: "Professionele Fotograaf en Videograaf in Amsterdam gebied",
     services: [
       {
         title: "Fotografie",
@@ -113,6 +115,7 @@ export const homeContent = {
     metaDescription: "Профессиональные услуги фото и видеосъёмки в районе Амстердама. Специализация: свадьбы, мероприятия, портреты и коммерческие проекты.",
     roles: ["Фотограф", "Режиссёр", "Блогер", "Друг"],
     location: "- База в районе Амстердама, готова к поездкам -",
+    imageAlt: "Профессиональная Фото и Видеосъёмка в Амстердаме",
     services: [
       {
         title: "Фотография",
@@ -167,6 +170,7 @@ export const homeContent = {
     metaDescription: "Професійні послуги фото та відеозйомки в районі Амстердама. Спеціалізація: весілля, заходи, портрети та комерційні проекти.",
     roles: ["Фотограф", "Режисер", "Блогер", "Друг"],
     location: "- База в районі Амстердама, готова до подорожей -",
+    imageAlt: "Професійна Фото та Відеозйомка в Амстердамі",
     services: [
       {
         title: "Фотографія",

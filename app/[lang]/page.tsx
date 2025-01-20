@@ -14,14 +14,6 @@ interface HomePageProps {
   }>;
 }
 
-// Generate static params for all languages
-export async function generateStaticParams() {
-  return Object.keys(languages).map((lang) => ({
-    lang,
-  }));
-}
-
-// Generate metadata for the page
 export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { lang } = await params;
   const content = homeContent[lang];
@@ -35,9 +27,9 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
       url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`,
       images: [{
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/banner.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "Professional Photography and Videography"
+        width: 600,
+        height: 315,
+        alt: content.imageAlt
       }],
       locale: lang,
       alternateLocale: Object.keys(languages).filter(l => l !== lang)
@@ -149,3 +141,9 @@ export default async function Home({ params }: HomePageProps): Promise<any> {
     </section>
   );
 } 
+
+export async function generateStaticParams() {
+  return Object.keys(languages).map((lang) => ({
+    lang,
+  }));
+}

@@ -22,19 +22,10 @@ export async function generateMetadata({ params }: WeddingServicesPageProps): Pr
     openGraph: {
       title: content.title,
       description: content.metaDescription,
-      type: 'website',
       url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`,
-      images: [{
-        url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/wedding.jpg`,
-      }],
-    },
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/wedding`,
-      languages: Object.keys(languages).reduce((acc, item) => ({
-        ...acc,
-        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/services/wedding`,
-      }), {}),
-    },
+      locale: lang,
+      alternateLocale: Object.keys(languages).filter(l => l !== lang)
+    }
   };
 }
 

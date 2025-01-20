@@ -22,19 +22,14 @@ export async function generateMetadata({ params }: PhotographyServicesPageProps)
     openGraph: {
       title: content.title,
       description: content.metaDescription,
-      type: 'website',
       url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`,
       images: [{
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/photo.jpg`,
+        alt: content.imageAlt
       }],
-    },
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/services/photography`,
-      languages: Object.keys(languages).reduce((acc, item) => ({
-        ...acc,
-        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/services/photography`,
-      }), {}),
-    },
+      locale: lang,
+      alternateLocale: Object.keys(languages).filter(l => l !== lang)
+    }
   };
 }
 

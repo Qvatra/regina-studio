@@ -5,6 +5,7 @@ export const photographyServicesContent = {
     heading: "Photography Packages",
     subtitle: "Professional photography services tailored to your needs. Package price is calculated based on shooting time, number of photos, and travel distance. Contact me for custom packages and special requirements.",
     includedFeaturesTitle: "What's Included in All Packages",
+    imageAlt: "Professional Photography in Amsterdam area",
     packages: [
       {
         title: "Minimum",
@@ -63,6 +64,7 @@ export const photographyServicesContent = {
     heading: "Fotografie Pakketten",
     subtitle: "Professionele fotografie diensten op maat. Pakketprijs wordt berekend op basis van opnametijd, aantal foto's en reisafstand. Neem contact met mij op voor aangepaste pakketten en speciale wensen.",
     includedFeaturesTitle: "Wat is inbegrepen in alle pakketten",
+    imageAlt: "Professionele Fotografie in Amsterdam gebied",
     packages: [
       {
         title: "Minimum",
@@ -121,6 +123,7 @@ export const photographyServicesContent = {
     heading: "Пакеты Фотосъёмки",
     subtitle: "Профессиональные услуги фотографии, адаптированные под ваши потребности. Стоимость пакета рассчитывается исходя из времени съёмки, количества фотографий и расстояния поездки. Свяжитесь со мной для индивидуальных пакетов и особых требований.",
     includedFeaturesTitle: "Что включено во все пакеты",
+    imageAlt: "Профессиональная Фотосъёмка в Амстердаме",
     packages: [
       {
         title: "Минимальный",
@@ -179,6 +182,7 @@ export const photographyServicesContent = {
     heading: "Пакети Фотозйомки",
     subtitle: "Професійні послуги фотографії, адаптовані під ваші потреби. Вартість пакету розраховується виходячи з часу зйомки, кількості фотографій та відстані поїздки. Зв'яжіться зі мною для індивідуальних пакетів та особливих вимог.",
     includedFeaturesTitle: "Що входить у всі пакети",
+    imageAlt: "Професійна Фотографія в Амстердамі",
     packages: [
       {
         title: "Мінімальний",

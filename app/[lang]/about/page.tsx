@@ -17,13 +17,19 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
   return {
     title: content.title,
     description: content.metaDescription,
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`,
-      languages: Object.keys(languages).reduce((acc, lang) => ({
-        ...acc,
-        [lang]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/about`,
-      }), {}),
-    },
+    openGraph: {
+      title: content.title,
+      description: content.metaDescription,
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}`,
+      images: [{
+        url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/about.jpg`,
+        width: 414,
+        height: 518,
+        alt: content.imageAlt
+      }],
+      locale: lang,
+      alternateLocale: Object.keys(languages).filter(l => l !== lang)
+    }
   };
 }
 

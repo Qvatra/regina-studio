@@ -20,10 +20,11 @@ export function middleware(request: NextRequest) {
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
+  response.headers.set('x-invoke-path', request.nextUrl.pathname); // passes current path for generating metadata serverside
 
   return response
 }
 
 export const config = {
-  matcher: ['/'],
+  matcher: '/:path*',
 };

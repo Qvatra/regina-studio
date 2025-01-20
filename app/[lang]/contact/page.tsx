@@ -45,13 +45,13 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
   return {
     title: content.title,
     description: content.metaDescription,
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`,
-      languages: Object.keys(languages).reduce((acc, item) => ({
-        ...acc,
-        [item]: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${item}/contact`,
-      }), {}),
-    },
+    openGraph: {
+      title: content.title,
+      description: content.metaDescription,
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${lang}/contact`,
+      locale: lang,
+      alternateLocale: Object.keys(languages).filter(l => l !== lang)
+    }
   };
 }
 

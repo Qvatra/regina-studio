@@ -10,7 +10,8 @@ export const aboutContent = {
       "Today, I specialize in both photography and videography, creating everything from intimate family portraits to dynamic advertising content. My work is particularly focused on capturing genuine moments and emotions, whether that's at a wedding, during a family session, or while filming a commercial.",
       "Based in Beverwijk, near Amsterdam, I find endless inspiration in the beauty of the Netherlands – from its stunning sunsets to its cozy corners. My love for flowers and natural beauty often finds its way into my work, creating images that are both authentic and aesthetically pleasing."
     ],
-    kvk: "Chamber of Commerce (KVK) Number: 95169903"
+    kvk: "Chamber of Commerce (KVK) Number: 95169903",
+    imageAlt: "Professional Photographer and Videographer in Amsterdam area"
   },
   nl: {
     title: "Over mij | Regina Fotografie",
@@ -23,7 +24,8 @@ export const aboutContent = {
       "Vandaag de dag ben ik gespecialiseerd in zowel fotografie als videografie, waarbij ik alles maak van intieme familieportretten tot dynamische reclame-content. Mijn werk richt zich vooral op het vastleggen van pure momenten en emoties, of het nu gaat om een bruiloft, een familiesessie, of een commercial.",
       "Vanuit mijn basis in Beverwijk, vlakbij Amsterdam, vind ik eindeloze inspiratie in de schoonheid van Nederland – van prachtige zonsondergangen tot gezellige hoekjes. Mijn liefde voor bloemen en natuurlijke schoonheid zie je vaak terug in mijn werk, wat resulteert in beelden die zowel authentiek als esthetisch zijn."
     ],
-    kvk: "KVK-nummer: 95169903"
+    kvk: "KVK-nummer: 95169903",
+    imageAlt: "Professionele Fotograaf en Videograaf in Amsterdam gebied"
   },
   ru: {
     title: "Обо мне | Regina Photography",
@@ -36,7 +38,8 @@ export const aboutContent = {
       "Сегодня я специализируюсь как на фотографии, так и на видеосъёмке, создавая всё: от душевных семейных портретов до динамичного рекламного контента. В своей работе я особенно стремлюсь запечатлеть искренние моменты и эмоции, будь то свадьба, семейная съёмка или рекламный проект.",
       "Работая в Бевервейке, недалеко от Амстердама, я черпаю бесконечное вдохновение в красоте Нидерландов – от великолепных закатов до уютных уголков. Моя любовь к цветам и природной красоте часто отражается в работах, создавая образы, которые сочетают в себе подлинность и эстетическую привлекательность."
     ],
-    kvk: "Регистрационный номер KVK: 95169903"
+    kvk: "Регистрационный номер KVK: 95169903",
+    imageAlt: "Профессиональная Фото и Видеосъёмка в Амстердаме"
   },
   ua: {
     title: "Про мене | Regina Photography",
@@ -49,6 +52,7 @@ export const aboutContent = {
       "Сьогодні я спеціалізуюся як на фотографії, так і на відеозйомці, створюючи все: від душевних сімейних портретів до динамічного рекламного контенту. У своїй роботі я особливо прагну закарбувати щирі моменти та емоції, чи то весілля, сімейна зйомка чи рекламний проект.",
       "Працюючи в Бевервейку, неподалік від Амстердама, я черпаю нескінченне натхнення в красі Нідерландів – від чудових заходів сонця до затишних куточків. Моя любов до квітів та природної краси часто відображається в роботах, створюючи образи, що поєднують у собі автентичність та естетичну привабливість."
     ],
-    kvk: "Реєстраційний номер KVK: 95169903"
+    kvk: "Реєстраційний номер KVK: 95169903",
+    imageAlt: "Професійна Фото та Відеозйомка в Амстердамі"
   }
 };
