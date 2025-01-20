@@ -29,14 +29,4 @@ export const navigationContent = {
     contact: "Контакты",
     wedding: "Свадьба"
   },
-  ua: {
-    home: "Головна",
-    portfolio: "Портфоліо",
-    photography: "Фотографія",
-    videography: "Відеозйомка",
-    services: "Послуги",
-    about: "Про мене",
-    contact: "Контакти",
-    wedding: "Весілля"
-  }
 };

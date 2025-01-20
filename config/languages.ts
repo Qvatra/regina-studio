@@ -1,11 +1,10 @@
-export type Language = 'en' | 'nl' | 'ru' | 'ua';
-
-export const languages: { [key in Language]: string } = {
+export const languages = {
   en: 'English',
-  nl: 'Nederlands',
-  ru: 'Русский',
-  ua: 'Українська'
+  nl: 'Dutch',
+  ru: 'Russian',
 } as const;
+
+export type Language = keyof typeof languages;
 
 export function isValidLang(lang: string): lang is Language {
   return Object.keys(languages).includes(lang);

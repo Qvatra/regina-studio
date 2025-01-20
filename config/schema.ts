@@ -53,14 +53,14 @@ export const getContactSchema = (lang: string) => ({
         {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "availableLanguage": ["en", "nl", "ru", "ua"],
+            "availableLanguage": ["en", "nl", "ru"],
             "url": process.env.NEXT_PUBLIC_WATSAPP,
             "contactOption": "WhatsApp"
         },
         {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "availableLanguage": ["en", "nl", "ru", "ua"],
+            "availableLanguage": ["en", "nl", "ru"],
             "url": process.env.NEXT_PUBLIC_INSTAGRAM,
             "contactOption": "Instagram"
         }
@@ -78,7 +78,7 @@ export const getAboutSchema = (lang: string) => ({
     "@type": "Person",
     "name": schemaContent[lang].artist.name,
     "jobTitle": schemaContent[lang].artist.jobTitle,
-    "knowsLanguage": ["en", "nl", "ru", "ua"],
+    "knowsLanguage": ["en", "nl", "ru"],
     "description": schemaContent[lang].artist.description,
     "image": `${process.env.NEXT_PUBLIC_WEBSITE_URL}/assets/about.jpg`,
     "worksFor": organizationInfo(lang)

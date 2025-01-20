@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       en: `${baseUrl}/en${route}`,
       nl: `${baseUrl}/nl${route}`,
       ru: `${baseUrl}/ru${route}`,
-      uk: `${baseUrl}/ua${route}`,
     },
   });
 

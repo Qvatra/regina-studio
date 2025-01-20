@@ -37,6 +37,19 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="mt-auto pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8 mb-6">
+        <div className="mt-8 flex justify-center items-center gap-4">
+          {Object.entries(languages).map(([lang, name]) => (
+            <Link
+              key={lang}
+              href={`/${lang}`}
+              className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              {name}
+            </Link>
+          ))}
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8">
         {socialLinks.map(({ href, label, icon }) => (
           <a
@@ -50,20 +63,6 @@ export default function Footer() {
             {icon}
           </a>
         ))}
-      </div>
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-8">
-        <div className="mt-8 flex justify-center items-center gap-4">
-          {Object.entries(languages).map(([lang, name]) => (
-            <Link
-              key={lang}
-              href={`/${lang}`}
-              className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
-            >
-              {name}
-              <span className="ml-4 last:hidden text-gray-300">|</span>
-            </Link>
-          ))}
-        </div>
       </div>
     </footer>
   );
