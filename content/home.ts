@@ -1,24 +1,26 @@
 export const homeContent = {
   en: {
-    title: "Studio Regina | Creative Photography & Videography Services",
-    introduction: "This is me, Regina:",
-    metaDescription: "Professional photography and videography services in Amsterdam area. Specializing in weddings, events, portraits, and commercial projects.",
-    roles: ["Photographer", "Filmmaker", "Blogger", "Friend"],
+    title: "Regina photo/video | Professional Photography & Videography Services in Amsterdam, Netherlands",
+    introduction: "Welcome, I'm Regina",
+    metaDescription: "Discover professional photography and videography services in Amsterdam. Specializing in weddings, events, portraits, commercial projects, family and love stories.",
+    roles: ["Photographer", "Videographer", "Blogger", "Friend"],
     location: "- Amsterdam area based, open for travel -",
-    imageAlt: "Professional Photographer and Videographer in Amsterdam area",
+    imageAlt: "Photographer and Videographer expert in North Holland",
     services: [
       {
         title: "Photography",
-        description: "From intimate portraits to grand events, we capture the essence of every moment.",
-        items: ["Weddings", "Family Portraits", "Events", "Product Photography", "Personal Shoots"],
+        description: "Capture the essence of every moment with professional photography services.",
+        items: ["Wedding Photography", "Family Portraits", "Event Photography", "Product Photography", "Personal Photoshoots", "Events"],
         image: "/assets/photo.jpg",
+        imageAlt: "Professional Photography portfolio",
         link: "/en/portfolio/photography"
       },
       {
         title: "Videography",
-        description: "Professional video production that tells your story in motion.",
+        description: "Tell your story through motion with our professional videography services, perfect for love stories, family videos, commercials, and more.",
         items: ["Wedding Films", "Commercial Videos", "Social Media Content", "Event Coverage", "Family Stories"],
         image: "/assets/video.jpg",
+        imageAlt: "Professional Videography portfolio",
         link: "/en/portfolio/videography"
       }
     ],
@@ -67,6 +69,7 @@ export const homeContent = {
         description: "Van intieme portretten tot grote evenementen, wij vangen de essentie van elk moment.",
         items: ["Bruiloften", "Familieportretten", "Evenementen", "Productfotografie", "Persoonlijke Shoots"],
         image: "/assets/photo.jpg",
+        imageAlt: "Professionele Fotografie portfolio",
         link: "/nl/portfolio/photography"
       },
       {
@@ -74,6 +77,7 @@ export const homeContent = {
         description: "Professionele videoproductie die uw verhaal in beweging vertelt.",
         items: ["Trouwfilms", "Commerciële Video's", "Social Media Content", "Evenementregistratie", "Familieverhalen"],
         image: "/assets/video.jpg",
+        imageAlt: "Professionele Videografie portfolio",
         link: "/nl/portfolio/videography"
       }
     ],
@@ -122,6 +126,7 @@ export const homeContent = {
         description: "От интимных портретов до масштабных мероприятий, мы запечатлеем суть каждого момента.",
         items: ["Свадьбы", "Семейные Портреты", "Мероприятия", "Предметная Съёмка", "Личные Фотосессии"],
         image: "/assets/photo.jpg",
+        imageAlt: "портфолио профессиональной Фотографии",
         link: "/ru/portfolio/photography"
       },
       {
@@ -129,6 +134,7 @@ export const homeContent = {
         description: "Профессиональное видеопроизводство, рассказывающее вашу историю в движении.",
         items: ["Свадебные Фильмы", "Рекламные Видео", "Контент для Соцсетей", "Освещение Мероприятий", "Семейные Истории"],
         image: "/assets/video.jpg",
+        imageAlt: "портфолио профессиональной Видеосъёмки",
         link: "/ru/portfolio/videography"
       }
     ],
@@ -177,6 +183,7 @@ export const homeContent = {
         description: "Від інтимних портретів до масштабних заходів, ми закарбуємо суть кожного моменту.",
         items: ["Весілля", "Сімейні Портрети", "Заходи", "Предметна Зйомка", "Особисті Фотосесії"],
         image: "/assets/photo.jpg",
+        imageAlt: "портфоліо професійної Фотографії",
         link: "/ua/portfolio/photography"
       },
       {
@@ -184,6 +191,7 @@ export const homeContent = {
         description: "Професійне відеовиробництво, що розповідає вашу історію в русі.",
         items: ["Весільні Фільми", "Рекламні Відео", "Контент для Соцмереж", "Висвітлення Заходів", "Сімейні Історії"],
         image: "/assets/video.jpg",
+        imageAlt: "портфоліо професійної Відеозйомки",
         link: "/ua/portfolio/videography"
       }
     ],

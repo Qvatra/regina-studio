@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { videographyServicesContent } from '../../../../content/videographyServices';
-import { languages, Language } from '../../../../config/languages';
-import StyledButton from '../../../../components/StyledButton';
-import { Card, CardHeader, CardContent, CardFooter } from '../../../../components/Card';
-import { getVideographyServicesSchema } from '../../../../content/schema';
+import { videographyServicesContent } from '@/content/videographyServices';
+import { languages, Language } from '@/config/languages';
+import StyledButton from '@/components/StyledButton';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/Card';
+import { getVideographyServicesSchema } from '@/config/schema';
 
 interface VideographyServicesPageProps {
   params: Promise<{

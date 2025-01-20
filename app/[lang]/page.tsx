@@ -5,7 +5,7 @@ import Citations from '@/components/Citations';
 import StyledButton from '@/components/StyledButton';
 import { homeContent } from '@/content/home';
 import { languages, Language, isValidLang } from '@/config/languages';
-import { getHomeSchema } from '@/content/schema';
+import { getHomeSchema } from '@/config/schema';
 import { Metadata } from 'next';
 import { notFound } from "next/navigation";
 
@@ -54,8 +54,9 @@ export default async function Home({ params }: HomePageProps): Promise<any> {
           <div className="relative md:h-auto aspect-[21/11] sm:aspect-[21/7] xl:aspect-[21/5] w-full">
             <Image
               src="/assets/banner.jpg"
-              alt="Studio Regina - Professional Photography and Videography in Amsterdam"
+              alt={content.imageAlt}
               fill
+              sizes="100vw"
               className="object-cover object-[center_calc(70%)] xl:object-[center_calc(52%)]"
               priority
             />
@@ -89,7 +90,7 @@ export default async function Home({ params }: HomePageProps): Promise<any> {
                     <div className="relative aspect-[21/9] mb-6 overflow-hidden cursor-pointer">
                       <Image
                         src={service.image}
-                        alt={`Studio Regina ${service.title} Services - ${service.description}`}
+                        alt={service.imageAlt}
                         fill
                         priority
                         sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 604px"

@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { photographyServicesContent } from '../../../../content/photographyServices';
-import { languages, Language } from '../../../../config/languages';
-import StyledButton from '../../../../components/StyledButton';
-import { Card, CardHeader, CardContent, CardFooter } from '../../../../components/Card';
-import { getPhotographyServicesSchema } from '../../../../content/schema';
+import { photographyServicesContent } from '@/content/photographyServices';
+import { languages, Language } from '@/config/languages';
+import StyledButton from '@/components/StyledButton';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/Card';
+import { getPhotographyServicesSchema } from '@/config/schema';
 
 interface PhotographyServicesPageProps {
   params: Promise<{

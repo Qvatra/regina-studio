@@ -1,7 +1,6 @@
 import { Language, languages } from "@/config/languages";
 import PhotographyPortfolioPageClient from "./_PhotographyPortfolioPageClient";
 import { fetchPhotographyPortfolioData } from "@/utils/fetchPhotographyData";
-import { getPhotographyPortfolioSchema } from "@/content/schema";
 
 interface PhotographyPortfolioPageProps {
   params: Promise<{
@@ -14,13 +13,7 @@ export default async function PhotographyPortfolioPage({ params }: PhotographyPo
   const images = await fetchPhotographyPortfolioData();
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getPhotographyPortfolioSchema(lang)) }}
-      />
-      <PhotographyPortfolioPageClient lang={lang} images={images} />;
-    </>
+    <PhotographyPortfolioPageClient lang={lang} images={images} />
   )
 }
 

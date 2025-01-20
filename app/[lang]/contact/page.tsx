@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
-import { Card, CardHeader, CardContent, CardFooter } from '../../../components/Card';
-import StyledButton from '../../../components/StyledButton';
-import { contactContent } from '../../../content/contact';
-import { languages, Language } from '../../../config/languages';
-import FacebookIcon from '../../../components/icons/FacebookIcon';
-import InstagramIcon from '../../../components/icons/InstagramIcon';
-import WhatsappIcon from '../../../components/icons/WhatsappIcon';
-import EmailIcon from '../../../components/icons/EmailIcon';
-import { getContactSchema } from '../../../content/schema';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/Card';
+import StyledButton from '@/components/StyledButton';
+import { contactContent } from '@/content/contact';
+import { languages, Language } from '@/config/languages';
+import FacebookIcon from '@/components/icons/FacebookIcon';
+import InstagramIcon from '@/components/icons/InstagramIcon';
+import WhatsappIcon from '@/components/icons/WhatsappIcon';
+import EmailIcon from '@/components/icons/EmailIcon';
+import { getContactSchema } from '@/config/schema';
 
 const contactOptions = [
   {

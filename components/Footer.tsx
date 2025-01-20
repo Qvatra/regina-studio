@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { languages } from '../config/languages';
+import { languages } from '@/config/languages';
 import FacebookIcon from './icons/FacebookIcon';
 import InstagramIcon from './icons/InstagramIcon';
 import YoutubeIcon from './icons/YoutubeIcon';

@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { aboutContent } from '../../../content/about';
-import { languages, Language } from '../../../config/languages';
-import { getAboutSchema } from '../../../content/schema';
+import { aboutContent } from '@/content/about';
+import { languages, Language } from '@/config/languages';
+import { getAboutSchema } from '@/config/schema';
 
 interface AboutPageProps {
   params: Promise<{

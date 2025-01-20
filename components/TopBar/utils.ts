@@ -1,6 +1,6 @@
 import { MenuItem } from './types';
-import { Language } from '../../config/languages';
-import { navigationContent } from '../../content/navigation';
+import { Language } from '@/config/languages';
+import { navigationContent } from '@/content/navigation';
 
 export function getMenuItems(
   content: typeof navigationContent[Language], 

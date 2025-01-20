@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { weddingServicesContent } from '../../../../content/weddingServices';
-import { languages, Language } from '../../../../config/languages';
-import StyledButton from '../../../../components/StyledButton';
-import { Card, CardHeader, CardContent, CardFooter } from '../../../../components/Card';
-import { getWeddingServicesSchema } from '../../../../content/schema';
+import { weddingServicesContent } from '@/content/weddingServices';
+import { languages, Language } from '@/config/languages';
+import StyledButton from '@/components/StyledButton';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/Card';
+import { getWeddingServicesSchema } from '@/config/schema';
 
 interface WeddingServicesPageProps {
   params: Promise<{

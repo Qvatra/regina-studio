@@ -46,9 +46,8 @@ export default function TypeWriter({
   return (
     <div className="flex items-center justify-center">
       <div className="text-center">
-        <p className={className}>
+        <p className={`h-[20px] ${className}`}>
           {text}
-          <span>|</span>
         </p>
       </div>
     </div>

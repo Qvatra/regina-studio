@@ -1,6 +1,5 @@
 import { Language, languages } from "@/config/languages";
 import VideographyPortfolioPageClient from "./_VideographyPortfolioPageClient";
-import { getVideographyPortfolioSchema } from "@/content/schema";
 import { fetchVideographyPortfolioData } from "@/utils/fetchVideographyData";
 
 interface VideographyPortfolioPage {
@@ -14,13 +13,7 @@ export default async function VideographyPortfolioPage({ params }: VideographyPo
   const data = await fetchVideographyPortfolioData();
   
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getVideographyPortfolioSchema(lang)) }}
-      />
-      <VideographyPortfolioPageClient lang={lang} data={data} />;
-    </>
+    <VideographyPortfolioPageClient lang={lang} data={data} />
   )
 }
 

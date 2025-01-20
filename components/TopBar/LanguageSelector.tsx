@@ -1,4 +1,4 @@
-import { Language } from '../../config/languages';
+import { Language } from '@/config/languages';
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 interface LanguageSelectorProps {

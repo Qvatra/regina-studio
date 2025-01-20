@@ -1,10 +1,10 @@
 "use client";
 
-import ScrollToTop from "../../../../components/ScrollToTop";
-import StyledLink from "../../../../components/StyledLink";
-import { MobileLayout, TabletLayout, DesktopLayout } from "../../../../components/VideoLayout";
-import { portfolioContent } from "../../../../content/portfolio";
-import { LayoutProp } from "../../../../types/videography";
+import ScrollToTop from "@/components/ScrollToTop";
+import StyledLink from "@/components/StyledLink";
+import { MobileLayout, TabletLayout, DesktopLayout } from "@/components/VideoLayout";
+import { portfolioContent } from "@/content/portfolio";
+import { LayoutProp } from "@/types/videography";
 
 interface VideosData {
     oneCol: LayoutProp;
