@@ -13,6 +13,30 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async headers() {
+    return [
+      {
+        // Match all static files
+        source: "/_next/public/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, immutable", // Cache for 7 days
+          },
+        ],
+      },
+      {
+        // Match all image files
+        source: "/_next/image",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, immutable", // Cache for 7 days
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {
