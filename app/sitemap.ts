@@ -22,11 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   return [
-    createSitemapEntry({ route: '', changeFrequency: 'monthly', priority: 1 }),
-    createSitemapEntry({ route: '/about', changeFrequency: 'monthly', priority: 0.8 }),
-    createSitemapEntry({ route: '/contact', changeFrequency: 'monthly', priority: 0.8 }),
-    createSitemapEntry({ route: '/services/photography', changeFrequency: 'monthly', priority: 0.8 }),
-    createSitemapEntry({ route: '/services/videography', changeFrequency: 'monthly', priority: 0.8 }),
-    createSitemapEntry({ route: '/services/wedding', changeFrequency: 'monthly', priority: 0.8 }),
+    createSitemapEntry({ route: '', changeFrequency: 'weekly', priority: 1 }),
+    createSitemapEntry({ route: '/about', changeFrequency: 'weekly', priority: 0.9 }),
+    createSitemapEntry({ route: '/contact', changeFrequency: 'weekly', priority: 0.8 }),
+    createSitemapEntry({ route: '/services/photography', changeFrequency: 'weekly', priority: 0.7 }),
+    createSitemapEntry({ route: '/services/videography', changeFrequency: 'weekly', priority: 0.7 }),
+    createSitemapEntry({ route: '/services/wedding', changeFrequency: 'weekly', priority: 0.7 }),
   ];
 }
