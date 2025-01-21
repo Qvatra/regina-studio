@@ -6,6 +6,7 @@ import { headers } from 'next/headers'
 import '@/styles/index.css'
 import ReactDOM from 'react-dom'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export async function generateMetadata(): Promise<Metadata> {
     const headersList = await headers()
@@ -53,6 +54,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <main className="flex-grow">
             {children}
             <SpeedInsights/>
+            <Analytics />
           </main>
 
           <Footer />
