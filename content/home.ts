@@ -1,6 +1,6 @@
 export const homeContent = {
   en: {
-    title: "Regina Photo/Video | Professional Photography & Videography Services in Amsterdam, Netherlands",
+    title: "Regina Photography | Professional Photography & Videography Services in Amsterdam, Netherlands",
     introduction: "Hello, I'm Regina",
     metaDescription: "Explore top-notch photography and videography services in Amsterdam. I specialize in events, commercial projects, family/love stories, portraits and weddings.",
     roles: ["Photographer", "Videographer", "Blogger", "Friend"],
@@ -57,7 +57,7 @@ export const homeContent = {
     },
   },
   nl: {
-    title: "Regina foto/video | Professionele Fotografie & Videografie in Amsterdam, Nederland",
+    title: "Regina Photography | Professionele Fotografie & Videografie in Amsterdam, Nederland",
     introduction: "Hallo, ik ben Regina",
     metaDescription: "Ervaar professionele fotografie en videografie in Amsterdam. Gespecialiseerd in evenementen, commerciële projecten, familie- en liefdesverhalen, portretten en bruiloften.",
     roles: ["Fotograaf", "Videograaf", "Blogger", "Vriend"],
@@ -114,7 +114,7 @@ export const homeContent = {
     },
   },
   ru: {
-    title: "Regina фото/видео | Профессиональные услуги фотографа и видеографа в Амстердаме, Нидерланды",
+    title: "Regina Photography | Профессиональные услуги фотографа и видеографа в Амстердаме, Нидерланды",
     introduction: "Привет, я Регина",
     metaDescription: "Познакомьтесь с профессиональными услугами фотографии и видеосъёмки в Амстердаме. Я специализируюсь на мероприятиях, коммерческих проектах, семейных и любовных историях, свадьбах, портретах.",
     roles: ["Фотограф", "Видеограф", "Блогер", "Друг"],
