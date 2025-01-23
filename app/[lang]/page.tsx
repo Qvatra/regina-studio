@@ -53,12 +53,11 @@ export default async function Home({ params }: HomePageProps): Promise<any> {
         <div className="relative w-full">
           <div className="relative md:h-auto aspect-[21/11] sm:aspect-[21/7] xl:aspect-[21/5] w-full">
             <Image
-              src="/assets/banner.jpg"
+              src="/assets/home.jpg"
               alt={content.imageAlt}
               fill
               sizes="100vw"
-              className="object-cover object-[center_calc(70%)] xl:object-[center_calc(52%)]"
-              priority
+              className="object-cover object-[center_calc(0%)] xl:object-[center_calc(20%)]"
             />
           </div>
         </div>
