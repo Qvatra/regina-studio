@@ -45,6 +45,28 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: process.env.NEXT_PUBLIC_DOMAIN,
+          },
+        ],
+        destination: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/`,
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: process.env.NEXT_PUBLIC_DOMAIN,
+          },
+        ],
+        destination: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/:path*`,
+        permanent: true,
+      },
+      {
         source: '/about',
         destination: '/en/about',
         permanent: true,

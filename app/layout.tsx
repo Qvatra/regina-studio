@@ -22,8 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
             'x-default': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/en${cleanPath}`,
             'en-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/en${cleanPath}`,
             'nl-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/nl${cleanPath}`,
-            'ru-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/ru${cleanPath}`,
-            'uk-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/ua${cleanPath}`
+            'ru-NL': `${process.env.NEXT_PUBLIC_WEBSITE_URL}/ru${cleanPath}`
         }
     }
   }
