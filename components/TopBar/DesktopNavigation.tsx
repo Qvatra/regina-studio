@@ -26,7 +26,8 @@ export default function DesktopMenu({
         <div key={item.path} className="w-[90px]">
           {item.children ? (
             <div className="relative group">
-              <button 
+              <button
+                data-testid={item.testId}
                 onClick={item.onClick}
                 className={`${navItemClassName(isActive(item.path))} text-center w-full`}
               >
@@ -36,6 +37,7 @@ export default function DesktopMenu({
                 <div className="bg-white py-2 shadow-md">
                   {item.children.map((child) => (
                     <Link 
+                      data-testid={child.testId}
                       key={child.path}
                       href={child.path}
                       className={`block px-4 py-2 text-left ${navItemClassName(isSubActive(child.path))}`}
@@ -48,6 +50,7 @@ export default function DesktopMenu({
             </div>
           ) : (
             <Link 
+              data-testid={item.testId}
               href={item.path} 
               className={`${navItemClassName(isActive(item.path))} text-center`}
             >

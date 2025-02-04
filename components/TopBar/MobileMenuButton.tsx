@@ -9,6 +9,7 @@ export default function MobileMenuButton({ isOpen, setIsOpen }: MobileMenuButton
   return (
     <div className="flex items-center md:hidden">
       <button
+        data-testid="burger-menu"
         onClick={() => setIsOpen(!isOpen)}
         className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none"
       >

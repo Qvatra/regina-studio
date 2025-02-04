@@ -4,6 +4,7 @@ import React from 'react';
 interface CardProps {
   className?: string;
   children: ReactNode;
+  testId?: string;
 }
 
 interface CardHeaderProps {
@@ -21,11 +22,11 @@ interface CardFooterProps {
   className?: string;
 }
 
-export function Card({ className = "", children }: CardProps) {
+export function Card({ className = "", children, testId = "card" }: CardProps) {
   const cardClassName = `block p-5 h-full bg-gray-100 cursor-default flex flex-col ${className}`;
 
   return (
-    <div className={cardClassName}>{children}</div>
+    <div className={cardClassName} data-testid={testId}>{children}</div>
   );
 }
 

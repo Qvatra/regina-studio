@@ -12,4 +12,7 @@ module.exports = {
       '/node_modules/',
     ],
     testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'],
+    testPathIgnorePatterns: [
+      '/tests/e2e/'
+    ],
   };

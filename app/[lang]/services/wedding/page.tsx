@@ -45,7 +45,7 @@ export default async function WeddingServicesPage({ params }: WeddingServicesPag
         
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-12">
           {content.packages.map((pkg) => (
-            <Card key={pkg.title}>
+            <Card key={pkg.title} testId={`${pkg.title.toLowerCase().replace(/\s+/g, '-')}-package-card`}>
               <CardHeader>
                 <h2 className="text-2xl font-bold">{pkg.title}</h2>
               </CardHeader>

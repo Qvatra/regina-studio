@@ -33,6 +33,7 @@ export default function MobileMenu({
           item.children ? (
             <div key={item.path}>
               <div
+                data-testid={`${item.testId}-mobile`}
                 className={mobileNavItemClassName(isActive(item.path))}
                 onClick={item.onClick}
               >
@@ -41,6 +42,7 @@ export default function MobileMenu({
               <div className='block pl-4'>
                 {item.children.map((child) => (
                   <Link 
+                    data-testid={`${child.testId}-mobile`}
                     key={child.path}
                     href={child.path}
                     className={mobileNavItemClassName(isSubActive(child.path))}
@@ -53,6 +55,7 @@ export default function MobileMenu({
             </div>
           ) : (
             <Link 
+              data-testid={`${item.testId}-mobile`}
               key={item.path}
               href={item.path}
               className={mobileNavItemClassName(isActive(item.path))}

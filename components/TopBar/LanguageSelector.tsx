@@ -19,6 +19,7 @@ export default function LanguageSelector({
   return (
     <div className="absolute right-16 mr-3 top-8 md:relative md:top-0 md:right-0 md:mr-0">
       <button
+        data-testid="language-selector-button"
         onClick={() => setIsLangOpen(!isLangOpen)}
         className="flex items-center space-x-1 text-gray-600 hover:text-gray-900"
       >
@@ -30,6 +31,7 @@ export default function LanguageSelector({
         <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
           {Object.entries(languages).map(([lang, name]) => (
             <button
+              data-testid={`${lang}-button`}
               key={lang}
               onClick={() => switchLanguage(lang as Language)}
               className={`block w-full text-left px-4 py-2 text-sm ${
